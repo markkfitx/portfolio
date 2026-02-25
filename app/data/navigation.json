@@ -1,0 +1,46 @@
+{
+    "navigation": [
+        {
+            "label": "Home",
+            "url":"#home"
+        },
+        {
+            "label": "Expertise",
+            "url":"#expertise"
+        },
+        {
+            "label":"Work",
+            "url":"#work"
+        },
+        {
+            "label": "Experience",
+            "url":"#experience"
+        },
+        {
+            "label": "Contact",
+            "url":"#contact"
+        }
+    ],
+    "footer": [
+        {
+            "label": "Home",
+            "url":"#home"
+        },
+        {
+            "label": "Expertise",
+            "url":"#expertise"
+        },
+        {
+            "label":"Work",
+            "url":"#work"
+        },
+        {
+            "label": "Experience",
+            "url":"#experience"
+        },
+        {
+            "label": "Contact",
+            "url":"#contact"
+        }
+    ]
+}
