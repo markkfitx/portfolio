@@ -18,9 +18,9 @@ export default function EmblaCarousel({id, className}: contentProps) {
   const goToNext = () => emblaApi?.goToNext()
 
   return (
-    <div id={id} className={clsx(`embla flex flex-row w-full justify-center xl:px-80 lg:px-40 md:px-20 px-10`,className)}>
+    <div id={id} className={clsx(`embla flex flex-row items-center justify-center gap-2 hover:cursor-pointer`, className)}>
       <CarouselButton id="embla__prev" onClick={goToPrev}><ArrowLeft /></CarouselButton>
-      <div className="embla__viewport w-full" ref={emblaRef}>
+      <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {data.languages.map((item,idx) =>{ 
             return <CarouselCard key={`${item.name}-${idx}`} id="embla__slide-1">{item.src}</CarouselCard> 
