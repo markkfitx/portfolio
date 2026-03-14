@@ -1,8 +1,9 @@
-import clsx from "clsx"
 import Section from "../../section-wrapper"
 import SkillBox from "../skills/skill-box"
 import {Database, Laptop, Figma} from "lucide-react"
 import htmlImg from "../../../app/img/hello-world-html-code.png"
+import SectionHero from "../../section-hero"
+
 import Image from "next/image"
 interface contentProps{
     id: string,
@@ -17,10 +18,17 @@ const skills = [
 export default function Skills({id, className}: contentProps){
     return (
        <Section id={id} className="">
-            <h2 className="w-full font-bold text-white md:text-[5.5rem] text-[4.5rem] tracking-widest text-shadow-lg whitespace-wrap text-center mb-10 z-10">My Expertise</h2>
+            <SectionHero 
+                id={`${id}-section-hero`} 
+                title="My Expertise"
+                description="Lorem Ipsem - This is placeholder text for now. Lorem Ipsem - This is placeholder text for now. Lorem Ipsem - This is placeholder text for now.Lorem Ipsem - This is placeholder text for now."
+                alignment="center"
+                badgeDesc="Lorem Ipsem"
+                />
             <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center gap-8 z-10">
                 {skills.map((skill,idx) =>{
-                    return <SkillBox key={`skillWrapper-${skill.header.replace(" ","-")}-${idx}`} id={`skillWrapper-${skill.header.replace(" ","-")}-${idx}`} header={skill.header} body={skill.body} color={skill.color} icon={skill.icon} />
+                    const skillID = `skillWrapper-${skill.header.replace(" ","-")}-${idx}`
+                    return <SkillBox key={skillID} id={skillID} header={skill.header} body={skill.body} color={skill.color} icon={skill.icon} />
                 })}
             </div>
             <Image src={htmlImg} alt="Background html example code image." className="z-0 opacity-30 relative bottom-10 self-center saturate-25 lg:w-[40vw] w-[50vw]"/>

@@ -18,7 +18,7 @@ export default function SkillBox(
     icon: Icon
 }: contentProps){
     return (
-        <Card className={clsx("group cursor-pointer overflow-hidden rounded-sm bg-[#111216] border border-white/10 shadow-lg transition-shadow hover:shadow-xl",className)} >
+        <Card className={clsx("group cursor-pointer overflow-hidden rounded-sm bg-[#111216]/50 border border-white/10  shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-xl",className)} >
             <CardHeader className="flex flex-row gap-3">
                 {Icon && <Icon size={32} className="text-white mt-1" />}
                 <h5 id={`${id}-header`} className="text-white font-bold mb-8 tracking-[1px] relative max-w-60">
