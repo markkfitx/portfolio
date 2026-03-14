@@ -27,6 +27,7 @@ export default function Work({id, className}: contentProps){
                         img={item.img}
                         title={item.title}
                         subTitle={item.subTitle}
+                        relevantSkills={item.relevantSkills}
                     />
                 ))}
             </div>
