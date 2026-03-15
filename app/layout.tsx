@@ -4,6 +4,7 @@ import "../app/css/globals.css";
 import "../app/css/layout.css";
 import Header from "@/components/header"
 import Footer from "@/components/footer/footer"
+import ParticlesBackground from "@/components/particle-background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-mist-950`}>
+        <ParticlesBackground />
         <div className="font-sans flex flex-col justify-start items-center min-h-screen ">
           {/** Navigation */}
           <Header />
