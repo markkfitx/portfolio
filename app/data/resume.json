@@ -1,0 +1,39 @@
+{
+    "resume":[
+        {
+            "title":"Lead Frontend Engineer",
+            "company":"Keystone Information Systems",
+            "description":"Modernized legacy enterprise platforms by migrating Classic ASP systems to React + TypeScript architectures with REST APIs. Led application architecture, deployment, and security implementation while optimizing CI/CD pipelines and integrating third-party services to expand platform functionality.",
+            "from":"2022",
+            "to":"",
+            "location":"Collingswood, NJ",
+            "url":"www.keyinfosys.com",
+            "img": "",
+            "color": "blue",
+            "skillBadges":["ASP", "JS", "TS", "React", "NextJS", "AI Integration"]
+        },
+        {
+            "title":"Marketing Technologist / Digital Creator",
+            "company":"The Impackt Brand",
+            "description":"Designed and developed responsive email campaigns by translating Figma layouts into production-ready HTML templates optimized for cross-client compatibility. Built and deployed lifecycle automation flows in Klaviyo (welcome, abandoned cart, post-purchase, winback), collaborating with marketing and creative teams to ensure brand consistency, performance, and timely campaign launches.",
+            "from":"2022",
+            "to":"",
+            "location":"Clementon, NJ",
+            "url":"www.theimpacktbrand.com",
+            "img": "",
+            "color": "yellow",
+            "skillBadges":["PhotoShop", "Figma", "Shopify", "Klaviyo", "Liquid", "HTML", "JS", "CSS"]
+        },
+        {
+            "title":"Backend Developer & Datbase Analyst",
+            "company":"Repco Inc.",
+            "description":"Engineered Python and PHP backend solutions supporting real-time OEM/product databases and customer analytics systems. Automated data processing and reporting pipelines, reducing reporting time by 50% while eliminating 75% of manual workflows.",
+            "from":"2016",
+            "to":"2022",
+            "location":"Marlton, NJ",
+            "url":"www.repcoinc.com",
+            "img": "",
+            "skillBadges":["Python", "PHP", "MongoDB", "Microsoft Excel"]
+        }
+    ]
+}

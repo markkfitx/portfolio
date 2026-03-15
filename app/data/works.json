@@ -4,37 +4,67 @@
             "title": "The Impackt Brand",
             "subTitle": "Test Sub Title",
             "img": "/work-img-files/impackt-brand.png",
-            "link": "https://www.theimpacktbrand.com"
+            "link": "https://www.theimpacktbrand.com",
+            "color":"red",
+            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
         },
         {
             "title": "The Impackt Brand",
             "subTitle": "Test Sub Title",
             "img": "/work-img-files/impackt-brand.png",
-            "link": "https://www.theimpacktbrand.com"
+            "link": "https://www.theimpacktbrand.com",
+            "color":"cyan",
+            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
         },
         {
             "title": "The Impackt Brand",
             "subTitle": "Test Sub Title",
             "img": "/work-img-files/impackt-brand.png",
-            "link": "https://www.theimpacktbrand.com"
+            "link": "https://www.theimpacktbrand.com",
+            "color":"blue",
+            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
         },
         {
             "title": "The Impackt Brand",
             "subTitle": "Test Sub Title",
             "img": "/work-img-files/impackt-brand.png",
-            "link": "https://www.theimpacktbrand.com"
+            "link": "https://www.theimpacktbrand.com",
+            "color":"blue",
+            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
         },
         {
             "title": "The Impackt Brand",
             "subTitle": "Test Sub Title",
             "img": "/work-img-files/impackt-brand.png",
-            "link": "https://www.theimpacktbrand.com"
+            "link": "https://www.theimpacktbrand.com",
+            "color":"yellow",
+            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
         },
         {
             "title": "The Impackt Brand",
             "subTitle": "Test Sub Title",
             "img": "/work-img-files/impackt-brand.png",
-            "link": "https://www.theimpacktbrand.com"
+            "link": "https://www.theimpacktbrand.com",
+            "color":"yellow",
+            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
+        }
+    ],
+    "filterOptions":[
+        {
+            "label":"Web Apps",
+            "color": "blue"
+        },
+        {
+            "label":"AI Integration",
+            "color": "cyan"
+        },
+        {
+            "label":"Marketing Design",
+            "color": "yellow"
+        },
+        {
+            "label":"Database",
+            "color": "red"
         }
     ]
 }
