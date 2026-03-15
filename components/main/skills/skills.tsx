@@ -27,7 +27,7 @@ export default function Skills({id, className}: contentProps){
                 />
             <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center gap-8 z-10">
                 {skills.map((skill,idx) =>{
-                    const skillID = `skillWrapper-${skill.header.replace(" ","-")}-${idx}`
+                    const skillID = `skillWrapper-${skill.header.replace(/\s+/g, "-").toLowerCase()}-${idx}`
                     return <SkillBox key={skillID} id={skillID} header={skill.header} body={skill.body} color={skill.color} icon={skill.icon} />
                 })}
             </div>
