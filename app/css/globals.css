@@ -140,8 +140,24 @@
 }
 
 #heroSection{
-  background-image: url("../../app/img/hero-bg.png");
+  /**background-image: url("../../app/img/hero-bg.png");**/
   background-position: center center;
   background-size: cover;
   max-width:100%;
 }
+
+.u-bg-blur {
+    z-index: 1;
+    backface-visibility: hidden;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    background-image: linear-gradient(#ffffff29 4%, #00000059 60%, #000000b3);
+    height: 70%;
+    position: absolute;
+    inset: auto 0% 0%;
+    transform: translateZ(0);
+    -webkit-mask: linear-gradient(#0000, #000, #000);
+    mask: linear-gradient(#0000, #000, #000);
+}
+

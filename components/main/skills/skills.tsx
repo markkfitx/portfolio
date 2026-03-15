@@ -31,7 +31,7 @@ export default function Skills({id, className}: contentProps){
                     return <SkillBox key={skillID} id={skillID} header={skill.header} body={skill.body} color={skill.color} icon={skill.icon} />
                 })}
             </div>
-            <Image src={htmlImg} alt="Background html example code image." className="z-0 opacity-30 relative bottom-10 self-center saturate-25 lg:w-[40vw] w-[50vw]"/>
+            <Image src={htmlImg} alt="Background html example code image." className="z-[0] opacity-30 relative bottom-10 self-center saturate-25 lg:w-[40vw] w-[50vw] z-10"/>
        </Section>
     )
 }

@@ -23,7 +23,7 @@ export default function SkillBox(
                 {Icon && <Icon size={32} className="text-white mt-1" />}
                 <div id={`${id}-header`} className="mb-8 relative max-w-60">
                     <h5 className="text-balance text-white font-bold relative tracking-[1px] z-10">{header}</h5>
-                    <div className={`absolute top-1/5 z-0 w-1/2 h-1/4 ${color}`}></div>
+                    <div className={`absolute top-1/5 z-[0] w-1/2 h-1/4 ${color}`}></div>
                 </div>
             </CardHeader>
             <CardContent id={`${id}-body`} className="text-white font-light tracking-[2px]">{body}</CardContent>

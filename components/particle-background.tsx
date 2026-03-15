@@ -30,11 +30,11 @@ export default function ParticlesBackground() {
           value: 80
         },
         color: {
-          value: "#ffffff"
+          value: "#808080"
         },
         links: {
           enable: true,
-          color: "#ffffff",
+          color: "#808080",
           distance: 150,
           opacity: 0.4
         },
@@ -76,5 +76,5 @@ export default function ParticlesBackground() {
 
   if (!init) return null;
 
-  return <Particles id="tsparticles" options={options} />;
+  return <Particles id="tsparticles" options={options} className="opacity-75" />;
 }

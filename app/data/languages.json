@@ -1,4 +1,26 @@
 {
+    "topFrameworks":[
+      {
+        "name": "React",
+        "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        "color": "cyan"
+      },
+      {
+        "name": "NextJS",
+        "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg",
+        "color": "grey"
+      },
+      {
+        "name": "TypeScript",
+        "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        "color": "blue"
+      },
+      {
+        "name": "Figma",
+        "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+        "color": "purple"
+      }
+    ],
     "languages": [
       {
         "name": "JavaScript",

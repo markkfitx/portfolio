@@ -29,15 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-mist-950`}>
-        <ParticlesBackground />
-        <div className="font-sans flex flex-col justify-start items-center min-h-screen ">
+        <div className="font-sans flex flex-col justify-start items-center min-h-screen">
           {/** Navigation */}
-          <Header />
+          {/**<Header/>**/}
           {/** Main withg children pages */}
           {children}
         </div>
         {/** Footer */}
         <Footer />
+        <ParticlesBackground />
       </body>
     </html>
   );

@@ -17,7 +17,7 @@ export default function Experience({id, className}: contentProps){
                 badgeDesc="My Resume"
                 className="lg:mx-4"
             />
-            <ExpAccordion id={`${id}-accordion`} className="w-3/4 self-center" />
+            <ExpAccordion id={`${id}-accordion`} className="w-3/4 self-center z-10" />
         </Section>
     )
 }

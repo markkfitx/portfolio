@@ -34,7 +34,7 @@ export default function Work({id, className}: contentProps){
                 badgeDesc="Lorem Ipsem"
             />
             {/**<FilterForm className="mb-10 w-fit" title="Filter By"/>**/}
-            <div className="flex flex-row items-center justify-start w-full">
+            <div className="flex flex-row items-center justify-start w-full z-10">
                 <label className="text-white font-medium underline underline-offset-4 w-1/4">Filter</label>
                 <div className="flex flex-row justify-center align-center gap-4 w-1/2 my-10">
                     {data.filterOptions.map((item,idx) => (
@@ -42,7 +42,7 @@ export default function Work({id, className}: contentProps){
                     ))}
                 </div>  
             </div>  
-            <div className="w-full lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 grid">
+            <div className="w-full lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 grid z-10">
                 {data.works.map((item, idx) => (
                     <WorkBox
                         key={`${id}-box-${idx}`}

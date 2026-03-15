@@ -51,7 +51,7 @@ export default function WorkBox({
 
               <CardTitle className="relative">
                 <h5 className="text-balance text-white font-bold relative tracking-[1px] leading-tight z-10">{title}</h5>
-                <div className={`absolute top-3/5 z-0 w-1/2 h-1/2 hover:w-1/4 transition-w duration-500 ${color}`}></div>
+                <div className={`absolute top-3/5 z-[0] w-1/2 h-1/2 hover:w-1/4 transition-w duration-500 ${color}`}></div>
               </CardTitle>
 
               <CardDescription
