@@ -12,8 +12,9 @@ interface ContentProps {
   link?: string
   img: string
   title: string
+  color: string
+  relevantSkills?: string[]
   subTitle?: string
-  relevantSkills: string[]
   className?: string
 }
 
@@ -23,6 +24,7 @@ export default function WorkBox({
   img,
   title,
   subTitle,
+  color,
   relevantSkills,
   className
 }: ContentProps) {
@@ -46,8 +48,10 @@ export default function WorkBox({
         <div className="relative overflow-hidden px-6 pt-16 pb-6 transition-all duration-500 group-hover:pt-24">
           <div className="relative z-10 flex items-end justify-between gap-4">
             <div className="max-w-[80%]">
-              <CardTitle className="font-semibold leading-tight text-white text-2xl">
-                {title}
+
+              <CardTitle className="relative">
+                <h5 className="text-balance text-white font-bold relative tracking-[1px] leading-tight z-10">{title}</h5>
+                <div className={`absolute top-3/5 z-0 w-1/2 h-1/2 hover:w-1/4 transition-w duration-500 ${color}`}></div>
               </CardTitle>
 
               <CardDescription
@@ -64,7 +68,7 @@ export default function WorkBox({
                   </p>
                 )}
 
-                {relevantSkills.length > 0 && (
+                {(relevantSkills && relevantSkills.length > 0) && (
                   <div className="mt-4 flex flex-wrap gap-2">
                     {relevantSkills.map((skill) => (
                       <Badge

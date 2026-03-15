@@ -16,9 +16,9 @@ export default function FilterForm({title, className}: contentProps){
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-mist-900 text-white border-none">
                     <DropdownMenuItem>All</DropdownMenuItem>
-                    <DropdownMenuItem>Web</DropdownMenuItem>
-                    <DropdownMenuItem>Mobile</DropdownMenuItem>
-                    <DropdownMenuItem>Desktop</DropdownMenuItem>
+                    <DropdownMenuItem>Web Apps</DropdownMenuItem>
+                    <DropdownMenuItem>Marketing</DropdownMenuItem>
+                    <DropdownMenuItem>Database & Backend</DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
         </form>
