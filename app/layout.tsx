@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-mist-950`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-mist-950 lg:p-8 md:p-6 p-4`}>
         <Header id="social-media-n-mobile-header" />
         <div className="font-sans flex flex-col justify-start items-center min-h-screen">
           {/** Navigation */}

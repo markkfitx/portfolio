@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
+  DropdownMenuSeparator
 } from "@/components/ui/dropdown-menu"
 interface contentProps{
     className?:string,
@@ -20,9 +21,10 @@ export default function MobileNavBar({id, className}: contentProps){
             <DropdownMenuTrigger asChild>
                 <Button variant="default"><Menu className="text-white" /></Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-40 bg-[#111216]/50 border border-white/10" align="start">
+            <DropdownMenuContent className="w-40 bg-[#1a1a1a] border border-white/10" align="start">
                 <DropdownMenuGroup>
-                <DropdownMenuLabel>Menu</DropdownMenuLabel>
+                <DropdownMenuLabel className="text-white font-bold">Menu</DropdownMenuLabel>
+                <DropdownMenuSeparator className="bg-white/10"/>
                 {data.navigation.map((item,idx) =>(
                     <DropdownMenuItem key={`mobile-nav-item-${idx}`} asChild>
                         <NavItem url={item.url} label={item.label} idx={idx} />

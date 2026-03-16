@@ -11,7 +11,7 @@ interface contentProps{
 }
 export default function Header({id, className}: contentProps){
     return(
-        <div id={id} className={clsx(`flex flex-row w-full flex-nowrap gap-4 items-center justify-between pt-4 px-4`,className)}>
+        <div id={id} className={clsx(`flex flex-row w-full flex-nowrap gap-4 items-center justify-between`,className)}>
             <div className="md:hidden z-10"><MobileNavBar id="mobile-navigation-bar-dropdown" /></div>
             <div className="flex flex-row w-full flex-nowrap gap-4 items-center justify-end z-10">
                 <Link href="#"><Image width={16} alt="LinkedIn link - Mark Kiby" src={LinkedIn}/></Link>

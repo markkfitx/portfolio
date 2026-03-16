@@ -28,10 +28,10 @@ export default function Work({id, className}: contentProps){
             />
             {/**<FilterForm className="mb-10 w-fit" title="Filter By"/>**/}
             <div className="flex flex-row items-center justify-start w-full z-10">
-                <label className="text-white font-medium underline underline-offset-4 w-1/4">Filter</label>
+                <label className="md:block hidden text-white font-medium underline underline-offset-4 w-1/4">Filter By:</label>
                 <FilterForm id={`${id}-filter-form`} title="Filter By" />
             </div>  
-            <div className="w-full lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 grid z-10">
+            <div className="w-full lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 grid z-10">
                 {data.works.map((item, idx) => (
                     <WorkBox
                         key={`${id}-box-${idx}`}

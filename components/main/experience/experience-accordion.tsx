@@ -25,11 +25,11 @@ export default function ExpAccordian({id,className}: contentProps){
                 >
                     <AccordionTrigger className={`text-white`} value={`${item.title.replace(/\s+/g, "-").toLowerCase()}-accordion-item-${idx} hover:no-underline`}>
                         <div className="w-full flex flex-row items-center justify-between">
-                            <h6 className="relative z-10 tracking-[1px]">{item.title} @ {item.company}</h6>
-                            <h6 className="relative z-10 tracking-[1px]">{item.from} - {item.to.length === 0 ? "Current" : item.to}</h6>
+                            <h6 className="relative z-10 tracking-[1px] md:text-[1rem]">{item.title} @ {item.company}</h6>
+                            <h6 className="relative z-10 tracking-[1px] md:text-[1rem]">{item.from} - {item.to.length === 0 ? "Current" : item.to}</h6>
                         </div>
                     </AccordionTrigger>
-                    <AccordionContent className="flex flex-row items-center justify-between gap-16 mt-2">
+                    <AccordionContent className="flex flex-row items-center justify-between gap-16 md:mt-2 mt-4">
                         <div className="flex flex-col items-start justify-start">
                             {(item.location.length > 0 || item.url.length > 0) && (
                                 <div className="flex flex-row gap-6 items-center justify-start text-white/55 mb-2">
@@ -54,7 +54,7 @@ export default function ExpAccordian({id,className}: contentProps){
                         {item.img.length > 0 ?  (
                             <Image src={item.img} alt="" />
                         ):(
-                            <span className="inline-flex shrink-0 rounded-full border border-white/20 bg-white/10 dark:border-neutral-300/10 dark:bg-neutral-400/10 p-4 shadow-lg">
+                            <span className="md:inline-flex hidden shrink-0 rounded-full border border-white/20 bg-white/10 dark:border-neutral-300/10 dark:bg-neutral-400/10 p-4 shadow-lg">
                                 <Building2 className="text-neutral-300" size={48} />
                             </span>
                         )}
