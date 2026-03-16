@@ -24,17 +24,17 @@ export default function ExpAccordian({id,className}: contentProps){
                     className={`border-0 bg-[#1a1a1a] rounded-sm px-5 ${idx < data.resume.length && "mb-4" }`}
                 >
                     <AccordionTrigger className={`text-white`} value={`${item.title.replace(/\s+/g, "-").toLowerCase()}-accordion-item-${idx} hover:no-underline`}>
-                        <div className="w-full flex flex-row items-center justify-between">
-                            <h6 className="relative z-10 tracking-[1px] md:text-[1rem]">{item.title} @ {item.company}</h6>
-                            <h6 className="relative z-10 tracking-[1px] md:text-[1rem]">{item.from} - {item.to.length === 0 ? "Current" : item.to}</h6>
+                        <div className="w-full flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-6 text-left">
+                            <h6 className="relative z-10 tracking-[1px] md:text-[1rem] wrap-break-word">{item.title} @ {item.company}</h6>
+                            <h6 className="relative z-10 tracking-[1px] md:text-[1rem] shrink-0">{item.from} - {item.to.length === 0 ? "Current" : item.to}</h6>
                         </div>
                     </AccordionTrigger>
-                    <AccordionContent className="flex flex-row items-center justify-between gap-16 md:mt-2 mt-4">
-                        <div className="flex flex-col items-start justify-start">
+                    <AccordionContent className="flex flex-col md:flex-row md:items-start items-start justify-between gap-6 md:gap-16 md:mt-2 mt-4">
+                        <div className="flex flex-col items-start justify-start min-w-0">
                             {(item.location.length > 0 || item.url.length > 0) && (
-                                <div className="flex flex-row gap-6 items-center justify-start text-white/55 mb-2">
-                                    {item.location.length > 0 && <span className="flex flex-row gap-3 items-center justify-start"><MapPin size={16} className="text-white/80"/>{item.location}</span>}
-                                    {item.url.length > 0 && <a href={item.url} className="flex flex-row gap-3 items-center justify-start hover:text-white/80"><Link2 size={16} className="text-white/80" />{item.url}</a>}
+                                <div className="flex flex-col sm:flex-row sm:gap-6 gap-2 sm:items-center items-start justify-start text-white/55 mb-2 min-w-0">
+                                    {item.location.length > 0 && <span className="flex flex-row gap-3 items-center justify-start min-w-0"><MapPin size={16} className="text-white/80 shrink-0"/><span className="wrap-break-word">{item.location}</span></span>}
+                                    {item.url.length > 0 && <a href={item.url} className="flex flex-row gap-3 items-center justify-start hover:text-white/80 min-w-0 break-all"><Link2 size={16} className="text-white/80 shrink-0" /><span className="break-all">{item.url}</span></a>}
                                 </div>
                             )}
                             {item.description.length > 0 && <p className="text-white/55">{item.description}</p>}

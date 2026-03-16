@@ -9,7 +9,7 @@ import clsx from "clsx"
 
 interface ContentProps {
   id: string
-  link?: string
+  link: string
   img: string
   title: string
   color: string
