@@ -3,7 +3,6 @@ import WorkBox from "@/components/main/works/work-box"
 import FilterForm from "@/components/main/works/filter-form"
 import Section from "../../section-wrapper"
 import SectionHero from "../../section-hero"
-import {Badge} from "../../ui/badge"
 import clsx from "clsx"
 interface contentProps{
     id: string,
@@ -14,12 +13,6 @@ const badgeColorMap: Record<string, string> = {
   cyan: "bg-cyan-800/60 text-cyan-100 border-cyan-500/20",
   red: "bg-red-800/60 text-red-100 border-red-500/20",
   yellow: "bg-yellow-800/60 text-yellow-100 border-yellow-500/20"
-}
-const accentColorMap: Record<string, string> = {
-  blue: "bg-blue-800/60",
-  cyan: "bg-cyan-800/60",
-  red: "bg-red-800/60",
-  yellow: "bg-yellow-800/60"
 }
 
 export default function Work({id, className}: contentProps){
@@ -36,11 +29,7 @@ export default function Work({id, className}: contentProps){
             {/**<FilterForm className="mb-10 w-fit" title="Filter By"/>**/}
             <div className="flex flex-row items-center justify-start w-full z-10">
                 <label className="text-white font-medium underline underline-offset-4 w-1/4">Filter</label>
-                <div className="flex flex-row justify-center align-center gap-4 w-1/2 my-10">
-                    {data.filterOptions.map((item,idx) => (
-                        <Badge variant="default" key={`${id}-badge-${idx}`} className={clsx(`py-1 px-4`, badgeColorMap[item.color] ?? "bg-white/10 text-white border-white/10")}>{item.label}</Badge>
-                    ))}
-                </div>  
+                <FilterForm id={`${id}-filter-form`} title="Filter By" />
             </div>  
             <div className="w-full lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 grid z-10">
                 {data.works.map((item, idx) => (
