@@ -16,10 +16,10 @@ interface contentProps{
 }
 export default function FrameworkBadges({id, className}: contentProps){
     return(
-        <div id={id} className={clsx(`flex flex-wrap gap-2`,className)}>
+        <div id={id} className={clsx(`flex flex-wrap gap-3`,className)}>
             {data.topFrameworks.map((item,idx) =>( 
                 <Badge key={`framework-badge-${idx}`} variant="secondary" className={clsx(`py-1`, badgeColorMap[item.color] ?? "bg-white/10 text-white border-white/10")}>
-                    <Image alt={`${item.name} logo icon badge`} src={item.src} width={16} height={16} />
+                    <Image className="mr-1" alt={`${item.name} logo icon badge`} src={item.src} width={16} height={16} />
                     {item.name}
                 </Badge>
             ))}

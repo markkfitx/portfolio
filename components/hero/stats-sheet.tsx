@@ -16,7 +16,7 @@ export default function StatsSheet({id,className}: contentProps){
             </div>
             <div className="flex flex-col items start justify-start gap-0">
                 <h5 className="font-bold text-2xl text-white">2K+</h5>
-                <span className="text-white/60 text-sm">Users / Customers Supported</span>
+                <span className="text-white/60 text-sm">Users Supported</span>
             </div>
         </div>
     )
