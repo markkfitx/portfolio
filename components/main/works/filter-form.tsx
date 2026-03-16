@@ -1,7 +1,9 @@
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu"
 import data from "@/app/data/works.json"
 import clsx from "clsx"
-import { Badge } from "../../ui/badge"
+import { Badge } from "@/components/ui//badge"
+import { Button } from "@/components/ui/button"
+import { ListFilter } from "lucide-react"
 interface contentProps{
     id:string,
     title: string,
@@ -19,14 +21,12 @@ export default function FilterForm({id, title, className}: contentProps){
         <form id={id} className={clsx("flex flex-col items-start justify-start gap-2", className)}>
             <div className="md:hidden block">
                 <DropdownMenu>
-                    <DropdownMenuTrigger className="text-white hover:bg-transparent hover:text-cyan-700 hover:cursor-pointer underline underline-offset-8">
-                        {title}
+                    <DropdownMenuTrigger asChild>
+                        <Button className="text-white mb-8" variant="default"><ListFilter className="mr-2" />{title}</Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="bg-mist-900 text-white border-none">
                         <DropdownMenuItem>All</DropdownMenuItem>
-                        <DropdownMenuItem>Web Apps</DropdownMenuItem>
-                        <DropdownMenuItem>Marketing</DropdownMenuItem>
-                        <DropdownMenuItem>Database & Backend</DropdownMenuItem>
+                        {data.filterOptions.map((item,idx) => (<DropdownMenuItem key={`${id}-dropdown-item-${idx}`} >{item.label}</DropdownMenuItem>))}
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
