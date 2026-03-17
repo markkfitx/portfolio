@@ -51,7 +51,7 @@ export default function WorkBox({
             <div className="sm:max-w-[80%]">
 
               <CardTitle className="relative">
-                <h5 className="text-balance text-white font-bold relative tracking-[1px] leading-tight z-10">{title}</h5>
+                <h5 className="work-card-title text-balance text-white font-bold relative z-10">{title}</h5>
                 <div className={`absolute top-3/5 z-[0] w-1/2 h-1/2 hover:w-1/4 transition-w duration-500 ${color}`}></div>
               </CardTitle>
 
@@ -65,7 +65,7 @@ export default function WorkBox({
                 "
               >
                 {subTitle && (
-                  <p className="italic max-w-md text-base leading-relaxed text-white/85">
+                  <p className="work-card-subtitle italic max-w-md text-base text-white/85">
                     {subTitle}
                   </p>
                 )}

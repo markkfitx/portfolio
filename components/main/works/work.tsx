@@ -12,7 +12,7 @@ const badgeColorMap: Record<string, string> = {
   blue: "bg-blue-800/60 text-blue-100 border-blue-500/20",
   cyan: "bg-cyan-800/60 text-cyan-100 border-cyan-500/20",
   red: "bg-red-800/60 text-red-100 border-red-500/20",
-  yellow: "bg-yellow-800/60 text-yellow-100 border-yellow-500/20"
+  green: "bg-green-800/60 text-green-100 border-green-500/20"
 }
 
 export default function Work({id, className}: contentProps){

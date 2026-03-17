@@ -39,7 +39,7 @@ export default function MobileNavBar({id, className}: contentProps){
                 >
                     <DropdownMenuGroup className="space-y-1">
                       <DropdownMenuLabel className="flex flex-col gap-1 px-3 py-2 text-white">
-                        <span className="text-xs uppercase tracking-[0.35em] text-white/40">
+                        <span className="mobile-nav-kicker text-xs uppercase text-white/40">
                           Navigate
                         </span>
                         <span className="text-sm font-semibold">

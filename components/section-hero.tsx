@@ -26,6 +26,7 @@ export default function SectionHero({id,alignment,title,description,badgeDesc,cl
 
     return (
         <div
+          id={id}
           className={clsx(
             "w-full flex flex-col justify-start gap-4 md:gap-5 mb-16 md:mb-20 md:flex-nowrap flex-wrap z-10",
             alignmentStyles[alignment].container,
@@ -40,7 +41,7 @@ export default function SectionHero({id,alignment,title,description,badgeDesc,cl
             </Badge>
             <h2
               className={clsx(
-                "font-bold text-white 2xl:text-[3.5vw] md:text-[4.25vw] text-[9vw] tracking-[0.12em] text-shadow-lg whitespace-normal flex flex-col text-balance leading-tight",
+                "font-bold text-white text-shadow-lg whitespace-normal flex flex-col text-balance",
                 alignmentStyles[alignment].text
               )}
             >
@@ -48,7 +49,7 @@ export default function SectionHero({id,alignment,title,description,badgeDesc,cl
             </h2>
             <p
               className={clsx(
-                "text-white/70 md:text-base text-sm max-w-xl md:max-w-2xl leading-relaxed",
+                "text-white/70 max-w-xl md:max-w-2xl",
                 alignmentStyles[alignment].text
               )}
             >

@@ -22,11 +22,11 @@ export default function SkillBox(
             <CardHeader className="flex flex-row md:justify-start justify-center gap-3">
                 {Icon && <Icon size={32} className="text-white mt-1" />}
                 <div id={`${id}-header`} className="mb-8 relative md:max-w-60">
-                    <h5 className="text-balance text-white font-bold relative tracking-[1px] leading-tight z-10">{header}</h5>
+                    <h5 className="skill-card-title text-balance text-white font-bold relative z-10">{header}</h5>
                     <div className={`absolute md:top-6/8 top-2/3 z-[0] w-1/2 h-1/4 ${color}`}></div>
                 </div>
             </CardHeader>
-            <CardContent id={`${id}-body`} className="text-white font-light tracking-[2px] md:text-start text-center">{body}</CardContent>
+            <CardContent id={`${id}-body`} ><p className="text-white font-light tracking-[2px] md:text-start text-center">{body}</p></CardContent>
         </Card>
     )
 }

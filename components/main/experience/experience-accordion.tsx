@@ -25,8 +25,8 @@ export default function ExpAccordian({id,className}: contentProps){
                 >
                     <AccordionTrigger className={`text-white`} value={`${item.title.replace(/\s+/g, "-").toLowerCase()}-accordion-item-${idx} hover:no-underline`}>
                         <div className="w-full flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-6 text-left">
-                            <h6 className="relative z-10 tracking-[1px] md:text-[1rem] wrap-break-word">{item.title} @ {item.company}</h6>
-                            <h6 className="relative z-10 tracking-[1px] md:text-[1rem] shrink-0">{item.from} - {item.to.length === 0 ? "Current" : item.to}</h6>
+                            <h6 className="relative z-10 md:text-[1rem] wrap-break-word">{item.title} @ {item.company}</h6>
+                            <h6 className="relative z-10 md:text-[1rem] shrink-0">{item.from} - {item.to.length === 0 ? "Current" : item.to}</h6>
                         </div>
                     </AccordionTrigger>
                     <AccordionContent className="flex flex-col md:flex-row md:items-start items-start justify-between gap-6 md:gap-16 md:mt-2 mt-4">

@@ -1,8 +1,16 @@
 {
     "hero": [
         {
-            "header":"Mark Kirby",
-            "subHeader":"Full Stack Developer & MarTech Specialist",
+            "name":"Mark Kirby",
+            "specialties": ["Full Stack Developer","Martech Specialist"],
+            "subHeader":"",
+            "description":"I build scalable web applications, marketing automation systems, and high-performance front-end experiences."
+        }
+    ],
+    "hero-backup": [
+        {
+            "header":"Full Stack Developer",
+            "subHeader":"",
             "description":"I build scalable web applications, marketing automation systems, and high-performance front-end experiences."
         }
     ]

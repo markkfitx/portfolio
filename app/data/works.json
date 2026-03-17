@@ -37,7 +37,7 @@
             "subTitle": "Test Sub Title",
             "img": "/work-img-files/impackt-brand.png",
             "link": "https://www.theimpacktbrand.com",
-            "color":"yellow",
+            "color":"green",
             "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
         },
         {
@@ -45,7 +45,7 @@
             "subTitle": "Test Sub Title",
             "img": "/work-img-files/impackt-brand.png",
             "link": "https://www.theimpacktbrand.com",
-            "color":"yellow",
+            "color":"green",
             "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
         }
     ],
@@ -60,7 +60,7 @@
         },
         {
             "label":"Marketing Design",
-            "color": "yellow"
+            "color": "green"
         },
         {
             "label":"Database",
