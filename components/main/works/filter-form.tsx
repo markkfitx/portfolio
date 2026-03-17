@@ -1,9 +1,8 @@
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu"
 import data from "@/app/data/works.json"
 import clsx from "clsx"
-import { Badge } from "@/components/ui//badge"
 import { Button } from "@/components/ui/button"
-import { ListFilter } from "lucide-react"
+import { ListFilter, GalleryHorizontalEnd,Laptop } from "lucide-react"
 interface contentProps{
     id:string,
     title: string,
@@ -13,13 +12,13 @@ const badgeColorMap: Record<string, string> = {
   blue: "bg-blue-800/60 text-blue-100 border-blue-500/20 hover:border-blue-500/60",
   cyan: "bg-cyan-800/60 text-cyan-100 border-cyan-500/20 hover:border-cyan-500/60",
   red: "bg-red-800/60 text-red-100 border-red-500/20 hover:border-red-500/60",
-  yellow: "bg-yellow-800/60 text-yellow-100 border-yellow-500/20 hover:border-yellow-500/60"
+  green: "bg-green-800/60 text-green-100 border-green-500/20 hover:border-green-500/60",
+  white: "bg-neutral-300/60 text-neutral-100 border-neutral-500/20 hover:border-neutral-500/60"
 }
 
 export default function FilterForm({id, title, className}: contentProps){
     return (
         <form id={id} className={clsx("w-full flex flex-row items-center justify-start gap-8 z-10", className)}>
-            <label className="md:block hidden text-white font-medium underline underline-offset-4">Filter By:</label>
             <div className="md:hidden block">
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -50,10 +49,13 @@ export default function FilterForm({id, title, className}: contentProps){
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
-            <div className="md:flex hidden flex-row justify-center align-center gap-2 my-10">
-                {data.filterOptions.map((item,idx) => (
-                    <Button type="button" variant="default" key={`${id}-badge-${idx}`} className={clsx(`py-0 px-2`, badgeColorMap[item.color] ?? "bg-white/10 text-white border-white/10")}>
-                      {item.label}
+            <div className="md:flex hidden flex-row justify-center align-center gap-2 my-10 bg-">
+                <Button type="button" variant="default" key={`${id}-badge-0`} className={clsx(`py-0 px-2 hover:cursor-pointer`, badgeColorMap["white"] ?? "bg-white/10 text-white border-white/10")}>
+                  <GalleryHorizontalEnd className="mr-1" />All<span>(6)</span>
+                </Button>
+                {data.filterOptions.map((item,idx=1) => (
+                    <Button type="button" variant="default" key={`${id}-badge-${idx}`} className={clsx(`py-0 px-2 hover:cursor-pointer`, badgeColorMap[item.color] ?? "bg-white/10 text-white border-white/10")}>
+                      <Laptop className="mr-1" />{item.label}
                     </Button>
                 ))}
             </div>
