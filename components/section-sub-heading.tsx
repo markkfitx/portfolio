@@ -26,12 +26,12 @@ export default function SectionHero({id,alignment,className, children} : content
         <div
           id={id}
           className={clsx(
-            "w-full mb-8 z-10 ",
+            "w-full flex flex-col mb-12 z-10 ",
             alignmentStyles[alignment].container,
             className
             )}
           >
-            <h3 className={clsx("text-white z-10 w-full md:max-w-[500px]",alignmentStyles[alignment].text)}>
+            <h3 className={clsx(``,alignmentStyles[alignment].text + " " + className)}>
               {children}
             </h3>
         </div>

@@ -17,7 +17,7 @@ const badgeColorMap: Record<string, string> = {
 
 export default function Work({id, className}: contentProps){
     return (
-        <Section id={id}>
+        <Section id={id} className="items-start bg-linear-to-t from-black to-neutral-900 z-10">
             
             <SectionHero 
                 id={`${id}-section-hero`} 
@@ -27,8 +27,8 @@ export default function Work({id, className}: contentProps){
                 badgeDesc="Recent Projects"
                 className="hidden"
             />
-            <SectionSubHeading id={`${id}-subheading`} alignment="start"> 
-                <h3 className="text-white z-10 w-full md:max-w-[500px]"><span className="text-cyan-500">UX/UI across platforms</span> — from startups to enterprise products.</h3>
+            <SectionSubHeading id={`${id}-subheading`} alignment="start" className="md:max-w-[500px] text-white"> 
+                <span className="text-neutral-400">UX/UI across platforms</span> — from startups to enterprise products.
             </SectionSubHeading>
             {/**<FilterForm className="mb-10 w-fit" title="Filter By"/>**/}
             <FilterForm id={`${id}-filter-form`} title="Filter By" /> 

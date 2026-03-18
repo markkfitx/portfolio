@@ -50,11 +50,11 @@ export default function FilterForm({id, title, className}: contentProps){
                 </DropdownMenu>
             </div>
             <div className="md:flex hidden flex-row justify-center align-center gap-2 my-10 bg-">
-                <Button type="button" variant="default" key={`${id}-badge-0`} className={clsx(`py-0 px-2 hover:cursor-pointer`, badgeColorMap["white"] ?? "bg-white/10 text-white border-white/10")}>
+                <Button type="button" variant="default" key={`${id}-badge-0`} className={clsx(`py-0 px-2 hover:cursor-pointer text-xs`, badgeColorMap["white"] ?? "bg-white/10 text-white border-white/10")}>
                   <GalleryHorizontalEnd className="mr-1" />All<span>(6)</span>
                 </Button>
                 {data.filterOptions.map((item,idx=1) => (
-                    <Button type="button" variant="default" key={`${id}-badge-${idx}`} className={clsx(`py-0 px-2 hover:cursor-pointer`, badgeColorMap[item.color] ?? "bg-white/10 text-white border-white/10")}>
+                    <Button type="button" variant="default" key={`${id}-badge-${idx}`} className={clsx(`py-0 px-2 hover:cursor-pointer text-xs`, badgeColorMap[item.color] ?? "bg-white/10 text-white border-white/10")}>
                       <Laptop className="mr-1" />{item.label}
                     </Button>
                 ))}

@@ -15,7 +15,7 @@ export default function Hero({className, id}: contentProps){
     return (
         <Section id={id} className={clsx("min-h-screen pt-16 md:pt-24", className)}>
             <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 z-10">
-                <div className="md:w-[60%] w-full flex flex-col md:items-start items-center justify-start">
+                <div className="lg:w-[60%] w-full flex flex-col md:items-start items-center justify-start">
                     {heroData.specialties.length > 0 && (
                       <h6 className="font-semibold text-center text-white text-shadow-md mb-6">
                         <TypingText words={heroData.specialties} className="text-cyan-500" />

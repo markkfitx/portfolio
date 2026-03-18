@@ -48,7 +48,7 @@ export default function WorkBox({
           <div className={`hidden absolute top-3/5 z-[0] w-1/2 h-1/2 hover:w-1/4 transition-w duration-500 ${color}`}></div>
         </div>
         {subTitle && (
-          <span className="work-card-subtitle italic max-w-md text-white/60">
+          <span className="work-card-subtitle text-white/60">
             {subTitle}
           </span>
         )}
