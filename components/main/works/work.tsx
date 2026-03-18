@@ -3,7 +3,7 @@ import WorkBox from "@/components/main/works/work-box"
 import FilterForm from "@/components/main/works/filter-form"
 import Section from "../../section-wrapper"
 import SectionHero from "../../section-hero"
-import clsx from "clsx"
+import SectionSubHeading from "../../section-sub-heading"
 interface contentProps{
     id: string,
     className?: string
@@ -21,14 +21,18 @@ export default function Work({id, className}: contentProps){
             
             <SectionHero 
                 id={`${id}-section-hero`} 
-                title="Recent Works"
+                title="My Work"
                 description="I've worked on a variety of projects, from small personal websites to large scale enterprise applications. I've worked with a variety of technologies, from traditional web development to modern web development."
                 alignment="start"
-                badgeDesc="Lorem Ipsem"
+                badgeDesc="Recent Projects"
+                className="hidden"
             />
+            <SectionSubHeading id={`${id}-subheading`} alignment="start"> 
+                <h3 className="text-white z-10 w-full md:max-w-[500px]"><span className="text-cyan-500">UX/UI across platforms</span> — from startups to enterprise products.</h3>
+            </SectionSubHeading>
             {/**<FilterForm className="mb-10 w-fit" title="Filter By"/>**/}
             <FilterForm id={`${id}-filter-form`} title="Filter By" /> 
-            <div className="w-full lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 grid z-10">
+            <div className="w-full works-grid gap-x-5 gap-y-8 grid z-10">
                 {data.works.map((item, idx) => (
                     <WorkBox
                         key={`${id}-box-${idx}`}
