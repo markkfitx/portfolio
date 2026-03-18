@@ -1,141 +1,30 @@
-/**
- * @license
- *
- * Font Family: Clash Display
- * Designed by: Indian Type Foundry
- * URL: https://www.fontshare.com/fonts/clash-display
- *
- * Weights included:
- * 500 Medium
- * 600 Semibold
- * 700 Bold
- */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+/* open-sauce-two-latin-300-normal */
 @font-face {
-  font-family: "Clash Display";
-  src:
-    url("../fonts/ClashDisplay-Medium.woff2") format("woff2"),
-    url("../fonts/ClashDisplay-Medium.woff") format("woff"),
-    url("../fonts/ClashDisplay-Medium.ttf") format("truetype");
-  font-weight: 500;
+  font-family: 'Open Sauce Two';
   font-style: normal;
   font-display: swap;
-}
-
-@font-face {
-  font-family: "Clash Display";
-  src:
-    url("../fonts/ClashDisplay-Semibold.woff2") format("woff2"),
-    url("../fonts/ClashDisplay-Semibold.woff") format("woff"),
-    url("../fonts/ClashDisplay-Semibold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Clash Display";
-  src:
-    url("../fonts/ClashDisplay-Bold.woff2") format("woff2"),
-    url("../fonts/ClashDisplay-Bold.woff") format("woff"),
-    url("../fonts/ClashDisplay-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/**
- * @license
- *
- * Font Family: Archivo
- * Designed by: Omnibus-Type
- * URL: https://www.fontshare.com/fonts/archivo
- *
- * Weights included:
- * 100 Thin
- * 200 ExtraLight
- * 300 Light
- * 400 Regular
- * 500 Medium
- * 600 SemiBold
- * 700 Bold
- */
-
-@font-face {
-  font-family: "Archivo";
-  src:
-    url("../fonts/Archivo-Thin.woff2") format("woff2"),
-    url("../fonts/Archivo-Thin.woff") format("woff"),
-    url("../fonts/Archivo-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Archivo";
-  src:
-    url("../fonts/Archivo-ExtraLight.woff2") format("woff2"),
-    url("../fonts/Archivo-ExtraLight.woff") format("woff"),
-    url("../fonts/Archivo-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Archivo";
-  src:
-    url("../fonts/Archivo-Light.woff2") format("woff2"),
-    url("../fonts/Archivo-Light.woff") format("woff"),
-    url("../fonts/Archivo-Light.ttf") format("truetype");
   font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/open-sauce-two@latest/latin-300-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/open-sauce-two@latest/latin-300-normal.woff) format('woff');
 }
 
+/* open-sauce-two-latin-400-normal */
 @font-face {
-  font-family: "Archivo";
-  src:
-    url("../fonts/Archivo-Regular.woff2") format("woff2"),
-    url("../fonts/Archivo-Regular.woff") format("woff"),
-    url("../fonts/Archivo-Regular.ttf") format("truetype");
+  font-family: 'Open Sauce Two';
+  font-style: normal;
+  font-display: swap;
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/open-sauce-two@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/open-sauce-two@latest/latin-400-normal.woff) format('woff');
 }
 
+/* open-sauce-two-latin-500-normal */
 @font-face {
-  font-family: "Archivo";
-  src:
-    url("../fonts/Archivo-Medium.woff2") format("woff2"),
-    url("../fonts/Archivo-Medium.woff") format("woff"),
-    url("../fonts/Archivo-Medium.ttf") format("truetype");
+  font-family: 'Open Sauce Two';
+  font-style: normal;
+  font-display: swap;
   font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Archivo";
-  src:
-    url("../fonts/Archivo-SemiBold.woff2") format("woff2"),
-    url("../fonts/Archivo-SemiBold.woff") format("woff"),
-    url("../fonts/Archivo-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Archivo";
-  src:
-    url("../fonts/Archivo-Bold.woff2") format("woff2"),
-    url("../fonts/Archivo-Bold.woff") format("woff"),
-    url("../fonts/Archivo-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/open-sauce-two@latest/latin-500-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/open-sauce-two@latest/latin-500-normal.woff) format('woff');
 }
 
 /* Base */
@@ -146,7 +35,7 @@ html {
 }
 
 body {
-  font-family: "Archivo", sans-serif;
+  font-family: "Open Sauce Two", sans-serif;
   font-size: 0.95rem;
 }
 
@@ -158,8 +47,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Clash Display", sans-serif !important;
-  font-weight: 600;
+  font-family: "Manrope", sans-serif !important;
+  font-optical-sizing: auto;
+  
 }
 
 h1 *,
@@ -183,22 +73,23 @@ h1 {
 }
 
 h2 {
-  font-size: 4vw;
+  font-size: 8.25vw;
   line-height: 1.1 !important;
+  letter-spacing: 0.12em;
 }
 
 h3 {
-  font-size: 1.5rem !important;
+  font-size: 4.5vw;
   line-height: 1.25 !important;
 }
 
 h4 {
-  font-size: 1.25rem !important;
+  font-size: 1.375rem;
   line-height: 1.3 !important;
 }
 
 h5 {
-  font-size: 22px !important;
+  font-size: 1.125rem;
 }
 
 h6 {
@@ -210,26 +101,69 @@ h6 {
 
 p,
 span {
-  font-family: "Archivo", sans-serif;
+  font-family: "Open Sauce Two", sans-serif;
   letter-spacing: 1.5px;
-  line-height: 1.5;
+  line-height: 1.6em;
 }
 
 /* Typography scale moved from TSX to CSS */
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 5.5vw;
+    font-size: 8.5vw;
   }
 
   h2 {
-    font-size: 3.75vw;
+    font-size: 6.5vw;
+  }
+  h3 {
+    font-size: 3.1vw;
+  }
+  h4{
+    font-size:1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 7.5vw;
+  }
+
+  h2 {
+    font-size: 5.5vw;
+  }
+  h3 {
+    font-size: 2.5vw;
+  }
+  h4{
+    font-size:1.5rem;
+  }
+  h5{
+    font-size: 1.25rem;
+  }
+  body{
+    font-size:16px;
   }
 }
 
 @media (min-width: 1536px) {
   h1 {
-    font-size: 4.5vw;
+    font-size: 5.5vw;
+  }
+
+  h2 {
+    font-size: 4.325vw;
+  }
+  h3 {
+    font-size: 2.15vw;
+  }
+  h4{
+    font-size:1.5rem;
+  }
+  h5{
+    font-size: 1.35rem;
+  }
+  body{
+    font-size:18px;
   }
 }
 
@@ -238,26 +172,10 @@ span {
   letter-spacing: 0.3em;
 }
 
-@media (min-width: 768px) {
-  h3 {
-    font-size: 1.3vw;
-  }
-}
 
-@media (min-width: 1536px) {
-  h3 {
-    font-size: 1.1vw;
-  }
-}
 
 #heroSection .hero-description {
   font-size: 0.875rem;
-}
-
-@media (min-width: 768px) {
-  #heroSection .hero-description {
-    font-size: 1rem;
-  }
 }
 
 /* Stats in hero */
@@ -272,31 +190,6 @@ span {
 
 /* Section hero */
 
-div[id$="-section-hero"] h2 {
-  font-size: 9vw;
-  letter-spacing: 0.12em;
-}
-
-div[id$="-section-hero"] p {
-  font-size: 0.875rem;
-  line-height: 1.5;
-}
-
-@media (min-width: 768px) {
-  div[id$="-section-hero"] h2 {
-    font-size: 4.25vw;
-  }
-
-  div[id$="-section-hero"] p {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1536px) {
-  div[id$="-section-hero"] h2 {
-    font-size: 3.5vw;
-  }
-}
 
 /* Card titles/subtitles */
 
@@ -314,4 +207,14 @@ div[id$="-section-hero"] p {
 
 .mobile-nav-kicker {
   letter-spacing: 0.35em;
+}
+
+.works-grid{
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+}
+.group-box{
+  aspect-ratio: 5/4;
+  width: 100%;
+  min-height: 300px;
+  height:100%;
 }
