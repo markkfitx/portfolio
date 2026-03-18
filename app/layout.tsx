@@ -28,8 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-mist-950 lg:p-8 md:p-6 p-4 w-full`}>
-        <Header id="social-media-n-mobile-header" />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-mist-950 w-full`}>
+        <Header id="social-media-n-mobile-header" className="lg:pt-8 md-pt-6 pt-4 lg:px-8 md:px-6 px-4" />
         <div className="font-sans flex flex-col justify-start items-center min-h-screen w-full">
           {children}
         </div>
