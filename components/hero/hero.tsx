@@ -3,6 +3,7 @@ import Section from "../section-wrapper"
 import clsx from "clsx"
 import data from "../../app/data/hero.json"
 import TypingText from "./TypingText"
+import ParticlesBackground from "../particle-background"
 
 interface ContentProps {
   className?: string
@@ -17,6 +18,7 @@ export default function Hero({ className, id }: ContentProps) {
   const marker = "|";
   const [before, after = ""] = heroData.intro.split(marker);
   return (
+    <>
     <Section
       id={id}
       className={clsx(
@@ -72,5 +74,7 @@ export default function Hero({ className, id }: ContentProps) {
         />
       </div>
     </Section>
+    <ParticlesBackground />
+    </>
   )
 }

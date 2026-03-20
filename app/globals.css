@@ -173,3 +173,46 @@
     -webkit-mask: linear-gradient(#0000, #000, #000);
     mask: linear-gradient(#0000, #000, #000);
 }
+
+/*
+ * Super Powers infinite “carousel” rows:
+ * Track contains TWO identical copies of the badges. Moving by exactly 50% of the track
+ * width shows the same pattern again → seamless loop. LTR drifts right, RTL drifts left.
+ */
+@keyframes superpowers-marquee-ltr {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes superpowers-marquee-rtl {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.superpowers-marquee-ltr {
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: superpowers-marquee-ltr 42s linear infinite;
+}
+
+.superpowers-marquee-rtl {
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: superpowers-marquee-rtl 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .superpowers-marquee-ltr,
+  .superpowers-marquee-rtl {
+    animation: none;
+    transform: none;
+  }
+}

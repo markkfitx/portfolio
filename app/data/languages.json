@@ -74,5 +74,31 @@
         "name": "Figma",
         "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
       }
+    ],
+    "superPowerRows": [
+      [
+        "AI Interaction Design",
+        "LLM Experience Design",
+        "Design Systems",
+        "User Testing",
+        "UI Animation",
+        "Accessibility"
+      ],
+      [
+        "Stakeholder Management",
+        "Presentation Design",
+        "User Research",
+        "Workshopping",
+        "Journey Mapping",
+        "Content Strategy"
+      ],
+      [
+        "Component Libraries",
+        "Prototyping",
+        "Design QA",
+        "Cross-functional Collaboration",
+        "Design Tokens",
+        "Responsive Layout"
+      ]
     ]
   }

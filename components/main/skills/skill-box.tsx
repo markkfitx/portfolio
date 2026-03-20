@@ -18,7 +18,7 @@ export default function SkillBox(
     icon: Icon
 }: contentProps){
     return (
-        <Card className={clsx("group border-0 bg-neutral-900 shadow-none ring-1 ring-white/6",
+        <Card className={clsx("group border-0 ring-white/8 bg-gradient-to-br from-emerald-900/30 via-neutral-800/20 to-neutral-800/50 shadow-none ring-1 ring-white/6",
           "transition-all duration-300 ease-out",
           "hover:-translate-y-1 hover:ring-white/12",className)} >
             <CardHeader className="flex flex-row items-center justify-start gap-3 text-white">

@@ -5,49 +5,15 @@
             "url": "#hero-section"
         },
         {
-            "label": "Expertise",
-            "url": "#skills-section"
+            "label": "Email",
+            "url": "mailto:markkirby1997@gmail.com"
         },
         {
-            "label": "Work",
-            "url": "#works-section"
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/in/markkirby1997/"
         },
         {
-            "label": "Experience",
-            "url": "#experience-section"
-        },
-        {
-            "label": "Awards",
-            "url": "#awards-section"
-        },
-        {
-            "label": "Contact",
-            "url": "/contact"
-        }
-    ],
-    "footer": [
-        {
-            "label": "Home",
-            "url": "#hero-section"
-        },
-        {
-            "label": "Expertise",
-            "url": "#skills-section"
-        },
-        {
-            "label": "Work",
-            "url": "#works-section"
-        },
-        {
-            "label": "Experience",
-            "url": "#experience-section"
-        },
-        {
-            "label": "Awards",
-            "url": "#awards-section"
-        },
-        {
-            "label": "Contact",
+            "label": "Contact Me",
             "url": "/contact"
         }
     ]
