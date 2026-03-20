@@ -18,13 +18,15 @@ export default function SkillBox(
     icon: Icon
 }: contentProps){
     return (
-        <Card className={clsx(" cursor-pointer bg-[#111216]/10 border border-black/5 shadow-none transition-all duration-300 hover:-translate-y-1 hover:border-black/10",className)} >
-            <CardHeader className="flex flex-row items-center justify-start gap-3">
+        <Card className={clsx("group border-0 bg-neutral-900 shadow-none ring-1 ring-white/6",
+          "transition-all duration-300 ease-out",
+          "hover:-translate-y-1 hover:ring-white/12",className)} >
+            <CardHeader className="flex flex-row items-center justify-start gap-3 text-white">
                 {Icon && <Icon size={24} className="mt-1" />}
                 <h4 className="skill-card-title text-balance font-semibold relative z-10">{header}</h4>
             </CardHeader>
             <CardContent>
-                <CardDescription id={`${id}-body`} ><p className="text-start font-medium">{body}</p></CardDescription>
+                <CardDescription id={`${id}-body`} ><p className="text-start font-normal text-white/70!">{body}</p></CardDescription>
             </CardContent>
         </Card>
     )

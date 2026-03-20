@@ -10,7 +10,7 @@ interface contentProps{
 
 export default function Awards({id, className}: contentProps){
     return (
-        <Section id={id} className={clsx(`bg-linear-to-t to-black from-neutral-800 z-10`,className)}>
+        <Section id={id} className={clsx(`bg-linear-to-t from-black to-neutral-900 z-10`,className)}>
             <SectionSubHeading id={`${id}-subheading`} alignment="center" className="md:max-w-[600px] text-white"> 
                 Awards & <span className="text-neutral-400">Certifications</span>
             </SectionSubHeading>

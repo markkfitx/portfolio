@@ -1,17 +1,20 @@
 {
-    "hero": [
-        {
-            "name":"Mark Kirby",
-            "specialties": ["Full Stack Developer","Martech Specialist"],
-            "subHeader":"",
-            "description":"I build scalable web applications, marketing automation systems, and high-performance front-end experiences."
-        }
-    ],
-    "hero-backup": [
-        {
-            "header":"Full Stack Developer",
-            "subHeader":"",
-            "description":"I build scalable web applications, marketing automation systems, and high-performance front-end experiences."
-        }
-    ]
+  "hero": [
+    {
+      "name": "Mark Kirby",
+      "intro": "Hi, I'm Mark Kirby, a | based in NJ, crafting thoughtful digital products—from marketing systems to polished web experiences.",
+      "email": "mailto:hello@markkirby.dev",
+      "linkedin": "https://www.linkedin.com/in/markkirby",
+      "resumeUrl": "#",
+      "specialties": ["Full Stack Developer", "Martech Specialist"],
+      "description": "I build scalable web applications, marketing automation systems, and high-performance front-end experiences."
+    }
+  ],
+  "hero-backup": [
+    {
+      "header": "Full Stack Developer",
+      "subHeader": "",
+      "description": "I build scalable web applications, marketing automation systems, and high-performance front-end experiences."
+    }
+  ]
 }

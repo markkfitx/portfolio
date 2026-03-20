@@ -1,41 +1,76 @@
+import Link from "next/link"
 import Section from "../section-wrapper"
 import clsx from "clsx"
 import data from "../../app/data/hero.json"
-import StatsSheet from "./stats-sheet"
-import FrameworkBadges from "./framework-badges"
 import TypingText from "./TypingText"
 
-interface contentProps{
-    className?:string,
-    id: string
+interface ContentProps {
+  className?: string
+  id: string
 }
-export default function Hero({className, id}: contentProps){
-    const heroData = data.hero[0]
-    return (
-        <Section id={id} className={clsx("min-h-screen pt-16 md:pt-24 pb-24 md:pb-36", className)}>
-            <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 z-10">
-                <div className="lg:w-[60%] w-full flex flex-col md:items-start items-center justify-start">
-                    {heroData.specialties.length > 0 && (
-                      <h6 className="font-semibold text-center text-white text-shadow-md mb-6">
-                        <TypingText words={heroData.specialties} className="text-cyan-500" />
-                      </h6>
-                    )}
-                    {heroData.name.length > 0 && (
-                      <h1 id="hero-title" className="font-bold text-white text-shadow-lg whitespace-normal uppercase md:text-start text-center mb-1 wrap-break-word">
-                        {heroData.name}
-                      </h1>
-                    )} 
-                    {heroData.description.length > 0 && (
-                      <span className="font-normal hero-description text-white/70  mb-4 md:w-3/4 max-w-xl italic md:text-start text-center">
-                        {heroData.description}
-                      </span>
-                    )}
-                    <div className="w-full flex flex-col gap-6 md:gap-4">
-                      {/**<StatsSheet id="hero-stats-sheet" className="mb-1" /> */}
-                      <FrameworkBadges id="hero-framework-badges" />
-                    </div>
-                </div>
-            </div>
-        </Section>
-    )
+
+const heroCtaBase =
+  "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+
+export default function Hero({ className, id }: ContentProps) {
+  const heroData = data.hero[0]
+  const marker = "|";
+  const [before, after = ""] = heroData.intro.split(marker);
+  return (
+    <Section
+      id={id}
+      className={clsx(
+        "min-h-screen pt-16 pb-20 md:pt-24 md:pb-28 lg:pb-32",
+        className
+      )}
+    >
+      <div className="flex w-full max-w-5xl flex-col items-start gap-10 md:gap-12 lg:gap-14">
+        <h1 className="sr-only">{heroData.name}</h1>
+
+        <h3 className="font-sans max-w-3xl text-pretty text-white">
+        {before}
+        {after !== "" ? <TypingText className="text-emerald-500" words={heroData.specialties} typeSpeed={100} deleteSpeed={100} delay={1000} loop={true} /> : null}
+        <br/>
+        {after}
+        </h3>
+
+        <div className="flex flex-wrap items-center gap-3">
+          <Link
+            href={heroData.email}
+            className={clsx(
+              heroCtaBase,
+              "bg-white/50 text-neutral-900 hover:bg-white/70 active:bg-white/90"
+            )}
+          >
+            Email
+          </Link>
+          <Link
+            href={heroData.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={clsx(
+              heroCtaBase,
+              "border border-white/12 bg-zinc-900 text-white hover:bg-zinc-800"
+            )}
+          >
+            LinkedIn
+          </Link>
+          <Link
+            href={heroData.resumeUrl}
+            className={clsx(
+              heroCtaBase,
+              "border border-white/12 bg-zinc-900 text-white hover:bg-zinc-800"
+            )}
+          >
+            Resume
+          </Link>
+        </div>
+
+        <div
+          className="aspect-video w-full min-h-[200px] h-[702px] max-w-5xl shrink-0 rounded-3xl bg-neutral-300 ring-1 ring-black/5 md:min-h-[280px]"
+          aria-hidden
+        />
+      </div>
+    </Section>
+  )
 }

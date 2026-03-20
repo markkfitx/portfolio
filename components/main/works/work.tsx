@@ -18,7 +18,7 @@ const badgeColorMap: Record<string, string> = {
 
 export default function Work({id, className}: contentProps){
     return (
-        <Section id={id} className={clsx(`items-start bg-linear-to-t from-black to-neutral-800 z-10`,className)}>
+        <Section id={id} className={clsx(`items-start bg-linear-to-t from-black to-neutral-900 z-10`,className)}>
             <SectionHero 
                 id={`${id}-section-hero`} 
                 title="My Work"

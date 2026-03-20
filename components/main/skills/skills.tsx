@@ -19,7 +19,7 @@ const skills = [
 
 export default function Skills({id, className}: contentProps){
     return (
-       <Section id={id} className={clsx(`items-start bg-white z-10`,className)}>
+       <Section id={id} className={clsx(`items-start bg-linear-to-t to-black from-neutral-900 z-10`,className)}>
             <SectionHero 
                 id={`${id}-section-hero`} 
                 title="My Expertise"

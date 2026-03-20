@@ -1,14 +1,37 @@
 import { TypingAnimation } from "../../components/ui/typing-animation"
 import clsx from "clsx"
-export default function TypingText({words, className}: {words: string[], className?: string}) {
+
+interface TypingTextProps {
+  words: string[]
+  className?: string
+  typeSpeed?: number
+  deleteSpeed?: number
+  delay?: number
+  pauseDelay?: number
+  loop?: boolean
+  blinkCursor?: boolean
+}
+
+export default function TypingText({
+  words,
+  className,
+  typeSpeed,
+  deleteSpeed,
+  delay,
+  pauseDelay,
+  loop,
+  blinkCursor,
+}: TypingTextProps) {
   return (
     <TypingAnimation
-          words={words}
-          blinkCursor={false}
-          pauseDelay={2500}
-          loop
-          className={clsx("", className)}
-        >
-    </TypingAnimation>
+      words={words}
+      typeSpeed={typeSpeed}
+      deleteSpeed={deleteSpeed}
+      delay={delay}
+      pauseDelay={pauseDelay ?? 2500}
+      loop={loop}
+      blinkCursor={blinkCursor ?? false}
+      className={clsx("", className)}
+    />
   )
 }

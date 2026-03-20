@@ -24,7 +24,7 @@ const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
       <Link
         href={href}
         ref={ref}
-        className={clsx("text-center bg-transparent text-white hover:text-gray-300 font-medium py-1 px-3 text-[11px]!",className)}{...props}>
+        className={clsx("text-start bg-transparent text-white hover:text-gray-300 font-medium py-1 px-0 text-sm",className)}{...props}>
         {label}
       </Link>
     )
