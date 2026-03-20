@@ -24,11 +24,8 @@ const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(
       <Link
         href={href}
         ref={ref}
-        className={clsx("flex flex-row items-end content-center bg-transparent text-white hover:text-gray-300 font-semibold py-1 px-3 text-sm",className)}{...props}>
+        className={clsx("text-center bg-transparent text-white hover:text-gray-300 font-medium py-1 px-3 text-[11px]!",className)}{...props}>
         {label}
-        <small className="text-[10px]">
-          <span className="mx-2">/</span>0{idx + 1}
-        </small>
       </Link>
     )
   }

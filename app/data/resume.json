@@ -1,6 +1,7 @@
 {
     "resume":[
         {
+            "header":"Driving long-term loyalty through personalisation",
             "title":"Lead Frontend Engineer",
             "company":"Keystone Information Systems",
             "description":"Modernized legacy enterprise platforms by migrating Classic ASP systems to React + TypeScript architectures with REST APIs. Led application architecture, deployment, and security implementation while optimizing CI/CD pipelines and integrating third-party services to expand platform functionality.",
@@ -8,11 +9,14 @@
             "to":"",
             "location":"Collingswood, NJ",
             "url":"www.keyinfosys.com",
-            "img": "",
+            "logo":"/img/KIS_logo.png",
+            "img": "/img/smartphone-dashboard-view.png",
             "color": "blue",
-            "skillBadges":["ASP", "JS", "TS", "React", "NextJS", "AI Integration"]
+            "skillBadges":["ASP", "JS", "TS", "React", "NextJS", "AI Integration"],
+            "alignment": "start"
         },
         {
+            "header":"Driving long-term loyalty through personalisation",
             "title":"Marketing Technologist / Digital Creator",
             "company":"The Impackt Brand",
             "description":"Designed and developed responsive email campaigns by translating Figma layouts into production-ready HTML templates optimized for cross-client compatibility. Built and deployed lifecycle automation flows in Klaviyo (welcome, abandoned cart, post-purchase, winback), collaborating with marketing and creative teams to ensure brand consistency, performance, and timely campaign launches.",
@@ -20,11 +24,14 @@
             "to":"",
             "location":"Clementon, NJ",
             "url":"www.theimpacktbrand.com",
-            "img": "",
+            "logo":"/img/impackt-icon.png",
+            "img": "/img/smartphone-dashboard-view.png",
             "color": "yellow",
-            "skillBadges":["PhotoShop", "Figma", "Shopify", "Klaviyo", "Liquid", "HTML", "JS", "CSS"]
+            "skillBadges":["PhotoShop", "Figma", "Shopify", "Klaviyo", "Liquid", "HTML", "JS", "CSS"],
+            "alignment": "center"
         },
         {
+            "header":"Driving long-term loyalty through personalisation",
             "title":"Backend Developer & Datbase Analyst",
             "company":"Repco Inc.",
             "description":"Engineered Python and PHP backend solutions supporting real-time OEM/product databases and customer analytics systems. Automated data processing and reporting pipelines, reducing reporting time by 50% while eliminating 75% of manual workflows.",
@@ -32,8 +39,10 @@
             "to":"2022",
             "location":"Marlton, NJ",
             "url":"www.repcoinc.com",
-            "img": "",
-            "skillBadges":["Python", "PHP", "MongoDB", "Microsoft Excel"]
+            "logo":"/img/repco-icon.png",
+            "img": "/img/smartphone-dashboard-view.png",
+            "skillBadges":["Python", "PHP", "MongoDB", "Microsoft Excel"],
+            "alignment": "start"
         }
     ]
 }

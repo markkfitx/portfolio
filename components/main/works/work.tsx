@@ -4,6 +4,7 @@ import FilterForm from "@/components/main/works/filter-form"
 import Section from "../../section-wrapper"
 import SectionHero from "../../section-hero"
 import SectionSubHeading from "../../section-sub-heading"
+import clsx from "clsx"
 interface contentProps{
     id: string,
     className?: string
@@ -17,8 +18,7 @@ const badgeColorMap: Record<string, string> = {
 
 export default function Work({id, className}: contentProps){
     return (
-        <Section id={id} className="items-start bg-linear-to-t from-black to-neutral-900 z-10">
-            
+        <Section id={id} className={clsx(`items-start bg-linear-to-t from-black to-neutral-800 z-10`,className)}>
             <SectionHero 
                 id={`${id}-section-hero`} 
                 title="My Work"

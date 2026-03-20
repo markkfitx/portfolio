@@ -16,8 +16,7 @@ export default function NavBar({id, className}: contentProps){
 
     return(
         <NavigationMenu id={id} className={clsx(`relative lg:block hidden`,className)}>
-            <div className="absolute w-1/2 h-1/2 top-[-1rem] left-[-1rem] rounded-tl-md border-t-2 border-l-2 border-white/80 z-[-1]"></div>
-            <NavigationMenuList id={`${id}-menu-list`} className="w-fit flex flex-col justify-center items-start gap-1 z-10">
+            <NavigationMenuList id={`${id}-menu-list`} className="w-fit flex flex-row justify-center items-start gap-1 z-10">
                 {data.navigation.map((item,idx) =>(
                     <NavigationMenuLink key={`${id}-menu-list-item-${idx}`} asChild>
                         <NavItem idx={idx} label={item.label} url={item.url}/>

@@ -1,9 +1,10 @@
-import Section from "../section-wrapper"
+import Section from "../../section-wrapper"
 import clsx from "clsx"
-import data from "../../app/data/hero.json"
-import StatsSheet from "./stats-sheet"
-import FrameworkBadges from "./framework-badges"
-import TypingText from "./TypingText"
+import NavBar from "../../navigation/navbar"
+import data from "../../../app/data/hero.json"
+import StatsSheet from "../stats-sheet"
+import FrameworkBadges from "../framework-badges"
+import TypingText from "../TypingText"
 
 interface contentProps{
     className?:string,
@@ -35,6 +36,7 @@ export default function Hero({className, id}: contentProps){
                       <FrameworkBadges id="hero-framework-badges" />
                     </div>
                 </div>
+                <NavBar id="navigation-menu" className="mt-2 lg:mt-0 lg:self-start" />
             </div>
         </Section>
     )

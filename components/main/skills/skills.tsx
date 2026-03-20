@@ -1,11 +1,12 @@
 import Section from "../../section-wrapper"
 import SkillBox from "../skills/skill-box"
 import {Database, Laptop, Figma} from "lucide-react"
-import htmlImg from "../../../app/img/hello-world-html-code.png"
+import htmlImg from "@/public/img/hello-world-html-code.png"
 import SectionHero from "../../section-hero"
 import SectionSubHeading from "../../section-sub-heading"
 
 import Image from "next/image"
+import clsx from "clsx"
 interface contentProps{
     id: string,
     className?: string
@@ -18,7 +19,7 @@ const skills = [
 
 export default function Skills({id, className}: contentProps){
     return (
-       <Section id={id} className="items-start bg-white z-10">
+       <Section id={id} className={clsx(`items-start bg-white z-10`,className)}>
             <SectionHero 
                 id={`${id}-section-hero`} 
                 title="My Expertise"

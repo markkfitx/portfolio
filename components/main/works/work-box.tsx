@@ -2,8 +2,11 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Plus } from "lucide-react"
-import { Card, CardTitle, CardContent, CardDescription } from "@/components/ui/card"
+import {
+  Card,
+  CardCaption,
+  CardMedia,
+} from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import clsx from "clsx"
 
@@ -26,34 +29,53 @@ export default function WorkBox({
   subTitle,
   color,
   relevantSkills,
-  className
+  className,
 }: ContentProps) {
   return (
-    <div className={clsx(`flex flex-col items-start justify-start gap-3`,className)}>
-      <Card className="group-box relative overflow-hidden cursor-pointer bg-[#111216]/50 border border-white/10  shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-xl">
-        <CardContent>
-          <Link href={link} target="_blank" rel="noopener noreferrer" className="block">
+    <div className={clsx("flex w-full flex-col items-stretch", className)}>
+      <Card
+        className={clsx(
+          "group border-0 bg-neutral-900 p-0 shadow-none ring-1 ring-white/6",
+          "transition-all duration-300 ease-out",
+          "hover:-translate-y-1 hover:ring-white/12"
+        )}
+      >
+        <CardMedia className="aspect-5/4 min-h-[300px] w-full bg-transparent p-0">
+          <Link
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 block"
+            aria-label={`Open project: ${title}`}
+          >
             <Image
               src={img}
               alt={title}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              className="object-contain object-center p-8 transition-transform duration-700 ease-out group-hover:scale-[1.02] md:p-12 lg:p-14"
             />
           </Link>
-        </CardContent>
+        </CardMedia>
       </Card>
-      <div className="flex flex-col gap-1">
+
+      <CardCaption className="items-start text-left">
         <div className="relative">
-          <h5 className="text-light work-card-title text-balance text-white relative z-10">{title}</h5>
-          <div className={`hidden absolute top-3/5 z-[0] w-1/2 h-1/2 hover:w-1/4 transition-w duration-500 ${color}`}></div>
+          <h5 className="font-heading font-semibold tracking-tight text-balance text-white">
+            {title}
+          </h5>
+          <div
+            className={`pointer-events-none absolute top-3/5 z-0 hidden h-1/2 w-1/2 transition-all duration-500 hover:w-1/4 ${color}`}
+            aria-hidden
+          />
         </div>
-        {subTitle && (
-          <span className="work-card-subtitle text-white/60">
+        {subTitle ? (
+          <p className="font-sans max-w-prose text-pretty text-sm leading-relaxed text-zinc-400">
             {subTitle}
-          </span>
-        )}
-        {(relevantSkills && relevantSkills.length > 0) && (
-          <div className="hidden flex flex-wrap gap-2">
+          </p>
+        ) : null}
+        {relevantSkills && relevantSkills.length > 0 ? (
+          <div className="hidden flex-wrap gap-2 pt-1">
             {relevantSkills.map((skill) => (
               <Badge
                 key={`${id}-${skill}`}
@@ -63,8 +85,8 @@ export default function WorkBox({
               </Badge>
             ))}
           </div>
-        )}
-      </div>
+        ) : null}
+      </CardCaption>
     </div>
   )
 }

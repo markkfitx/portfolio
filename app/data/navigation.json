@@ -2,45 +2,53 @@
     "navigation": [
         {
             "label": "Home",
-            "url":"#home"
+            "url": "#hero-section"
         },
         {
             "label": "Expertise",
-            "url":"#expertise"
+            "url": "#skills-section"
         },
         {
-            "label":"Work",
-            "url":"#work"
+            "label": "Work",
+            "url": "#works-section"
         },
         {
             "label": "Experience",
-            "url":"#experience"
+            "url": "#experience-section"
+        },
+        {
+            "label": "Awards",
+            "url": "#awards-section"
         },
         {
             "label": "Contact",
-            "url":"#contact"
+            "url": "/contact"
         }
     ],
     "footer": [
         {
             "label": "Home",
-            "url":"#home"
+            "url": "#hero-section"
         },
         {
             "label": "Expertise",
-            "url":"#expertise"
+            "url": "#skills-section"
         },
         {
-            "label":"Work",
-            "url":"#work"
+            "label": "Work",
+            "url": "#works-section"
         },
         {
             "label": "Experience",
-            "url":"#experience"
+            "url": "#experience-section"
+        },
+        {
+            "label": "Awards",
+            "url": "#awards-section"
         },
         {
             "label": "Contact",
-            "url":"#contact"
+            "url": "/contact"
         }
     ]
 }

@@ -21,7 +21,7 @@ export default function ExpAccordian({id,className}: contentProps){
                 <AccordionItem
                     key={`accordion-${idx}`}
                     value={`${item.title.replace(/\s+/g, "-").toLowerCase()}-accordion-item-${idx}`}
-                    className={`border-b border-black/30 px-5 ${idx < data.resume.length && "" }`}
+                    className={`border-b border-black/5 ${idx < data.resume.length && "" }`}
                 >
                     <AccordionTrigger className={``} value={`${item.title.replace(/\s+/g, "-").toLowerCase()}-accordion-item-${idx}`}>
                         <div className="w-full flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-6 text-left">
