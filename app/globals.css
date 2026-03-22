@@ -159,6 +159,51 @@
   max-width: 100%;
 }
 
+/* Hero intro HTML: line break only below Tailwind `md` (768px) */
+.hero-intro br:last-of-type {
+  display: none;
+}
+@media (max-width: 767px) {
+  .hero-intro br:last-of-type {
+    display: inline;
+  }
+  .hero-intro br:nth-child(3) {
+    display: none;
+  }
+}
+
+/* Hero intro: 👋 in hero.json — <span id="wavingHand"> */
+#wavingHand {
+  display: inline-block;
+  transform-origin: 70% 85%;
+  animation: hero-wave-hand 2.25s ease-in-out infinite;
+}
+
+@keyframes hero-wave-hand {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  12% {
+    transform: rotate(16deg);
+  }
+  24% {
+    transform: rotate(-10deg);
+  }
+  36% {
+    transform: rotate(14deg);
+  }
+  48% {
+    transform: rotate(-6deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  72% {
+    transform: rotate(0deg);
+  }
+}
+
 .u-bg-blur {
     z-index: 1;
     backface-visibility: hidden;
@@ -214,5 +259,8 @@
   .superpowers-marquee-rtl {
     animation: none;
     transform: none;
+  }
+  #wavingHand {
+    animation: none;
   }
 }
