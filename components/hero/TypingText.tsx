@@ -28,7 +28,7 @@ export default function TypingText({
       typeSpeed={typeSpeed}
       deleteSpeed={deleteSpeed}
       delay={delay}
-      pauseDelay={pauseDelay ?? 2500}
+      pauseDelay={pauseDelay ?? 1500}
       loop={loop}
       blinkCursor={blinkCursor ?? false}
       className={clsx("", className)}

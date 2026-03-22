@@ -3,22 +3,18 @@ import Section from "../section-wrapper"
 import clsx from "clsx"
 import data from "../../app/data/hero.json"
 import TypingText from "./TypingText"
-import ParticlesBackground from "../particle-background"
+import PreviewWindow from "./Preview-window/preview-window"
 
 interface ContentProps {
   className?: string
   id: string
 }
 
-const heroCtaBase =
-  "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+const heroCtaBase = "group inline-flex items-center gap-2 rounded-full border border-emerald-400/45 bg-emerald-500/[0.07] px-5 py-2.5 text-sm font-medium text-emerald-400 transition-colors hover:border-emerald-400/70 hover:bg-emerald-500/15 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
 
 export default function Hero({ className, id }: ContentProps) {
   const heroData = data.hero[0]
-  const marker = "|";
-  const [before, after = ""] = heroData.intro.split(marker);
   return (
-    <>
     <Section
       id={id}
       className={clsx(
@@ -29,11 +25,17 @@ export default function Hero({ className, id }: ContentProps) {
       <div className="flex w-full max-w-5xl flex-col items-start gap-10 md:gap-12 lg:gap-14">
         <h1 className="sr-only">{heroData.name}</h1>
 
-        <h3 className="font-sans max-w-3xl text-pretty text-white">
-        {before}
-        {after !== "" ? <TypingText className="text-emerald-500" words={heroData.specialties} typeSpeed={100} deleteSpeed={100} delay={1000} loop={true} /> : null}
-        <br/>
-        {after}
+        <h3 className="hero-intro font-sans max-w-3xl text-pretty text-white [&_a]:text-emerald-400 [&_a]:underline [&_a]:underline-offset-2">
+          <span dangerouslySetInnerHTML={{ __html: heroData.intro }} />
+          
+            <TypingText
+              className="text-emerald-500"
+              words={heroData.specialties}
+              typeSpeed={35}
+              deleteSpeed={30}
+              delay={0}
+              loop={true}
+            />
         </h3>
 
         <div className="flex flex-wrap items-center gap-3">
@@ -41,7 +43,7 @@ export default function Hero({ className, id }: ContentProps) {
             href={heroData.email}
             className={clsx(
               heroCtaBase,
-              "bg-white/50 text-neutral-900 hover:bg-white/70 active:bg-white/90"
+              ""
             )}
           >
             Email
@@ -67,14 +69,8 @@ export default function Hero({ className, id }: ContentProps) {
             Resume
           </Link>
         </div>
-
-        <div
-          className="aspect-video w-full min-h-[200px] h-[702px] max-w-5xl shrink-0 rounded-3xl bg-neutral-300 ring-1 ring-black/5 md:min-h-[280px]"
-          aria-hidden
-        />
+        <PreviewWindow  />
       </div>
     </Section>
-    <ParticlesBackground />
-    </>
   )
 }
