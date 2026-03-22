@@ -35,7 +35,7 @@ export default function WorkBox({
     <div className={clsx("flex w-full flex-col items-stretch", className)}>
       <Card
         className={clsx(
-          "group border-0 bg-neutral-900 p-0 shadow-none ring-1 ring-white/6",
+          "group border-0 ring-white/8 bg-gradient-to-br from-emerald-900/30 via-neutral-800/20 to-neutral-800/50 p-0 shadow-none ring-1 ring-white/6",
           "transition-all duration-300 ease-out",
           "hover:-translate-y-1 hover:ring-white/12"
         )}
@@ -61,7 +61,7 @@ export default function WorkBox({
 
       <CardCaption className="items-start text-left">
         <div className="relative">
-          <h5 className="font-heading font-semibold tracking-tight text-balance text-white">
+          <h5 className="font-heading font-medium text-balance text-white tracking-wide">
             {title}
           </h5>
           <div

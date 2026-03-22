@@ -1,10 +1,10 @@
 import clsx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
-import {Button} from "@/components/ui/button"
 import type { ReactNode } from "react"
 import { ArrowUpRight } from "lucide-react"
 import { Card, CardMedia } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
 
 function caseStudyHref(raw: string): string | null {
   const u = raw.trim()
@@ -23,7 +23,6 @@ interface ContentProps {
   company: string
   job: string
   alignment: "start" | "center" | "end"
-  /** Company / project URL (with or without protocol) */
   caseStudyUrl: string
   className?: string
 }
@@ -46,38 +45,22 @@ export default function ExperienceSubSection({
   company,
   job,
   body,
-  alignment,
+  alignment: _alignment,
   caseStudyUrl,
 }: ContentProps) {
   const headline = headlineFromChildren(children, job)
   const studyHref = caseStudyHref(caseStudyUrl)
 
-  const copyAlign = {
-    start: "items-start text-left",
-    center: "items-center text-center lg:items-start lg:text-left",
-    end: "items-end text-right",
-  } as const
-
   return (
     <div
       className={clsx(
-        "flex w-full max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-16",
+        "mx-auto flex w-full max-w-[1240px] flex-col gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-16",
         className
       )}
     >
-      <div
-        className={clsx(
-          "flex w-full flex-col gap-3 md:gap-4 lg:w-[42%] lg:max-w-xl lg:shrink-0",
-          copyAlign[alignment]
-        )}
-      >
-        <div
-          className={clsx(
-            "mb-1 flex flex-wrap items-center gap-3",
-            alignment === "center" && "justify-center lg:justify-start",
-            alignment === "end" && "justify-end"
-          )}
-        >
+      {/* Case-study copy column — left-aligned like reference + Awards / skill headers */}
+      <div className="flex w-full min-w-0 flex-col items-start gap-5 text-left lg:w-[42%] lg:max-w-xl lg:shrink-0">
+        <div className="flex w-full flex-wrap items-center gap-3">
           {icon.length > 0 ? (
             <Image
               src={icon}
@@ -87,62 +70,57 @@ export default function ExperienceSubSection({
               className="size-10 shrink-0 rounded-full object-cover ring-1 ring-white/15"
             />
           ) : null}
-          <div
-            className={clsx(
-              "flex min-w-0 flex-col gap-0.5 leading-tight",
-              alignment === "center" &&
-                "items-center text-center lg:items-start lg:text-left",
-              alignment === "end" && "items-end text-right"
-            )}
-          >
-            <h6 className="font-heading text-sm font-semibold tracking-tight text-white md:text-base">
+          <div className="flex min-w-0 flex-col gap-0.5 leading-tight">
+            <p className="font-heading text-sm font-semibold tracking-tight text-white md:text-base">
               {company}
-            </h6>
-            <h6 className="font-sans text-xs font-medium tracking-wide text-white">
-              {job}
-            </h6>
+            </p>
+            <p className="font-sans text-sm font-normal text-white/70">{job}</p>
           </div>
         </div>
 
         <h3
           id={`${id}-item-headline-${idx}`}
-          className="experience-case-headline font-heading mb-2.5 text-balance text-white"
+          className="experience-case-headline font-heading text-balance text-white"
         >
           {headline}
         </h3>
 
-        <p className="font-sans max-w-prose text-pretty text-sm leading-relaxed text-zinc-300">
+        <p className="font-sans max-w-prose text-pretty text-base leading-relaxed text-white/70">
           {body}
         </p>
 
         {studyHref ? (
-          <div
-            className={clsx(
-              "pt-2",
-              alignment === "center" && "flex justify-center lg:justify-start",
-              alignment === "end" && "flex justify-end"
-            )}
-          >
-            <Button
-              asChild
-              variant="default"
+          <div className="pt-1">
+            <Link
+              href={studyHref}
+              target="_blank"
+              rel="noopener noreferrer"
               id={`${id}-case-study-cta-${idx}`}
-              className="font-sans group inline-flex items-center gap-1.5 text-sm text-white underline-offset-4 transition-colors hover:text-cyan-400 font-medium border border-white/5 px-4 py-2 rounded-full"
+              className={cn(
+                "group inline-flex items-center gap-2 rounded-full border border-emerald-400/45",
+                "bg-emerald-500/[0.07] px-5 py-2.5 text-sm font-medium text-emerald-400",
+                "transition-colors hover:border-emerald-400/70 hover:bg-emerald-500/15 hover:text-emerald-300",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40",
+                "focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+              )}
             >
-              <Link href={studyHref} target="_blank" rel="noopener noreferrer">
               View case study
               <ArrowUpRight
                 className="size-4 shrink-0 transition-transform group-hover:-translate-y-px group-hover:translate-x-px"
                 aria-hidden
               />
-              </Link>   
-            </Button>
+            </Link>
           </div>
         ) : null}
       </div>
 
       <div className="relative w-full min-w-0 lg:flex-1 lg:w-[58%]">
-        <Card className="overflow-hidden rounded-3xl border-0 bg-[#F5F5F7] p-0 shadow-none ring-1 ring-black/5 dark:bg-[#F5F5F7]">
+        <Card
+          className={cn(
+            "overflow-hidden rounded-3xl border-0 bg-[#F5F5F7] p-0 shadow-xl shadow-black/20",
+            "ring-1 ring-black/5 dark:bg-[#F5F5F7]"
+          )}
+        >
           <CardMedia className="relative aspect-4/3 min-h-[260px] w-full bg-transparent p-0 md:min-h-[300px]">
             <Image
               src={image}

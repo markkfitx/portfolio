@@ -23,7 +23,7 @@ export default function FilterForm({id, title, className}: contentProps){
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button
-                          className="text-white mb-8 h-9 rounded-full bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/25"
+                          className="text-emerald-300 mb-8 h-9 rounded-full border border-emerald-300/20 bg-emerald-400/5"
                           variant="default"
                         >
                           <ListFilter className="mr-2 h-4 w-4" />

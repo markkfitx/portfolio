@@ -28,7 +28,7 @@ export default function Work({id, className}: contentProps){
                 className="hidden"
             />
             <SectionSubHeading id={`${id}-subheading`} alignment="start" className="md:max-w-[500px] text-white"> 
-                <span className="text-neutral-400">UX/UI across platforms</span> — from startups to enterprise products.
+                <span className="text-emerald-400">UX/UI across platforms</span> — Recent projects I'm proud of.
             </SectionSubHeading>
             {/**<FilterForm className="mb-10 w-fit" title="Filter By"/>**/}
             <FilterForm id={`${id}-filter-form`} title="Filter By" /> 

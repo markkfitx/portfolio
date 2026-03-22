@@ -59,7 +59,7 @@ export default function SuperPowerBox({ id, className }: ContentProps) {
         id={id}
         className="relative flex h-full flex-col items-center justify-start gap-6 p-6 md:p-7"
       >
-        <div className="flex w-full items-center justify-center gap-2 sm:justify-start">
+        <div className="flex w-full items-center justify-center gap-2">
           <span className="inline-flex size-8 items-center justify-center rounded-lg border border-emerald-300/25 bg-emerald-400/10">
             <Bolt className="size-4 text-emerald-300" aria-hidden />
           </span>

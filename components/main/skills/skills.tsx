@@ -23,9 +23,9 @@ export default function Skills({id, className}: contentProps){
                 className="hidden"
                 />
             <SectionSubHeading id={`${id}-subheading`} alignment="start" className="md:max-w-[450px]"> 
-                <span className="text-neutral-400">I’ll help you to </span>design better products <span className="text-neutral-400">and</span> achieve results <span className="text-neutral-400">that matter.</span>
+                <span className="text-emerald-400">I’ll help you to </span>design better products <span className="text-emerald-400">and</span> achieve results <span className="text-emerald-400">that matter.</span>
             </SectionSubHeading>
-            <SuperPowersGroup id={`${id}-super-powers`} className="z-10 md:mb-4 mb-12!" />
+            <SuperPowersGroup id={`${id}-super-powers`} className="z-10 md:mb-6 mb-12" />
             <SkillGroup id={`${id}-skill-group`} className="" />
             <Image src={htmlImg} alt="Background html example code image." className="hidden opacity-30 relative bottom-10 self-center saturate-25 md:w-[40vw] sm:w-[75vw] w-[90vw]"/>
        </Section>
