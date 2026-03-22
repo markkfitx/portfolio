@@ -2,12 +2,17 @@
   "hero": [
     {
       "name": "Mark Kirby",
-      "intro": "Hi, I'm Mark Kirby, a | based in NJ, crafting thoughtful digital products—from marketing systems to polished web experiences.",
+      "intro": "Hi <span id='wavingHand'>👋</span> I'm Mark!<br/>A Full Stack Software Developer. <br/>I build <br/>",
       "email": "mailto:hello@markkirby.dev",
       "linkedin": "https://www.linkedin.com/in/markkirby",
       "resumeUrl": "#",
-      "specialties": ["Full Stack Developer", "Martech Specialist"],
-      "description": "I build scalable web applications, marketing automation systems, and high-performance front-end experiences."
+      "specialties": [
+        "UI that converts.",
+        "Scalable web systems.",
+        "High-performance apps.",
+        "Modern frontend architecture."
+      ],
+      "description": "I build UI that converts, systems that scale, and AI that works."
     }
   ],
   "hero-backup": [
