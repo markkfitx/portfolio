@@ -35,7 +35,8 @@ export default function DashboardLayout({
 
       <Header onOpenSidebar={() => setNavOpen(true)} />
 
-      <div className="relative flex h-full min-h-0 w-full flex-1 flex-row rounded-t-lg bg-white/80">
+      {/* Above z-80 drawer portal mount so buttons/hover paint and hit-test reliably */}
+      <div className="relative  flex h-full min-h-0 w-full flex-1 flex-row rounded-t-lg">
         <div className="hidden h-full min-h-0 md:flex">
           <Sidebar />
         </div>

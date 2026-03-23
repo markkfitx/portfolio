@@ -38,7 +38,7 @@ export default function Hero({ className, id }: ContentProps) {
             />
         </h3>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3 mb-8">
           <Link
             href={heroData.email}
             className={clsx(
@@ -69,7 +69,7 @@ export default function Hero({ className, id }: ContentProps) {
             Resume
           </Link>
         </div>
-        <PreviewWindow  />
+        <PreviewWindow className="z-50" />
       </div>
     </Section>
   )

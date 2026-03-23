@@ -23,8 +23,8 @@ const muted = "#6d6d6d"
 
 function ShopMark({ className }: { className?: string }) {
   return (
-    <div className={clsx("relative flex size-3 shrink-0 items-center justify-center", className)}>
-      <ShoppingBag className="size-3 text-[#303030]" strokeWidth={1.5} />
+    <div className={clsx("relative flex md:size-3 size-2 shrink-0 items-center justify-center", className)}>
+      <ShoppingBag className="md:size-3 size-2 text-[#303030]" strokeWidth={1.5} />
       <span className="absolute text-[7px] font-bold leading-none text-[#303030]">S</span>
     </div>
   )
@@ -49,7 +49,7 @@ function NavRow({
   return (
     <div
       className={clsx(
-        "flex items-center gap-3 rounded-lg px-2 py-0.75 text-[13px] font-medium leading-tight text-[#303030]",
+        "flex items-center md:gap-3 gap-2 rounded-lg px-2 py-0.75 md:text-[13px] text-[11px] font-medium leading-tight text-[#303030]",
         "hover:bg-black/4",
         className
       )}
@@ -57,11 +57,11 @@ function NavRow({
       {startSlot ? (
         startSlot
       ) : Icon ? (
-        <Icon className="size-3 shrink-0 " strokeWidth={2} />
+        <Icon className="md:size-3 size-2 shrink-0 " strokeWidth={2} />
       ) : null}
-      <span className="text-[11px] min-w-0 flex-1 font-medium truncate tracking-wide! whitespace-nowrap">{label}</span>
+      <span className="md:text-[10px] text-[8px] min-w-0 flex-1 font-medium truncate tracking-wide! whitespace-nowrap">{label}</span>
       {badge ? (
-        <span className="shrink-0 rounded-full bg-[#d4d4d4] px-2 py-0.5 text-[9px] font-normal tabular-nums text-[#303030]">
+        <span className="shrink-0 rounded-full bg-[#d4d4d4] px-2 py-0.5 md:text-[9px] text-[7px] font-normal tabular-nums text-[#303030]">
           {badge}
         </span>
       ) : null}
@@ -76,8 +76,8 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
       className="mt-4 flex items-center justify-between px-2 text-[9px] font-semibold uppercase tracking-wide first:mt-2"
       style={{ color: muted }}
     >
-      <span>{children}</span>
-      <ChevronRight className="size-3.5 shrink-0 opacity-80" aria-hidden />
+      <span className="md:text-[9px] text-[7px]">{children}</span>
+      <ChevronRight className="md:size-3.5 size-2 shrink-0 opacity-80" aria-hidden />
     </div>
   )
 }
@@ -95,13 +95,13 @@ function TextRow({
     <button
       type="button"
       className={clsx(
-        "flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-[12px] font-medium text-[#303030] hover:bg-black/4",
+        "flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left md:text-[12px] text-[9px] font-medium text-[#303030] hover:bg-black/4",
         className
       )}
     >
       <span className="min-w-0 flex-1 truncate">{label}</span>
       {chevron ? (
-        <ChevronRight className="size-4 shrink-0 text-[#303030]/70" aria-hidden />
+        <ChevronRight className="md:size-4 size-3 shrink-0 text-[#303030]/70" aria-hidden />
       ) : null}
     </button>
   )
@@ -109,9 +109,9 @@ function TextRow({
 
 export default function Sidebar() {
   return (
-    <aside className="flex h-full min-h-0 w-[225px] shrink-0 flex-col border-r border-black/6 bg-[#ebebeb]">
+    <aside className="flex h-full min-h-0 md:w-[225px] w-[150px] shrink-0 flex-col border-r border-black/6 bg-[#ebebeb]">
       <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
-        <nav className="flex flex-col gap-0.5 px-2 pb-2 pt-2" aria-label="Primary">
+        <nav className="flex flex-col md:gap-0.5 gap-0 px-2 pb-2 pt-2" aria-label="Primary">
           <NavRow icon={Home} label="Home" />
           <NavRow icon={Inbox} label="Orders" badge="144" />
           <NavRow icon={Tag} label="Products" />
@@ -123,20 +123,20 @@ export default function Sidebar() {
           <NavRow icon={Building2} label="Finance" />
 
           <div className="mt-1 rounded-lg bg-white px-2 py-1.5 shadow-[0_1px_0_rgba(0,0,0,0.04)]">
-            <div className="flex items-center gap-3 text-[11px] min-w-0 flex-1 truncate tracking-wide! whitespace-nowrap font-semibold text-[#303030]">
-              <BarChart3 className="size-3 shrink-0" strokeWidth={1.65} />
-              <span>Analytics</span>
+            <div className="flex items-center gap-3 md:text-[10px] text-[8px] min-w-0 flex-1 truncate tracking-wide! whitespace-nowrap font-semibold text-[#303030]">
+              <BarChart3 className="md:size-3 size-2 shrink-0" strokeWidth={1.65} />
+              <span className="md:text-[11px] text-[8px]">Analytics</span>
             </div>
-            <div className="mt-1 space-y-0.5 pl-8">
+            <div className="mt-1 space-y-0.5 pl-4">
               <button
                 type="button"
-                className="block w-full cursor-default rounded-md border-0 bg-transparent py-1 text-left text-[12px] font-medium text-[#5c5c5c] hover:bg-black/4"
+                className="block w-full cursor-default rounded-md border-0 bg-transparent p-1 text-left md:text-[12px] text-[9px] font-medium text-[#5c5c5c] hover:bg-black/4"
               >
                 Reports
               </button>
               <button
                 type="button"
-                className="block w-full cursor-default rounded-md border-0 bg-transparent py-1 text-left text-[12px] font-medium text-[#5c5c5c] hover:bg-black/4"
+                className="block w-full cursor-default rounded-md border-0 bg-transparent p-1 text-left md:text-[12px] text-[9px] font-medium text-[#5c5c5c] hover:bg-black/4"
               >
                 Live View
               </button>

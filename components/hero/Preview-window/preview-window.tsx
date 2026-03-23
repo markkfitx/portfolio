@@ -12,7 +12,7 @@ export default function PreviewWindow({className}: {className?: string}) {
                 className
             )}
         >
-            <BrowserContentWrapper />
+        <BrowserContentWrapper />
         </BrowserWindow>
     )
 }

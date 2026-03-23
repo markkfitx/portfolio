@@ -1,4 +1,12 @@
 @import "tailwindcss";
+
+/* Content detection — paths are relative to this file (app/globals.css).
+   Prefer directory @source entries: long glob patterns often skip files in this folder
+   (e.g. app/page and app/layout). See Tailwind docs: detecting classes in source files. */
+@source ".";
+@source "../components";
+@source "../lib";
+
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 

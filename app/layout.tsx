@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
-import "../app/globals.css";
+import "./globals.css";
 import "../app/css/layout.css";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -23,11 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} antialiased bg-mist-950 w-full`}>
-          <Header id="social-media-n-mobile-header" className="z-10" />
-          <div className="font-sans flex flex-col justify-start items-center min-h-screen w-full">
-            {children}
-          </div>
-          <Footer />
+        <TooltipProvider delayDuration={100}>
+            <Header id="social-media-n-mobile-header" className="z-10" />
+            <div className="font-sans flex flex-col justify-start items-center min-h-screen w-full">
+              {children}
+            </div>
+            <Footer />
+          </TooltipProvider>
       </body>
     </html>
   );

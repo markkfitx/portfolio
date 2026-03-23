@@ -1,5 +1,5 @@
-import Toolbar from "./toolbar"
-import Tabs from "./tabs"
+import Toolbar from "./components/toolbar"
+import Tabs from "./components/tabs"
 import clsx from "clsx"
 export default function BrowserWindow({children, className}: {children: React.ReactNode, className?: string}) {
     return (
