@@ -15,7 +15,7 @@ export default function DateTime({className}: {className?: string}) {
   return (
     <span
       className={clsx(
-        "text-[9px] font-medium tracking-wide text-muted-foreground md:text-[11px]",
+        "text-[9px] font-medium tracking-wide text-zinc-500 md:text-[11px]",
         className
       )}
     >

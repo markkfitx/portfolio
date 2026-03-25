@@ -25,7 +25,7 @@ export default function DashboardLayout({
   const [drawerPortal, setDrawerPortal] = useState<HTMLDivElement | null>(null)
 
   return (
-    <div className="relative flex min-h-0 w-full flex-1 flex-col overflow-hidden bg-[#1a1a1a] transform-gpu">
+    <div className="relative flex min-h-0 w-full flex-1 flex-col overflow-hidden bg-zinc-950 transform-gpu">
       {/* Mount Radix/Vaul portal here so overlay + sheet stay inside the preview */}
       <div
         ref={setDrawerPortal}
@@ -33,10 +33,12 @@ export default function DashboardLayout({
         aria-hidden
       />
 
-      <Header onOpenSidebar={() => setNavOpen(true)} />
+      <div className="shrink-0 border-b border-white/10 bg-zinc-900/90">
+        <Header onOpenSidebar={() => setNavOpen(true)} />
+      </div>
 
       {/* Above z-80 drawer portal mount so buttons/hover paint and hit-test reliably */}
-      <div className="relative  flex h-full min-h-0 w-full flex-1 flex-row rounded-t-lg">
+      <div className="relative flex h-full min-h-0 w-full flex-1 flex-row rounded-t-lg bg-zinc-950">
         <div className="hidden h-full min-h-0 md:flex">
           <Sidebar />
         </div>
@@ -55,7 +57,7 @@ export default function DashboardLayout({
           >
             <DrawerContent
               aria-describedby={undefined}
-              className="flex h-full max-h-full w-[[min(100%,280px)]] max-w-none flex-col rounded-none border-0 bg-[#ebebeb] p-0 data-[vaul-drawer-direction=left]:sm:max-w-none"
+              className="flex h-full max-h-full w-[min(100%,280px)] max-w-none flex-col rounded-none border-r border-white/10 bg-zinc-900 p-0 data-[vaul-drawer-direction=left]:sm:max-w-none"
             >
               <DrawerTitle className="sr-only">Store navigation</DrawerTitle>
               <div className="flex min-h-0 flex-1 flex-col overflow-hidden">

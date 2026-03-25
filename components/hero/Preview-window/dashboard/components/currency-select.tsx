@@ -110,7 +110,7 @@ export default function CurrencySelect() {
           aria-expanded={open}
           aria-haspopup="listbox"
           className={cn(
-            "h-5 shrink-0 gap-1 rounded-md border border-neutral-400/50 bg-white px-1! text-[9px] font-medium text-[#303030] shadow-none transition-colors md:h-6 md:px-2! md:text-[11px]",
+            "h-5 shrink-0 gap-1 rounded-md border border-white/10 bg-zinc-900 text-[9px] text-zinc-100 font-medium shadow-none transition-colors md:h-6 md:px-2! md:text-[11px]",
             "hover:bg-neutral-50 hover:text-[#303030]",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400/40"
           )}

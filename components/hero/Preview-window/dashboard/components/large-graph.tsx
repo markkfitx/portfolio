@@ -89,28 +89,28 @@ export function ChartAreaInteractive({title, className}: {title: string, classNa
   })
 
   return (
-    <Card className={cn("gap-2 rounded-xl p-3 py-3", className)}>
-      <CardHeader className="flex items-center gap-2 space-y-0 border-b p-0 sm:flex-row ">
+    <Card className={cn("gap-2 rounded-xl border border-white/10 bg-zinc-900/80 p-3 py-3 text-zinc-100 shadow-none", className)}>
+      <CardHeader className="flex items-center gap-2 space-y-0 border-b border-white/10 p-0 sm:flex-row">
         <div className="grid min-w-0 flex-1 gap-0.5">
           <CardTitle className="text-[9px] font-semibold md:text-[11px]">
             {title}
           </CardTitle>
-          <CardDescription className="text-[9px] leading-snug md:text-[11px]">
+          <CardDescription className="text-[9px] leading-snug text-zinc-500 md:text-[11px]">
             Showing total visitors for the last 3 months
           </CardDescription>
         </div>
         <Select value={timeRange} onValueChange={setTimeRange}>
           <SelectTrigger
             className={cn(
-              "ml-auto hidden h-7! w-[min(100%,9.5rem)] shrink-0 rounded-md border border-neutral-400/50 bg-white px-1.5! md:px-2! text-[9px] font-medium text-[#303030] shadow-none sm:flex md:h-6 md:px-2",
-              "focus-visible:border-neutral-400/60 focus-visible:ring-2 focus-visible:ring-neutral-400/40 focus-visible:ring-offset-0",
-              "[&_svg]:size-3 [&_svg]:opacity-60"
+              "ml-auto hidden h-7! w-[min(100%,9.5rem)] shrink-0 rounded-md border border-white/15 bg-zinc-950/80 px-1.5! text-[9px] font-medium text-zinc-200 shadow-none sm:flex md:h-6 md:px-2!",
+              "focus-visible:border-emerald-500/40 focus-visible:ring-2 focus-visible:ring-emerald-400/25 focus-visible:ring-offset-0",
+              "[&_svg]:size-3 [&_svg]:opacity-70"
             )}
             aria-label="Select a value"
           >
             <SelectValue placeholder="Last 3 months" />
           </SelectTrigger>
-          <SelectContent className="rounded-md text-[9px]">
+          <SelectContent className="rounded-md border border-white/10 bg-zinc-900 text-[9px] text-zinc-100">
             <SelectItem value="90d" className="rounded-sm py-1 text-[9px]">
               Last 3 months
             </SelectItem>
