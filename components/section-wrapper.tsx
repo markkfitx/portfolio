@@ -8,7 +8,7 @@ interface componentProps {
 function Section({id,children, className} : componentProps){
     return (
         <section id={id} className={clsx("w-full", className)}>
-            <div className="mx-auto max-w-[1240px] flex flex-col content-center justify-start items-start xl:px-24 lg:px-8 md:px-6 px-4">
+            <div className={`mx-auto ${id !== "hero-section" && "max-w-[1240px]"} flex flex-col content-center justify-start items-start xl:px-24 lg:px-8 md:px-6 px-4`}>
                 {children}
             </div>
         </section>

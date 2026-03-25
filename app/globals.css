@@ -168,17 +168,7 @@
 }
 
 /* Hero intro HTML: line break only below Tailwind `md` (768px) */
-.hero-intro br:last-of-type {
-  display: none;
-}
-@media (max-width: 767px) {
-  .hero-intro br:last-of-type {
-    display: inline;
-  }
-  .hero-intro br:nth-child(3) {
-    display: none;
-  }
-}
+
 
 /* Hero intro: 👋 in hero.json — <span id="wavingHand"> */
 #wavingHand {

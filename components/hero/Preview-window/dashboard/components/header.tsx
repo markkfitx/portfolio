@@ -28,7 +28,6 @@ export default function Header() {
           <BarChart3 className="size-2 shrink-0 text-zinc-400 md:size-3" strokeWidth={1.65} />
           <span className="text-[9px] font-bold md:text-[11px]">Analytics</span>
         </div>
-        <DateTime />
       </div>
       <div className="flex flex-row items-center justify-start gap-1 md:gap-2">
         {/* md+: inline icon actions */}

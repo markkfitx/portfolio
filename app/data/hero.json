@@ -2,7 +2,7 @@
   "hero": [
     {
       "name": "Mark Kirby",
-      "intro": "Hi <span id='wavingHand'>👋</span> I'm Mark!<br/>A Full Stack Software Developer. <br/>I build <br/>",
+      "intro": "Hi <span id='wavingHand'>👋</span> I'm Mark!<br/>A Full Stack Software Developer. I build",
       "email": "mailto:hello@markkirby.dev",
       "linkedin": "https://www.linkedin.com/in/markkirby",
       "resumeUrl": "#",

@@ -28,12 +28,12 @@ type HeaderProps = {
 
 export default function Header({ onOpenSidebar }: HeaderProps) {
   return (
-    <header className="flex shrink-0 items-center gap-3 border-none py-1.75 px-3 sm:gap-4 sm:px-4 text-zinc-100">
+    <header className="flex shrink-0 items-center gap-3 border-none py-1.75 pr-3 pl-2 sm:gap-4 sm:pr-4 sm:pl-3 text-zinc-100">
       <div className="flex min-w-0 shrink-0 items-center gap-2">
         {onOpenSidebar ? (
           <Button
             type="button"
-            className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-zinc-100 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/30 md:hidden md:h-6 md:w-6"
+            className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-zinc-100 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/30 md:h-6 md:w-6"
             aria-label="Open navigation menu"
             onClick={onOpenSidebar}
           >

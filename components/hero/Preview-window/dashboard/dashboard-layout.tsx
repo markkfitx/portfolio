@@ -39,9 +39,9 @@ export default function DashboardLayout({
 
       {/* Above z-80 drawer portal mount so buttons/hover paint and hit-test reliably */}
       <div className="relative flex h-full min-h-0 w-full flex-1 flex-row rounded-t-lg bg-zinc-950">
-        <div className="hidden h-full min-h-0 md:flex">
+        {/*<div className="hidden h-full min-h-0 md:flex">
           <Sidebar />
-        </div>
+        </div>*/}
 
         {children}
 
