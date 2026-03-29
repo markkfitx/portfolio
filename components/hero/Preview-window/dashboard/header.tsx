@@ -51,7 +51,7 @@ export default function Header({ onOpenSidebar }: HeaderProps) {
       <div className="flex min-w-0 flex-1 justify-center px-1 sm:px-2">
         <div
           role="search"
-          className="flex w-full max-w-[min(100%,420px)] items-center gap-2 rounded-xl bg-zinc-950/80 px-3 py-0.5 ring-1 ring-white/10 md:py-1"
+          className="flex w-full max-w-[min(100%,420px)] items-center gap-2 rounded-xl bg-zinc-950/80 md:px-3 px-1 py-0.5 ring-1 ring-white/10 md:py-1"
         >
           <Search
             className="size-[10px] shrink-0 text-zinc-500 md:size-[12px]"
@@ -62,17 +62,17 @@ export default function Header({ onOpenSidebar }: HeaderProps) {
             Search
           </span>
           <div className="ml-auto flex shrink-0 items-center gap-1">
-            <kbd className="inline-flex h-3.5 min-w-[14px] items-center justify-center rounded bg-zinc-800 px-1 text-[8px] font-medium leading-none text-zinc-400 ring-1 ring-white/10 md:text-[10px]">
+            <kbd className="inline-flex md:h-3.5 h-2.5 md:w-3.5 w-2.75  items-center justify-center rounded bg-zinc-800 px-1 text-[8px] font-medium leading-none text-zinc-400 ring-1 ring-white/10 md:text-[10px]">
               ⌘
             </kbd>
-            <kbd className="inline-flex h-3.5 min-w-[14px] items-center justify-center rounded bg-zinc-800 px-1 text-[8px] font-medium leading-none text-zinc-400 ring-1 ring-white/10 md:text-[10px]">
+            <kbd className="inline-flex md:h-3.5 h-2.5 md:w-3.5 w-2.75 items-center justify-center rounded bg-zinc-800 px-1 text-[8px] font-medium leading-none text-zinc-400 ring-1 ring-white/10 md:text-[10px]">
               K
             </kbd>
           </div>
         </div>
       </div>
 
-      <div className="flex shrink-0 items-center gap-2">
+      <div className="flex shrink-0 items-center md:gap-2 gap-0">
         <Button
           type="button"
           className="inline-flex h-5 w-5 items-center justify-center rounded-sm text-zinc-100 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/30 md:h-6 md:w-6"
