@@ -262,3 +262,26 @@
     animation: none;
   }
 }
+
+/* Premium, subtle motion for hero preview (nested wrapper only). */
+.hero-preview-float {
+  will-change: transform;
+  animation: hero-preview-float 12s ease-in-out infinite;
+}
+
+@keyframes hero-preview-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-preview-float {
+    animation: none;
+    transform: none;
+  }
+}
