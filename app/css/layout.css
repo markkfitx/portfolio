@@ -73,9 +73,11 @@ h1 {
 h2 {
   font-size: 8.25vw;
   line-height: 1.1 !important;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.05em;
 }
-
+h2 .heroSlash {
+  font-size: 9.25vw;
+}
 h3 {
   font-size: 1.85rem;
   line-height: 1.25 !important;
@@ -124,6 +126,9 @@ button {
   h2 {
     font-size: 6.5vw;
   }
+  h2 .heroSlash {
+    font-size: 7.5vw;
+  }
   h3 {
     font-size: 3.1vw;
   }
@@ -138,6 +143,9 @@ button {
 
   h2 {
     font-size: 5.5vw;
+  }
+  h2 .heroSlash {
+    font-size: 6.55vw;
   }
   h3 {
     font-size: 2.5vw;
@@ -160,6 +168,9 @@ button {
 
   h2 {
     font-size: 4.325vw;
+  }
+  h2 .heroSlash {
+    font-size: 5.15vw;
   }
   h3 {
     font-size: 2.15vw;
