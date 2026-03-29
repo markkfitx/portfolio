@@ -1,17 +1,12 @@
 {
   "hero": [
     {
-      "name": "Mark Kirby",
-      "intro": "Hi <span id='wavingHand'>👋</span> I'm Mark!<br/>A Full Stack Software Developer. I build",
+      "name": "Mark",
+      "intro": "Hi <span id='wavingHand'>👋</span> I'm Mark!<br/><span class='font-light! text-white/75'>A Full Stack Software Developer.</span> I build",
       "email": "mailto:hello@markkirby.dev",
       "linkedin": "https://www.linkedin.com/in/markkirby",
       "resumeUrl": "#",
-      "specialties": [
-        "UI that converts.",
-        "Scalable web systems.",
-        "High-performance apps.",
-        "Modern frontend architecture."
-      ],
+      "specialties": ["Full Stack Developer & Marketing Technologist"],
       "description": "I build UI that converts, systems that scale, and AI that works."
     }
   ],
