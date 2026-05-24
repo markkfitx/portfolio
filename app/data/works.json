@@ -1,70 +1,73 @@
 {
     "works": [
         {
-            "title": "The Impackt Brand",
-            "subTitle": "Test Sub Title",
-            "img": "/work-img-files/impackt-brand.png",
-            "link": "https://www.theimpacktbrand.com",
-            "color":"red",
-            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
+            "slug": "keystone-enterprise-platform",
+            "title": "Keystone Enterprise Platform",
+            "subTitle": "Lead frontend · React migration",
+            "year": "2024",
+            "img": "/img/smartphone-dashboard-view.png",
+            "link": "https://www.keyinfosys.com",
+            "color": "blue",
+            "categories": ["Web Apps"],
+            "relevantSkills": ["React", "TypeScript", "REST APIs"],
+            "caseStudy": {
+                "overview": "Modernized legacy enterprise software by migrating Classic ASP applications to a React and TypeScript stack backed by REST APIs—improving maintainability, deployment velocity, and the day-to-day experience for internal users.",
+                "role": "Lead Frontend Engineer",
+                "highlights": [
+                    "Led architecture for React + TypeScript migration paths",
+                    "Established CI/CD and deployment patterns for frontend releases",
+                    "Integrated third-party services to extend platform capabilities"
+                ],
+                "deliverables": ["Component library foundations", "REST-integrated views", "Security-hardened auth flows"]
+            }
         },
         {
+            "slug": "impackt-brand-shopify",
             "title": "The Impackt Brand",
-            "subTitle": "Test Sub Title",
+            "subTitle": "Shopify storefront & brand system",
+            "year": "2024",
             "img": "/work-img-files/impackt-brand.png",
             "link": "https://www.theimpacktbrand.com",
-            "color":"cyan",
-            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
+            "color": "red",
+            "categories": ["Marketing Design", "Web Apps"],
+            "relevantSkills": ["Branding", "Shopify", "Liquid"],
+            "caseStudy": {
+                "overview": "Designed and built a cohesive Shopify experience—translating brand direction into a storefront, custom Liquid templates, and visual assets that support campaigns and product launches.",
+                "role": "Marketing Technologist",
+                "highlights": [
+                    "Shopify theme customization with Liquid",
+                    "Brand-consistent product and collection templates",
+                    "Collaboration with creative on campaign landing experiences"
+                ],
+                "deliverables": ["Shopify theme", "Brand asset integration", "Conversion-focused product pages"]
+            }
         },
         {
-            "title": "The Impackt Brand",
-            "subTitle": "Test Sub Title",
-            "img": "/work-img-files/impackt-brand.png",
+            "slug": "impackt-lifecycle-marketing",
+            "title": "Impackt Lifecycle Marketing",
+            "subTitle": "Email & Klaviyo automation",
+            "year": "2023",
+            "img": "/img/work-img-files/Impackt-website.png",
             "link": "https://www.theimpacktbrand.com",
-            "color":"blue",
-            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
-        },
-        {
-            "title": "The Impackt Brand",
-            "subTitle": "Test Sub Title",
-            "img": "/work-img-files/impackt-brand.png",
-            "link": "https://www.theimpacktbrand.com",
-            "color":"blue",
-            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
-        },
-        {
-            "title": "The Impackt Brand",
-            "subTitle": "Test Sub Title",
-            "img": "/work-img-files/impackt-brand.png",
-            "link": "https://www.theimpacktbrand.com",
-            "color":"green",
-            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
-        },
-        {
-            "title": "The Impackt Brand",
-            "subTitle": "Test Sub Title",
-            "img": "/work-img-files/impackt-brand.png",
-            "link": "https://www.theimpacktbrand.com",
-            "color":"green",
-            "relevantSkills": ["Liquid", "Shopify","HTML", "JavaScript", "CSS"]
+            "color": "cyan",
+            "categories": ["Marketing Design"],
+            "relevantSkills": ["Klaviyo", "HTML", "Figma"],
+            "caseStudy": {
+                "overview": "Built lifecycle email programs from Figma designs through production HTML—deploying welcome, abandoned cart, post-purchase, and winback flows in Klaviyo with cross-client compatibility in mind.",
+                "role": "Marketing Technologist",
+                "highlights": [
+                    "Figma-to-HTML email development",
+                    "Klaviyo flow automation across the customer lifecycle",
+                    "Cross-client QA for major email clients"
+                ],
+                "deliverables": ["Email templates", "Klaviyo flows", "Campaign-ready creative handoff"]
+            }
         }
     ],
-    "filterOptions":[
-        {
-            "label":"Web Apps",
-            "color": "blue"
-        },
-        {
-            "label":"AI Integration",
-            "color": "cyan"
-        },
-        {
-            "label":"Marketing Design",
-            "color": "green"
-        },
-        {
-            "label":"Database",
-            "color": "red"
-        }
+    "filterOptions": [
+        { "label": "Web Apps", "color": "blue" },
+        { "label": "Marketing Design", "color": "green" },
+        { "label": "AI Integration", "color": "cyan" },
+        { "label": "Database", "color": "red" }
     ]
 }

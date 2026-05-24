@@ -7,7 +7,7 @@
       },
       {
         "name": "NextJS",
-        "src": "https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1762498501254",
+        "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg",
         "color": "grey"
       },
       {
@@ -19,6 +19,17 @@
         "name": "Figma",
         "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
         "color": "purple"
+      }
+      ,
+      {
+        "name": "Adobe Photoshop",
+        "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg?color=1abcfe",
+        "color": "blue"
+      },
+      {
+        "name": "Klaviyo",
+        "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/klaviyo/klaviyo-original.svg",
+        "color": "green"
       }
     ],
     "languages": [

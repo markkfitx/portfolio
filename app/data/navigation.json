@@ -1,20 +1,10 @@
 {
-    "navigation": [
-        {
-            "label": "Home",
-            "url": "#hero-section"
-        },
-        {
-            "label": "Email",
-            "url": "mailto:markkirby1997@gmail.com"
-        },
-        {
-            "label": "LinkedIn",
-            "url": "https://www.linkedin.com/in/markkirby1997/"
-        },
-        {
-            "label": "About Me",
-            "url": "/about"
-        }
-    ]
+  "navigation": [
+    { "label": "Home", "url": "/#hero-section" },
+    { "label": "About", "url": "/#about-section" },
+    { "label": "Skills", "url": "/#skills-section" },
+    { "label": "Work", "url": "/#works-section" },
+    { "label": "Experience", "url": "/#experience-section" },
+    { "label": "Contact", "url": "/contact" }
+  ]
 }

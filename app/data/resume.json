@@ -1,7 +1,7 @@
 {
     "resume":[
         {
-            "header":"Driving long-term loyalty through personalisation",
+            "header":"Modernizing enterprise platforms with React",
             "title":"Lead Frontend Engineer",
             "company":"Keystone Information Systems",
             "description":"Modernized legacy enterprise platforms by migrating Classic ASP systems to React + TypeScript architectures with REST APIs. Led application architecture, deployment, and security implementation while optimizing CI/CD pipelines and integrating third-party services to expand platform functionality.",
@@ -16,7 +16,7 @@
             "alignment": "start"
         },
         {
-            "header":"Driving long-term loyalty through personalisation",
+            "header":"Lifecycle marketing and Shopify experiences",
             "title":"Marketing Technologist",
             "company":"The Impackt Brand",
             "description":"Designed and developed responsive email campaigns by translating Figma layouts into production-ready HTML templates optimized for cross-client compatibility. Built and deployed lifecycle automation flows in Klaviyo (welcome, abandoned cart, post-purchase, winback), collaborating with marketing and creative teams to ensure brand consistency, performance, and timely campaign launches.",
@@ -31,7 +31,7 @@
             "alignment": "center"
         },
         {
-            "header":"Driving long-term loyalty through personalisation",
+            "header":"Data pipelines that cut manual work in half",
             "title":"Data Analyst",
             "company":"Repco Inc.",
             "description":"Engineered Python and PHP backend solutions supporting real-time OEM/product databases and customer analytics systems. Automated data processing and reporting pipelines, reducing reporting time by 50% while eliminating 75% of manual workflows.",

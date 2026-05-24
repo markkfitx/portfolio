@@ -1,16 +1,19 @@
 {
     "certifications": [
         {
-            "name":"Meta Basic React Certification",
-            "year":"2026"
+            "name": "Meta Front-End Developer Professional Certificate",
+            "year": "2026",
+            "url": "https://www.coursera.org/professional-certificates/meta-front-end-developer"
         },
         {
-            "name":"Meta Advanced React Certification",
-            "year":"2026"
+            "name": "Meta Advanced React",
+            "year": "2026",
+            "url": "https://www.coursera.org/learn/advanced-react"
         },
         {
-            "name":"Foundations of Cybersecurity",
-            "year":"2025"
+            "name": "Google Cybersecurity Certificate — Foundations of Cybersecurity",
+            "year": "2025",
+            "url": "https://www.coursera.org/learn/foundations-of-cybersecurity"
         }
     ]
 }

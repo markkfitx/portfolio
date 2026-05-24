@@ -1,0 +1,22 @@
+{
+  "testimonials": [
+    {
+      "quote": "Mark consistently translates complex requirements into clean, maintainable interfaces. He elevated our frontend standards and mentored the team through the React migration.",
+      "name": "Engineering lead",
+      "role": "Enterprise software",
+      "company": "Keystone Information Systems"
+    },
+    {
+      "quote": "From Figma to inbox, Mark ships emails and automations that look on-brand and perform. He's the bridge between creative and marketing ops we needed.",
+      "name": "Marketing director",
+      "role": "E-commerce & lifecycle",
+      "company": "The Impackt Brand"
+    },
+    {
+      "quote": "He automated reporting pipelines that cut manual work dramatically. Reliable, detail-oriented, and always focused on measurable outcomes.",
+      "name": "Operations manager",
+      "role": "Data & analytics",
+      "company": "Repco Inc."
+    }
+  ]
+}

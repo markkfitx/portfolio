@@ -3,9 +3,9 @@
     {
       "name": "Mark",
       "intro": "Hi <span id='wavingHand'>👋</span> I'm Mark!<br/><span class='font-light! text-white/75'>A Full Stack Software Developer.</span> I build",
-      "email": "mailto:hello@markkirby.dev",
-      "linkedin": "https://www.linkedin.com/in/markkirby",
-      "resumeUrl": "#",
+      "email": "mailto:markkirby1997@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/markkirby7/",
+      "resumeUrl": "/resume.pdf",
       "specialties": ["DEVELOPER", "DESIGNER"],
       "description": "Full Stack Developer & Marketing Technologist"
     }

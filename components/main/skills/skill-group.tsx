@@ -7,9 +7,9 @@ interface contentProps{
 export default function SkillGroup({id, className}: contentProps){
 
     const skills = [
-        {color: "bg-red-600", icon: Database, header: "Backend Development", body:"Experienced in building secure and scalable backend systems working with Python, SQL, REST APIs, and modern server infrastructure using Git and CI/CD workflows."},
-        {color: "bg-blue-600", icon: Laptop, header: "Frontend Development", body:"Passionate about creating UX/UI experiences. Over 8 years of development experience in HTML, CSS, JS, React, and NextJS frameworks."},
-        {color: "bg-green-600", icon: Figma, header: "UX/UI Design", body:"Over 4 years of experience designing responsive layouts and translating Figma concepts into polished campaigns / web applications."}
+        {color: "bg-blue-600", icon: Laptop, header: "Web Development", body: "Web development is the process of building, programming, and optimizing accessible sites..."},
+        {color: "bg-green-600", icon: Figma, header: "UX/UI Design", body: "UX/UI design focuses on creating clear user experiences, responsive layout..."},
+        {color: "bg-red-600", icon: Database, header: "Marketing Automation", body: "Marketing automation focuses on workflows that nurture leads, personalize journeys, and..."}
     ]
     return (
         <div className="w-full gap-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center">

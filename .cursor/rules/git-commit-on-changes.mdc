@@ -1,0 +1,19 @@
+---
+description: Stage and commit code changes after completing implementation work
+alwaysApply: true
+---
+
+# Git commits after changes
+
+When you finish implementing or modifying code in this project:
+
+1. Run `git status` and `git diff` to review what changed.
+2. Stage relevant files with `git add` (never stage `.env`, `.env.local`, or credential files).
+3. Create a commit with a concise message following the repo style (`feat(scope):`, `fix(scope):`, `chore(scope):`).
+4. Run `git status` after the commit to confirm success.
+
+Do this in the same turn as the implementation unless the user explicitly asks for uncommitted changes only.
+
+Do not push unless the user asks.
+
+Follow the user's git safety rules: no amend unless allowed, no force push, no skipping hooks.
