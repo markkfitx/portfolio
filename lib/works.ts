@@ -1,47 +1,47 @@
 import { createPublicClient } from "@/lib/supabase/public"
 import type { Database } from "@/lib/supabase/database.types"
-import { WorkItem, FilterOption } from "./works-shared"
+import type { FilterOption, WorkItem } from "./works-shared"
 
-type CaseStudyRow = Database["public"]["Tables"]["Works"]["Row"]
+type WorkRow = Database["public"]["Tables"]["Works"]["Row"]
 type FilterOptionRow = Database["public"]["Tables"]["FilterOptions"]["Row"]
 
-function rowToWorkItem(row: CaseStudyRow): WorkItem {
-  const year = row.created_at
-    ? String(new Date(row.created_at).getFullYear())
-    : ""
+function rowToFilterOption(row: FilterOptionRow): FilterOption {
+  return {
+    label: row.label,
+    color: row.color,
+    code: row.code,
+  }
+}
+
+function rowToWorkItem(row: WorkRow, filterOptions: FilterOption[]): WorkItem {
+  const primaryCategory = row.category?.[0]
+  const color =
+    filterOptions.find((o) => o.code === primaryCategory)?.color ?? "blue"
+
+  const year =
+    row.Year != null
+      ? String(row.Year)
+      : row.created_at
+        ? String(new Date(row.created_at).getFullYear())
+        : ""
 
   return {
     slug: row.slug ?? row.id,
     title: row.title,
     subTitle: row.subtitle ?? "",
     year,
-    img: row.image_url ?? "",
+    img: row.image_url ?? "/img/smartphone-dashboard-view.png",
     link: row.live_url ?? row.github_url ?? "#",
-    color: "blue",
+    color,
     categories: row.category ?? [],
     relevantSkills: row.relevant_skills ?? [],
     caseStudy: {
       overview: row.description,
-      role: "",
-      highlights: [],
+      role: row.subtitle ?? "",
+      highlights: row.relevant_skills ?? [],
       deliverables: [],
     },
   }
-}
-
-function rowToFilterOption(row: FilterOptionRow): FilterOption {
-  return {
-    label: row.label ?? "",
-    color: row.color ?? "",
-    code: row.code ?? 0,
-  }
-}
-
-export async function getWorks(): Promise<WorkItem[]> {
-  const supabase = createPublicClient()
-  const { data, error } = await supabase.from("Works").select("*")
-  if (error) throw error
-  return (data ?? []).map(rowToWorkItem)
 }
 
 export async function getFilterOptions(): Promise<FilterOption[]> {
@@ -54,26 +54,35 @@ export async function getFilterOptions(): Promise<FilterOption[]> {
   return (data ?? []).map(rowToFilterOption)
 }
 
+export async function getWorks(): Promise<WorkItem[]> {
+  const supabase = createPublicClient()
+  const [worksResult, filterOptions] = await Promise.all([
+    supabase.from("Works").select("*").order("created_at", { ascending: false }),
+    getFilterOptions(),
+  ])
+
+  if (worksResult.error) throw worksResult.error
+  return (worksResult.data ?? []).map((row) =>
+    rowToWorkItem(row, filterOptions)
+  )
+}
+
 export async function getWorkBySlug(slug: string): Promise<WorkItem | undefined> {
   const supabase = createPublicClient()
+  const [workResult, filterOptions] = await Promise.all([
+    supabase.from("Works").select("*").eq("slug", slug).maybeSingle(),
+    getFilterOptions(),
+  ])
 
-  const { data, error } = await supabase
-    .from("Works")
-    .select("*")
-    .eq("slug", slug)
-    .maybeSingle()
+  if (workResult.error) throw workResult.error
+  if (!workResult.data) return undefined
 
-  if (error) throw error
-  if (!data) return undefined
-
-  return rowToWorkItem(data)
+  return rowToWorkItem(workResult.data, filterOptions)
 }
 
 export async function getWorkSlugs(): Promise<string[]> {
   const supabase = createPublicClient()
-
   const { data, error } = await supabase.from("Works").select("slug")
-
   if (error) throw error
 
   return (data ?? [])

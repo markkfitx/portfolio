@@ -7,10 +7,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import type { FilterOption } from "@/lib/works-shared"
+import { FILTER_ALL } from "@/lib/works-shared"
 import clsx from "clsx"
 import { Button } from "@/components/ui/button"
 import { GalleryHorizontalEnd, Laptop, ListFilter } from "lucide-react"
-import { FILTER_ALL } from "@/lib/works-shared"
 
 const badgeColorMap: Record<string, string> = {
   blue: "bg-blue-800/60 text-blue-100 border-blue-500/20 hover:border-blue-500/60",
@@ -25,10 +25,18 @@ interface FilterFormProps {
   id: string
   title: string
   className?: string
-  activeFilter: string | null
-  onFilterChange: (filter: string | null) => void
+  activeFilter: number | null
+  onFilterChange: (code: number | null) => void
   counts: Record<string, number>
   filterOptions: FilterOption[]
+}
+
+function activeLabel(
+  code: number | null,
+  options: FilterOption[]
+): string {
+  if (code == null || code === FILTER_ALL.code) return FILTER_ALL.label
+  return options.find((o) => o.code === code)?.label ?? FILTER_ALL.label
 }
 
 export default function FilterForm({
@@ -40,26 +48,30 @@ export default function FilterForm({
   counts,
   filterOptions,
 }: FilterFormProps) {
-  const options = filterOptions
-  const activeLabel = activeFilter ?? FILTER_ALL[0]
+  const label = activeLabel(activeFilter, filterOptions)
 
   function FilterButton({
-    label,
+    optionLabel,
     color,
     count,
     code,
   }: {
-    label: string
+    optionLabel: string
     color: string
     count: number
     code: number
   }) {
-    const isActive = activeLabel === label
+    const isActive =
+      activeFilter === code ||
+      (code === FILTER_ALL.code && activeFilter == null)
+
     return (
       <Button
         type="button"
         variant="default"
-        onClick={() => onFilterChange(code === FILTER_ALL[1] ? null : code as unknown as string)}
+        onClick={() =>
+          onFilterChange(code === FILTER_ALL.code ? null : code)
+        }
         aria-pressed={isActive}
         className={clsx(
           "py-0 px-3 hover:cursor-pointer text-xs transition-opacity",
@@ -68,12 +80,12 @@ export default function FilterForm({
           isActive && "ring-1 ring-white/30"
         )}
       >
-        {code === FILTER_ALL[1] ? (
+        {code === FILTER_ALL.code ? (
           <GalleryHorizontalEnd className="mr-1 size-3.5" />
         ) : (
           <Laptop className="mr-1 size-3.5" />
         )}
-        {label}
+        {optionLabel}
         <span className="ml-1 tabular-nums opacity-70">({count})</span>
       </Button>
     )
@@ -95,7 +107,7 @@ export default function FilterForm({
               variant="default"
             >
               <ListFilter className="mr-2 h-4 w-4" />
-              {activeLabel}
+              {label}
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
@@ -107,13 +119,13 @@ export default function FilterForm({
               className="cursor-pointer rounded-xl px-3 py-2.5 text-sm text-white/85 hover:bg-white/10 focus:bg-white/10 focus:text-white"
               onClick={() => onFilterChange(null)}
             >
-              {FILTER_ALL[0]} ({counts[FILTER_ALL[0]] ?? 0})
+              {FILTER_ALL.label} ({counts[FILTER_ALL.label] ?? 0})
             </DropdownMenuItem>
-            {options.map((item, idx) => (
+            {filterOptions.map((item, idx) => (
               <DropdownMenuItem
                 key={`${id}-dropdown-item-${idx}`}
                 className="cursor-pointer rounded-xl px-3 py-2.5 text-sm text-white/85 hover:bg-white/10 focus:bg-white/10 focus:text-white"
-                onClick={() => onFilterChange(item.label)}
+                onClick={() => onFilterChange(item.code)}
               >
                 {item.label} ({counts[item.label] ?? 0})
               </DropdownMenuItem>
@@ -123,15 +135,15 @@ export default function FilterForm({
       </div>
       <div className="hidden flex-row flex-wrap items-center gap-2 md:flex">
         <FilterButton
-          label={FILTER_ALL[0] as string}
+          optionLabel={FILTER_ALL.label}
           color="white"
-          count={counts[FILTER_ALL[0]] ?? 0}
-          code={FILTER_ALL[1] as number}
+          count={counts[FILTER_ALL.label] ?? 0}
+          code={FILTER_ALL.code}
         />
-        {options.map((item, idx) => (
+        {filterOptions.map((item, idx) => (
           <FilterButton
             key={`${id}-badge-${idx}`}
-            label={item.label}
+            optionLabel={item.label}
             color={item.color}
             count={counts[item.label] ?? 0}
             code={item.code}

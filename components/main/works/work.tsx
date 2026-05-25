@@ -27,7 +27,7 @@ export default async function Work({ id, className }: contentProps) {
       <SectionHero
         id={`${id}-section-hero`}
         title="My Work"
-        description="I've worked on a variety of projects, from small personal websites to large scale enterprise applications."
+        description="Projects loaded from the portfolio database."
         alignment="start"
         badgeDesc="Recent Projects"
         className="hidden"
@@ -40,11 +40,18 @@ export default async function Work({ id, className }: contentProps) {
         <span className="text-emerald-400">UX/UI across platforms</span> — Featured
         projects I&apos;m proud of.
       </SectionSubHeading>
-      <WorkGrid
-        sectionId={id}
-        works={works}
-        filterOptions={filterOptions}
-      />
+      {works.length === 0 ? (
+        <p className="text-sm text-white/60">
+          No projects published yet. Add rows to the{" "}
+          <code className="text-emerald-400/90">Works</code> table in Supabase.
+        </p>
+      ) : (
+        <WorkGrid
+          sectionId={id}
+          works={works}
+          filterOptions={filterOptions}
+        />
+      )}
     </Section>
   )
 }

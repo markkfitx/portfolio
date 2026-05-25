@@ -17,10 +17,10 @@ export default function WorkGrid({
   works,
   filterOptions,
 }: WorkGridProps) {
-  const [activeFilter, setActiveFilter] = useState<string | null>(null)
+  const [activeFilter, setActiveFilter] = useState<number | null>(null)
 
   const filteredWorks = useMemo(
-    () => filterWorks(works, activeFilter as unknown as number | null),
+    () => filterWorks(works, activeFilter),
     [works, activeFilter]
   )
 
@@ -47,7 +47,7 @@ export default function WorkGrid({
             onClick={() => setActiveFilter(null)}
             className="text-emerald-400 underline-offset-2 hover:underline"
           >
-            {FILTER_ALL}
+            {FILTER_ALL.label}
           </button>
           .
         </p>
