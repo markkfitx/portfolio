@@ -20,49 +20,53 @@ export default function CaseStudy({ work }: { work: WorkWithDisplay }) {
         Back to work
       </Link>
 
-      <header className="flex flex-col gap-4 border-b border-white/10 pb-8">
-        <p className="section-kicker">
+      <header className="flex flex-col gap-4">
+        <p className="text-xs font-medium uppercase tracking-[0.28em] text-emerald-500">
           Case study{year ? ` · ${year}` : ""}
         </p>
-        <h1 className="section-title font-heading text-4xl font-bold text-white md:text-5xl">
+        <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl">
           {work.title}
         </h1>
         {work.subtitle ? (
           <p className="text-lg text-white/70">{work.subtitle}</p>
         ) : null}
         {skills.length > 0 ? (
-          <ul className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (
-              <li
+              <span
                 key={skill}
                 className="rounded-full border border-emerald-300/25 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-200"
               >
                 {skill}
-              </li>
+              </span>
             ))}
-          </ul>
+          </div>
         ) : null}
       </header>
 
-      <div className="relative mt-10 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-[#E8ECF0] ring-1 ring-white/10">
+      <div className="relative mt-10 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-[#E2E8F0] ring-1 ring-white/10">
         <Image
           src={workImageUrl(work)}
           alt={work.title}
           fill
-          className="object-cover object-center"
+          className="object-contain object-center p-6"
           sizes="(min-width: 768px) 768px, 100vw"
           priority
         />
       </div>
 
-      {work.description ? (
-        <div className="case-study-prose mt-12 flex flex-col gap-4">
-          <h2>Overview</h2>
-          <p className="text-lg text-white/80">{work.description}</p>
-        </div>
-      ) : null}
+      <div className="mt-12 flex flex-col gap-10 text-white/80">
+        {work.description ? (
+          <section>
+            <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-white/45">
+              Overview
+            </h2>
+            <p className="text-lg leading-relaxed">{work.description}</p>
+          </section>
+        ) : null}
+      </div>
 
-      <div className="mt-12 flex flex-wrap gap-3 border-t border-white/10 pt-8">
+      <div className="mt-12 flex flex-wrap gap-3">
         {externalLink ? (
           <Button
             asChild

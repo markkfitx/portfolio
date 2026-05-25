@@ -4,7 +4,7 @@ import { useMemo, useState } from "react"
 import WorkBox from "@/components/main/works/work-box"
 import FilterForm from "@/components/main/works/filter-form"
 import type { FilterOptionRow, WorkWithDisplay } from "@/lib/works"
-import { FILTER_ALL, filterWorks, getFilterCounts } from "@/lib/works"
+import { FILTER_ALL, filterWorks, getFilterCounts, workSlug } from "@/lib/works"
 
 interface WorkGridProps {
   sectionId: string
@@ -30,7 +30,7 @@ export default function WorkGrid({
   )
 
   return (
-    <div className="flex w-full flex-col gap-8">
+    <>
       <FilterForm
         id={`${sectionId}-filter-form`}
         title="Filter projects"
@@ -40,7 +40,7 @@ export default function WorkGrid({
         filterOptions={filterOptions}
       />
       {filteredWorks.length === 0 ? (
-        <p className="text-sm text-white/60">
+        <p className="z-10 text-sm text-white/60">
           No projects in this category yet. Try{" "}
           <button
             type="button"
@@ -52,17 +52,17 @@ export default function WorkGrid({
           .
         </p>
       ) : (
-        <div className="works-grid z-10">
-          {filteredWorks.map((work) => (
+        <div className="works-grid z-10 grid w-full gap-5">
+          {filteredWorks.map((work, idx) => (
             <WorkBox
               key={work.id}
-              id={`${sectionId}-box-${work.slug ?? work.id}`}
+              id={`${sectionId}-box-${workSlug(work)}`}
               work={work}
-              featured={work.featured}
+              className={idx % 2 > 0 ? "relative top-7 md:top-15" : ""}
             />
           ))}
         </div>
       )}
-    </div>
+    </>
   )
 }
