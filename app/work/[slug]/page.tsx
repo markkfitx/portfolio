@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   return createPageMetadata({
     title: `${work.title} | Mark Kirby`,
-    description: work.caseStudy.overview,
+    description: work.description,
     path: `/work/${slug}`,
   })
 }

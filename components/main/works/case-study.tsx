@@ -1,15 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, ExternalLink } from "lucide-react"
-import type { WorkItem } from "@/lib/works-shared"
+import type { WorkWithDisplay } from "@/lib/works"
+import { workImageUrl, workPrimaryLink, workYear } from "@/lib/works"
 import { Button } from "@/components/ui/button"
 
-export default function CaseStudy({ work }: { work: WorkItem }) {
-  const { caseStudy } = work
-  const hasRole = caseStudy.role.length > 0
-  const hasHighlights = caseStudy.highlights.length > 0
-  const hasDeliverables = caseStudy.deliverables.length > 0
-  const externalLink = work.link !== "#"
+export default function CaseStudy({ work }: { work: WorkWithDisplay }) {
+  const year = workYear(work)
+  const skills = work.relevant_skills ?? []
+  const externalLink = workPrimaryLink(work) !== "#"
 
   return (
     <article className="w-full max-w-3xl">
@@ -23,17 +22,17 @@ export default function CaseStudy({ work }: { work: WorkItem }) {
 
       <header className="flex flex-col gap-4">
         <p className="text-xs font-medium uppercase tracking-[0.28em] text-emerald-500">
-          Case study{work.year ? ` · ${work.year}` : ""}
+          Case study{year ? ` · ${year}` : ""}
         </p>
         <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl">
           {work.title}
         </h1>
-        {work.subTitle ? (
-          <p className="text-lg text-white/70">{work.subTitle}</p>
+        {work.subtitle ? (
+          <p className="text-lg text-white/70">{work.subtitle}</p>
         ) : null}
-        {work.relevantSkills.length > 0 ? (
+        {skills.length > 0 ? (
           <div className="flex flex-wrap gap-2">
-            {work.relevantSkills.map((skill) => (
+            {skills.map((skill) => (
               <span
                 key={skill}
                 className="rounded-full border border-emerald-300/25 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-200"
@@ -45,68 +44,24 @@ export default function CaseStudy({ work }: { work: WorkItem }) {
         ) : null}
       </header>
 
-      {work.img ? (
-        <div className="relative mt-10 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-[#E2E8F0] ring-1 ring-white/10">
-          <Image
-            src={work.img}
-            alt={work.title}
-            fill
-            className="object-contain object-center p-6"
-            sizes="(min-width: 768px) 768px, 100vw"
-            priority
-          />
-        </div>
-      ) : null}
+      <div className="relative mt-10 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-[#E2E8F0] ring-1 ring-white/10">
+        <Image
+          src={workImageUrl(work)}
+          alt={work.title}
+          fill
+          className="object-contain object-center p-6"
+          sizes="(min-width: 768px) 768px, 100vw"
+          priority
+        />
+      </div>
 
       <div className="mt-12 flex flex-col gap-10 text-white/80">
-        {caseStudy.overview ? (
+        {work.description ? (
           <section>
             <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-white/45">
               Overview
             </h2>
-            <p className="text-lg leading-relaxed">{caseStudy.overview}</p>
-          </section>
-        ) : null}
-
-        {hasRole ? (
-          <section>
-            <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-white/45">
-              Role
-            </h2>
-            <p className="text-lg text-emerald-400/90">{caseStudy.role}</p>
-          </section>
-        ) : null}
-
-        {hasHighlights ? (
-          <section>
-            <h2 className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-white/45">
-              Highlights
-            </h2>
-            <ul className="flex list-disc flex-col gap-2 pl-5 marker:text-emerald-500">
-              {caseStudy.highlights.map((item) => (
-                <li key={item} className="leading-relaxed">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
-        ) : null}
-
-        {hasDeliverables ? (
-          <section>
-            <h2 className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-white/45">
-              Deliverables
-            </h2>
-            <ul className="flex flex-col gap-2">
-              {caseStudy.deliverables.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <p className="text-lg leading-relaxed">{work.description}</p>
           </section>
         ) : null}
       </div>
@@ -117,7 +72,11 @@ export default function CaseStudy({ work }: { work: WorkItem }) {
             asChild
             className="rounded-full border border-emerald-400/70 bg-emerald-400 text-neutral-950 hover:bg-emerald-300"
           >
-            <a href={work.link} target="_blank" rel="noopener noreferrer">
+            <a
+              href={workPrimaryLink(work)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Visit live project
               <ExternalLink className="ml-2 size-4" aria-hidden />
             </a>

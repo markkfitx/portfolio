@@ -6,8 +6,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import type { FilterOption } from "@/lib/works-shared"
-import { FILTER_ALL } from "@/lib/works-shared"
+import type { FilterOptionRow } from "@/lib/works"
+import { FILTER_ALL } from "@/lib/works"
 import clsx from "clsx"
 import { Button } from "@/components/ui/button"
 import { GalleryHorizontalEnd, Laptop, ListFilter } from "lucide-react"
@@ -28,12 +28,12 @@ interface FilterFormProps {
   activeFilter: number | null
   onFilterChange: (code: number | null) => void
   counts: Record<string, number>
-  filterOptions: FilterOption[]
+  filterOptions: FilterOptionRow[]
 }
 
 function activeLabel(
   code: number | null,
-  options: FilterOption[]
+  options: FilterOptionRow[]
 ): string {
   if (code == null || code === FILTER_ALL.code) return FILTER_ALL.label
   return options.find((o) => o.code === code)?.label ?? FILTER_ALL.label
