@@ -2,6 +2,7 @@ import Section from "@/components/section-wrapper"
 import SectionHeader from "@/components/section-header"
 import { getTestimonials, type Testimonial } from "@/lib/testimonials"
 import clsx from "clsx"
+import SectionSubHeading from "@/components/section-sub-heading"
 
 interface TestimonialsProps {
   id: string
@@ -39,14 +40,18 @@ export default async function Testimonials({ id, className }: TestimonialsProps)
     >
       <SectionHeader
         kicker="Testimonials"
-        title={
-          <>
-            What collaborators <span className="text-emerald-400">say</span>
-          </>
-        }
-        align="center"
-        className="max-w-[600px]"
+        title="What collaborators say"
+        align="start"
+        className="hidden"
       />
+      <SectionSubHeading
+        id={`${id}-subheading`}
+        alignment="start"
+        className="max-w-[500px] text-white"
+      >
+        <span className="text-emerald-400">What collaborators say</span> — Featured
+        testimonials from my collaborators.
+      </SectionSubHeading>
 
       {testimonials.length === 0 ? (
         <p className="w-full max-w-xl text-center text-sm text-white/50">

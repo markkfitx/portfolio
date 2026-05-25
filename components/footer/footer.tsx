@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
-import navData from "@/app/data/navigation.json"
+import { mainNavLinks } from "@/lib/navigation"
 import { siteConfig, mailtoHref } from "@/lib/site"
 
 const connectLinks = [
@@ -56,7 +56,7 @@ export default function Footer() {
               Explore
             </p>
             <ul className="flex flex-col gap-2">
-              {navData.navigation.map((item) => (
+              {mainNavLinks.map((item) => (
                 <li key={item.label}>
                   <FooterLink href={item.url}>{item.label}</FooterLink>
                 </li>

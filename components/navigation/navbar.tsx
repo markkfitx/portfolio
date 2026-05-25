@@ -1,31 +1,28 @@
-"use client" 
-import NavItem from "@/components/navigation/navItem"
-import data from "../../app/data/navigation.json"
+"use client"
+
+import NavItem from "@/components/navigation/nav-item"
+import { mainNavLinks } from "@/lib/navigation"
 import clsx from "clsx"
-import {
-  NavigationMenu,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu"
 
-interface contentProps{
-    id:string,
-    className:string
+interface NavBarProps {
+  id?: string
+  className?: string
 }
-export default function NavBar({id, className}: contentProps){
 
-    return(
-        <NavigationMenu id={id} className={clsx(`relative lg:block hidden`,className)}>
-            <NavigationMenuList id={`${id}-menu-list`} className="w-fit flex flex-row justify-center items-start gap-5 z-10">
-                {data.navigation.map((item,idx) =>(
-                    <NavigationMenuLink key={`${id}-menu-list-item-${idx}`} asChild>
-                        <NavItem idx={idx} label={item.label} url={item.url}/>
-                    </NavigationMenuLink>
-                    )
-                    /**return <NavItem key={`${id}-menu-list-item-${idx}`} idx={idx} label={item.label} url={item.url}/>**/
-                )}
-            </NavigationMenuList>
-        </NavigationMenu>
-    );
-
+export default function NavBar({ id = "navigation-menu", className }: NavBarProps) {
+  return (
+    <nav
+      id={id}
+      aria-label="Main"
+      className={clsx("hidden lg:block", className)}
+    >
+      <ul className="flex flex-row flex-wrap items-center justify-center gap-1">
+        {mainNavLinks.map((item) => (
+          <li key={item.label}>
+            <NavItem label={item.label} url={item.url} />
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
 }

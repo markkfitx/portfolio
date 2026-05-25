@@ -1,69 +1,41 @@
-import MobileNavBar from "../navigation/mobile-navbar"
-import NavBar from "../navigation/navbar"
-import GitHub from "@/public/img/github.svg"
-import LinkedIn from "@/public/img/linkedin.svg"
-import Email from "@/public/img/email.svg"
 import Link from "next/link"
-import Image from "next/image"
 import clsx from "clsx"
-import { mailtoHref, siteConfig } from "@/lib/site"
+import MobileNavBar from "@/components/navigation/mobile-navbar"
+import NavBar from "@/components/navigation/navbar"
+import SocialLinks from "@/components/navigation/social-links"
+import { siteConfig } from "@/lib/site"
 
-interface contentProps {
+interface HeaderProps {
   className?: string
   id: string
 }
 
-export default function Header({ id, className }: contentProps) {
+export default function Header({ id, className }: HeaderProps) {
   return (
-    <div
+    <header
       id={id}
-      className={clsx("w-full lg:pt-8 md:pt-6 pt-4", className)}
+      className={clsx(
+        "sticky top-0 z-50 w-full border-b border-white/5 bg-mist-950/80 backdrop-blur-md",
+        className
+      )}
     >
-      <div className="relative z-10 mx-auto max-w-[1440px] w-full px-4 md:px-6 lg:px-8 flex flex-row flex-nowrap gap-4 items-center justify-between">
-        <div className="md:hidden z-10">
-          <MobileNavBar id="mobile-navigation-bar-dropdown" />
-        </div>
-        <NavBar id="navigation-menu" className="sticky z-10" />
-        <div className="flex items-center gap-4 z-10">
-          <Link href={mailtoHref} aria-label="Email Mark Kirby">
-            <Image
-              width={20}
-              height={20}
-              className="opacity-80 transition-opacity hover:opacity-100"
-              alt=""
-              src={Email}
-            />
-          </Link>
+      <div className="mx-auto flex h-14 max-w-[1440px] items-center gap-4 px-4 md:h-16 md:px-6 lg:px-8">
+        <div className="flex min-w-0 items-center gap-3">
+          <MobileNavBar id="mobile-navigation" />
           <Link
-            href={siteConfig.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
+            href="/"
+            className="font-heading truncate text-sm font-semibold tracking-tight text-white transition-colors hover:text-emerald-400 sm:text-base"
           >
-            <Image
-              width={20}
-              height={20}
-              className="opacity-80 transition-opacity hover:opacity-100"
-              alt=""
-              src={LinkedIn}
-            />
-          </Link>
-          <Link
-            href={siteConfig.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-          >
-            <Image
-              width={20}
-              height={20}
-              className="opacity-80 transition-opacity hover:opacity-100"
-              alt="GitHub"
-              src={GitHub}
-            />
+            {siteConfig.name}
           </Link>
         </div>
+
+        <div className="flex flex-1 justify-center">
+          <NavBar id="desktop-navigation" />
+        </div>
+
+        <SocialLinks />
       </div>
-    </div>
+    </header>
   )
 }
