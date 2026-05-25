@@ -2,7 +2,7 @@ import { createPublicClient } from "@/lib/supabase/public"
 import type { Database } from "@/lib/supabase/database.types"
 import { WorkItem, FilterOption } from "./works-shared"
 
-type CaseStudyRow = Database["public"]["Tables"]["works"]["Row"]
+type CaseStudyRow = Database["public"]["Tables"]["Works"]["Row"]
 type FilterOptionRow = Database["public"]["Tables"]["FilterOptions"]["Row"]
 
 function rowToWorkItem(row: CaseStudyRow): WorkItem {
@@ -39,7 +39,7 @@ function rowToFilterOption(row: FilterOptionRow): FilterOption {
 
 export async function getWorks(): Promise<WorkItem[]> {
   const supabase = createPublicClient()
-  const { data, error } = await supabase.from("works").select("*")
+  const { data, error } = await supabase.from("Works").select("*")
   if (error) throw error
   return (data ?? []).map(rowToWorkItem)
 }
@@ -58,7 +58,7 @@ export async function getWorkBySlug(slug: string): Promise<WorkItem | undefined>
   const supabase = createPublicClient()
 
   const { data, error } = await supabase
-    .from("works")
+    .from("Works")
     .select("*")
     .eq("slug", slug)
     .maybeSingle()
@@ -72,7 +72,7 @@ export async function getWorkBySlug(slug: string): Promise<WorkItem | undefined>
 export async function getWorkSlugs(): Promise<string[]> {
   const supabase = createPublicClient()
 
-  const { data, error } = await supabase.from("works").select("slug")
+  const { data, error } = await supabase.from("Works").select("slug")
 
   if (error) throw error
 

@@ -63,7 +63,7 @@ export type Database = {
         }
         Relationships: []
       }
-      testimonials: {
+      Testimonials: {
         Row: {
           company: string
           created_at: string
@@ -90,9 +90,9 @@ export type Database = {
         }
         Relationships: []
       }
-      works: {
+      Works: {
         Row: {
-          category: string[] | null
+          category: number[] | null
           created_at: string
           description: string
           featured: boolean
@@ -107,7 +107,7 @@ export type Database = {
           Year: number | null
         }
         Insert: {
-          category?: string[] | null
+          category?: number[] | null
           created_at?: string
           description: string
           featured: boolean
@@ -122,7 +122,7 @@ export type Database = {
           Year?: number | null
         }
         Update: {
-          category?: string[] | null
+          category?: number[] | null
           created_at?: string
           description?: string
           featured?: boolean
