@@ -12,12 +12,12 @@ export default function Home() {
     <>
       <Hero id="hero-section" className="z-10" />
       <About id="about-section" className="z-10" />
-      <Skills id="skills-section" className="py-24 md:py-36" />
-      <Work id="works-section" className="py-24 md:py-36" />
+      <Skills id="skills-section" />
+      <Work id="works-section" />
       {/* <Experience id="experience-section" className="" /> */}
       <Testimonials id="testimonials-section" />
       <ContactCta id="contact-cta-section" />
-      <Awards id="awards-section" className="py-24 md:py-36" />
+      <Awards id="awards-section" />
     </>
   );
 }

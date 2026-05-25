@@ -279,6 +279,68 @@ h2.experience-case-headline {
   letter-spacing: 0.35em;
 }
 
-.works-grid{
-  grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 30%, 400px), 1fr))
+/* Section rhythm — shared across home sections */
+.section-kicker {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: rgb(16 185 129);
+}
+
+.section-title {
+  letter-spacing: -0.02em;
+  line-height: 1.15 !important;
+}
+
+.section-lead {
+  letter-spacing: 0.02em;
+  line-height: 1.65 !important;
+}
+
+.section-shell {
+  width: 100%;
+}
+
+/* Work project grid */
+.works-grid {
+  display: grid;
+  width: 100%;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .works-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .works-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .works-grid .work-card--featured {
+    grid-column: span 2;
+  }
+}
+
+/* Case study prose */
+.case-study-prose h2 {
+  font-size: 0.75rem !important;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 1.4 !important;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.45);
+}
+
+.case-study-prose p {
+  letter-spacing: 0.02em;
+  line-height: 1.75 !important;
 }
