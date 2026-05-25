@@ -1,5 +1,5 @@
 import Section from "@/components/section-wrapper"
-import SectionSubHeading from "@/components/section-sub-heading"
+import SectionHeader from "@/components/section-header"
 import { getTestimonials, type Testimonial } from "@/lib/testimonials"
 import clsx from "clsx"
 
@@ -31,18 +31,22 @@ export default async function Testimonials({ id, className }: TestimonialsProps)
   return (
     <Section
       id={id}
+      align="center"
       className={clsx(
         "z-10 bg-linear-to-t from-neutral-900 to-black py-24 md:py-36",
         className
       )}
     >
-      <SectionSubHeading
-        id={`${id}-subheading`}
-        alignment="center"
-        className="mb-12 md:max-w-[600px] text-white"
-      >
-        What collaborators <span className="text-emerald-400">say</span>
-      </SectionSubHeading>
+      <SectionHeader
+        kicker="Testimonials"
+        title={
+          <>
+            What collaborators <span className="text-emerald-400">say</span>
+          </>
+        }
+        align="center"
+        className="max-w-[600px]"
+      />
 
       {testimonials.length === 0 ? (
         <p className="w-full text-center text-sm text-white/50">

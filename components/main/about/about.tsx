@@ -42,7 +42,7 @@ export default function About({ id, className }: ContentProps) {
           </h2>
         </header>
 
-        <h3 className="text-center text-[1.05rem] font-semibold leading-[1.75] text-white md:text-2xl md:leading-[1.65]">
+        <h3 className="text-center text-[1.05rem] font-medium leading-[1.75] text-white md:text-2xl md:leading-[1.65]">
           Hi,{" "}
           <span className="text-emerald-500">I am</span>{" "}
           <span className="relative mx-0.5 inline-block size-12 align-[-0.35em] overflow-hidden rounded-full ring-2 ring-white shadow-sm md:size-16">

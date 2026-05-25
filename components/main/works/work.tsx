@@ -35,7 +35,7 @@ export default async function Work({ id, className }: contentProps) {
       <SectionSubHeading
         id={`${id}-subheading`}
         alignment="start"
-        className="md:max-w-[500px] text-white"
+        className="max-w-[500px] text-white"
       >
         <span className="text-emerald-400">UX/UI across platforms</span> — Featured
         projects I&apos;m proud of.

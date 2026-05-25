@@ -1,51 +1,75 @@
 import clsx from "clsx"
-interface contentProps{
-    id:string,
-    alignment:"start" | "center" | "end",
-    className?:string,
-    flex?:"row" | "col",
-    children?: React.ReactNode
+
+export type SectionAlign = "start" | "center" | "end"
+
+interface SectionSubHeadingProps {
+  id: string
+  alignment: SectionAlign
+  className?: string
+  flex?: "row" | "col"
+  children?: React.ReactNode
 }
-export default function SectionSubHeading({id,alignment,className, flex, children} : contentProps){
-        const alignmentStyles = flex === "row" ? {
-            start: {
-                container: "justify-start" ,
-                text: "text-left",
-            },
-            center: {
-                container: "justify-center",
-                text: "text-center",
-            },
-            end: {
-                container: "justify-end",
-                text: "text-right",
-            },
-        } : {
-            start: {
-                container: "items-start" ,
-                text: "text-left",
-            },
-            center: {
-                container: "items-center",
-                text: "text-center",
-            },
-            end: {
-                container: "items-end",
-                text: "text-right",
-            },
-        } as const
-    return (
-        <div
-          id={id}
-          className={clsx(
-            "w-full flex flex-col mb-12 z-10 md:max-w-[650px]",
-            alignmentStyles[alignment].container,
-            className
-            )}
-          >
-            <h3 className={clsx(`font-medium`,alignmentStyles[alignment].text)}>
-              {children}
-            </h3>
-        </div>
-    )
+
+const colAlign: Record<
+  SectionAlign,
+  { root: string; text: string }
+> = {
+  start: {
+    root: "self-start items-start",
+    text: "text-left",
+  },
+  center: {
+    root: "self-center items-center mx-auto",
+    text: "text-center",
+  },
+  end: {
+    root: "self-end items-end ml-auto",
+    text: "text-right",
+  },
+}
+
+const rowAlign: Record<SectionAlign, { root: string; text: string }> = {
+  start: {
+    root: "self-stretch justify-start",
+    text: "text-left",
+  },
+  center: {
+    root: "self-stretch justify-center",
+    text: "text-center",
+  },
+  end: {
+    root: "self-stretch justify-end",
+    text: "text-right",
+  },
+}
+
+export default function SectionSubHeading({
+  id,
+  alignment,
+  className,
+  flex = "col",
+  children,
+}: SectionSubHeadingProps) {
+  const styles = flex === "row" ? rowAlign[alignment] : colAlign[alignment]
+
+  return (
+    <div
+      id={id}
+      className={clsx(
+        "mb-12 flex w-full max-w-[650px] flex-col gap-0 z-10",
+        flex === "row" && "max-w-none flex-row",
+        styles.root,
+        className
+      )}
+    >
+      <h3
+        className={clsx(
+          "text-balance font-medium text-white/90 md:text-lg",
+          styles.text
+        )}
+      >
+        {children}
+      </h3>
+    </div>
+  )
 }
