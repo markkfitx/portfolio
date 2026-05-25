@@ -279,8 +279,30 @@
   }
 }
 
+/* Animated character — idle float on desktop+ */
+.hero-character-float {
+  will-change: transform;
+  animation: hero-character-float 10s ease-in-out infinite;
+}
+
+@keyframes hero-character-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
 @media (max-width: 767px) {
   .hero-preview-float {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .hero-character-float {
     animation: none;
     transform: none;
     will-change: auto;
@@ -289,6 +311,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-preview-float {
+    animation: none;
+    transform: none;
+  }
+
+  .hero-character-float {
     animation: none;
     transform: none;
   }
