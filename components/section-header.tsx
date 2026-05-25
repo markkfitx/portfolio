@@ -3,7 +3,7 @@ import type { SectionAlign } from "@/components/section-sub-heading"
 
 interface SectionHeaderProps {
   kicker: string
-  title: React.ReactNode
+  title?: React.ReactNode
   lead?: React.ReactNode
   align?: SectionAlign
   className?: string

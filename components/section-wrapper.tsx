@@ -1,12 +1,18 @@
 import clsx from "clsx"
 import type { SectionAlign } from "@/components/section-sub-heading"
 
-interface componentProps {
+interface SectionProps {
   id: string
   children: React.ReactNode
+  /**
+   * Styles for the outer `<section>` (background, padding, borders).
+   * Not a flex container — do not use items-* here; use `align` instead.
+   */
   className?: string
-  /** Aligns section children on the cross axis (horizontal in a column layout). */
+  /** Horizontal alignment of children in the inner flex column. */
   align?: SectionAlign
+  /** Vertical distribution of children (e.g. center 404 content in min-height sections). */
+  justify?: "start" | "center" | "end"
 }
 
 const sectionAlignClass: Record<SectionAlign, string> = {
@@ -15,14 +21,27 @@ const sectionAlignClass: Record<SectionAlign, string> = {
   end: "items-end",
 }
 
-function Section({ id, children, className, align = "start" }: componentProps) {
+const sectionJustifyClass = {
+  start: "justify-start",
+  center: "justify-center",
+  end: "justify-end",
+} as const
+
+function Section({
+  id,
+  children,
+  className,
+  align = "start",
+  justify = "start",
+}: SectionProps) {
   return (
     <section id={id} className={clsx("w-full", className)}>
       <div
         className={clsx(
-          "mx-auto flex flex-col justify-start px-4 md:px-6 lg:px-8 xl:px-24",
+          "mx-auto flex w-full flex-col px-4 md:px-6 lg:px-8 xl:px-24",
           id !== "hero-section" && "max-w-[1440px]",
-          sectionAlignClass[align]
+          sectionAlignClass[align],
+          sectionJustifyClass[justify]
         )}
       >
         {children}

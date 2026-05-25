@@ -13,7 +13,11 @@ interface contentProps{
 
 export default function Skills({id, className}: contentProps){
     return (
-       <Section id={id} className={clsx(`items-start bg-linear-to-t to-black from-neutral-900 z-10`,className)}>
+       <Section
+         id={id}
+         align="start"
+         className={clsx("z-10 bg-linear-to-t to-black from-neutral-900", className)}
+       >
             <SectionHero 
                 id={`${id}-section-hero`} 
                 title="My Expertise"

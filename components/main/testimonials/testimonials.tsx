@@ -49,13 +49,13 @@ export default async function Testimonials({ id, className }: TestimonialsProps)
       />
 
       {testimonials.length === 0 ? (
-        <p className="w-full text-center text-sm text-white/50">
+        <p className="w-full max-w-xl text-center text-sm text-white/50">
           Testimonials will appear here once added in Supabase.
         </p>
       ) : (
-        <ul className="grid w-full gap-5 md:grid-cols-3">
+        <ul className="grid w-full max-w-6xl gap-5 md:grid-cols-3">
           {testimonials.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className="w-full">
               <TestimonialCard item={item} />
             </li>
           ))}

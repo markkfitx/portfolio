@@ -5,7 +5,9 @@ export default function NotFound() {
   return (
     <Section
       id="not-found"
-      className="min-h-[60vh] items-center justify-center py-32 text-center"
+      align="center"
+      justify="center"
+      className="min-h-[60vh] py-32 text-center"
     >
       <p className="text-xs font-medium uppercase tracking-[0.28em] text-emerald-500">
         404

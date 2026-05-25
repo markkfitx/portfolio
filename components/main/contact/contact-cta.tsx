@@ -15,8 +15,9 @@ export default function ContactCta({
   return (
     <Section
       id={id}
+      align="center"
       className={clsx(
-        "items-center border-y border-white/8 bg-linear-to-t from-neutral-900 to-black py-20 md:py-28",
+        "border-y border-white/8 bg-linear-to-t from-neutral-900 to-black py-20 md:py-28",
         className
       )}
     >
@@ -31,7 +32,7 @@ export default function ContactCta({
           I&apos;m open to frontend roles, contract work, and collaborations on
           product and marketing tech.
         </p>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-full border border-emerald-400/70 bg-emerald-400 px-6 py-2.5 text-sm font-medium text-neutral-950 transition-colors hover:bg-emerald-300"

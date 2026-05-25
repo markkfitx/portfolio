@@ -16,12 +16,13 @@ export default function ContactMe({
   return (
     <Section
       id={id}
+      align="center"
       className={clsx(
-        "min-h-[60vh] items-center bg-linear-to-t from-black to-neutral-900 py-24 md:py-36",
+        "min-h-[60vh] bg-linear-to-t from-black to-neutral-900 py-24 md:py-36",
         className
       )}
     >
-      <header className="mb-10 flex max-w-xl flex-col items-center gap-3 text-center">
+      <header className="mb-10 flex w-full max-w-xl flex-col items-center gap-3 text-center">
         <p className="text-xs font-medium uppercase tracking-[0.28em] text-emerald-500">
           Get in touch
         </p>
@@ -48,7 +49,9 @@ export default function ContactMe({
           </Link>
         </p>
       </header>
-      <ContactForm />
+      <div className="w-full max-w-lg">
+        <ContactForm />
+      </div>
     </Section>
   )
 }
