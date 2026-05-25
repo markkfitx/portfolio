@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, ExternalLink } from "lucide-react"
-import type { WorkItem } from "@/lib/works"
+import type { WorkItem } from "@/lib/works-shared"
 import { Button } from "@/components/ui/button"
 
 export default function CaseStudy({ work }: { work: WorkItem }) {

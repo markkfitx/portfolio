@@ -6,11 +6,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { getFilterOptions } from "@/lib/works"
+import type { FilterOption } from "@/lib/works-shared"
 import clsx from "clsx"
 import { Button } from "@/components/ui/button"
 import { GalleryHorizontalEnd, Laptop, ListFilter } from "lucide-react"
-import { FILTER_ALL } from "@/lib/works"
+import { FILTER_ALL } from "@/lib/works-shared"
 
 const badgeColorMap: Record<string, string> = {
   blue: "bg-blue-800/60 text-blue-100 border-blue-500/20 hover:border-blue-500/60",
@@ -28,6 +28,7 @@ interface FilterFormProps {
   activeFilter: string | null
   onFilterChange: (filter: string | null) => void
   counts: Record<string, number>
+  filterOptions: FilterOption[]
 }
 
 export default function FilterForm({
@@ -37,25 +38,28 @@ export default function FilterForm({
   activeFilter,
   onFilterChange,
   counts,
+  filterOptions,
 }: FilterFormProps) {
-  const options = getFilterOptions()
-  const activeLabel = activeFilter ?? FILTER_ALL
+  const options = filterOptions
+  const activeLabel = activeFilter ?? FILTER_ALL[0]
 
   function FilterButton({
     label,
     color,
     count,
+    code,
   }: {
     label: string
     color: string
     count: number
+    code: number
   }) {
     const isActive = activeLabel === label
     return (
       <Button
         type="button"
         variant="default"
-        onClick={() => onFilterChange(label === FILTER_ALL ? null : label)}
+        onClick={() => onFilterChange(code === FILTER_ALL[1] ? null : code as unknown as string)}
         aria-pressed={isActive}
         className={clsx(
           "py-0 px-3 hover:cursor-pointer text-xs transition-opacity",
@@ -64,7 +68,7 @@ export default function FilterForm({
           isActive && "ring-1 ring-white/30"
         )}
       >
-        {label === FILTER_ALL ? (
+        {code === FILTER_ALL[1] ? (
           <GalleryHorizontalEnd className="mr-1 size-3.5" />
         ) : (
           <Laptop className="mr-1 size-3.5" />
@@ -103,7 +107,7 @@ export default function FilterForm({
               className="cursor-pointer rounded-xl px-3 py-2.5 text-sm text-white/85 hover:bg-white/10 focus:bg-white/10 focus:text-white"
               onClick={() => onFilterChange(null)}
             >
-              {FILTER_ALL} ({counts[FILTER_ALL] ?? 0})
+              {FILTER_ALL[0]} ({counts[FILTER_ALL[0]] ?? 0})
             </DropdownMenuItem>
             {options.map((item, idx) => (
               <DropdownMenuItem
@@ -119,9 +123,10 @@ export default function FilterForm({
       </div>
       <div className="hidden flex-row flex-wrap items-center gap-2 md:flex">
         <FilterButton
-          label={FILTER_ALL}
+          label={FILTER_ALL[0] as string}
           color="white"
-          count={counts[FILTER_ALL] ?? 0}
+          count={counts[FILTER_ALL[0]] ?? 0}
+          code={FILTER_ALL[1] as number}
         />
         {options.map((item, idx) => (
           <FilterButton
@@ -129,6 +134,7 @@ export default function FilterForm({
             label={item.label}
             color={item.color}
             count={counts[item.label] ?? 0}
+            code={item.code}
           />
         ))}
       </div>

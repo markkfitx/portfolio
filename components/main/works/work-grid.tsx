@@ -3,27 +3,31 @@
 import { useMemo, useState } from "react"
 import WorkBox from "@/components/main/works/work-box"
 import FilterForm from "@/components/main/works/filter-form"
-import {
-  FILTER_ALL,
-  filterWorks,
-  getFilterCounts,
-  getWorks,
-} from "@/lib/works"
+import type { FilterOption, WorkItem } from "@/lib/works-shared"
+import { FILTER_ALL, filterWorks, getFilterCounts } from "@/lib/works-shared"
 
 interface WorkGridProps {
   sectionId: string
+  works: WorkItem[]
+  filterOptions: FilterOption[]
 }
 
-export default function WorkGrid({ sectionId }: WorkGridProps) {
-  const allWorks = useMemo(() => getWorks(), [])
+export default function WorkGrid({
+  sectionId,
+  works,
+  filterOptions,
+}: WorkGridProps) {
   const [activeFilter, setActiveFilter] = useState<string | null>(null)
 
   const filteredWorks = useMemo(
-    () => filterWorks(allWorks, activeFilter),
-    [allWorks, activeFilter]
+    () => filterWorks(works, activeFilter as unknown as number | null),
+    [works, activeFilter]
   )
 
-  const counts = useMemo(() => getFilterCounts(allWorks), [allWorks])
+  const counts = useMemo(
+    () => getFilterCounts(works, filterOptions),
+    [works, filterOptions]
+  )
 
   return (
     <>
@@ -33,6 +37,7 @@ export default function WorkGrid({ sectionId }: WorkGridProps) {
         activeFilter={activeFilter}
         onFilterChange={setActiveFilter}
         counts={counts}
+        filterOptions={filterOptions}
       />
       {filteredWorks.length === 0 ? (
         <p className="z-10 text-sm text-white/60">

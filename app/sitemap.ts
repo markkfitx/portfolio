@@ -2,11 +2,12 @@ import type { MetadataRoute } from "next"
 import { siteConfig } from "@/lib/site"
 import { getWorkSlugs } from "@/lib/works"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url
   const now = new Date()
 
-  const workPages = getWorkSlugs().map((slug) => ({
+  const slugs = await getWorkSlugs()
+  const workPages = slugs.map((slug) => ({
     url: `${base}/work/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

@@ -9,12 +9,13 @@ type PageProps = {
 }
 
 export async function generateStaticParams() {
-  return getWorkSlugs().map((slug) => ({ slug }))
+  const slugs = await getWorkSlugs()
+  return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params
-  const work = getWorkBySlug(slug)
+  const work = await getWorkBySlug(slug)
   if (!work) return {}
 
   return createPageMetadata({
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function WorkCaseStudyPage({ params }: PageProps) {
   const { slug } = await params
-  const work = getWorkBySlug(slug)
+  const work = await getWorkBySlug(slug)
 
   if (!work) notFound()
 

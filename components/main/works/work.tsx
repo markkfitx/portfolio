@@ -2,6 +2,7 @@ import Section from "../../section-wrapper"
 import SectionHero from "../../section-hero"
 import SectionSubHeading from "../../section-sub-heading"
 import WorkGrid from "@/components/main/works/work-grid"
+import { getFilterOptions, getWorks } from "@/lib/works"
 import clsx from "clsx"
 
 interface contentProps {
@@ -9,7 +10,12 @@ interface contentProps {
   className?: string
 }
 
-export default function Work({ id, className }: contentProps) {
+export default async function Work({ id, className }: contentProps) {
+  const [works, filterOptions] = await Promise.all([
+    getWorks(),
+    getFilterOptions(),
+  ])
+
   return (
     <Section
       id={id}
@@ -34,7 +40,11 @@ export default function Work({ id, className }: contentProps) {
         <span className="text-emerald-400">UX/UI across platforms</span> — Featured
         projects I&apos;m proud of.
       </SectionSubHeading>
-      <WorkGrid sectionId={id} />
+      <WorkGrid
+        sectionId={id}
+        works={works}
+        filterOptions={filterOptions}
+      />
     </Section>
   )
 }
