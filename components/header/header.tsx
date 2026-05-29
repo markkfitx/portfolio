@@ -15,7 +15,7 @@ export default function Header({ id, className }: HeaderProps) {
     <header
       id={id}
       className={clsx(
-        "sticky top-0 z-50 w-full border-b border-white/5 bg-mist-950/80 backdrop-blur-md",
+        "sticky top-0 z-50 w-full border-b border-neutral-200 bg-white/80 backdrop-blur-md",
         className
       )}
     >
@@ -24,7 +24,7 @@ export default function Header({ id, className }: HeaderProps) {
           <MobileNavBar id="mobile-navigation" />
           <Link
             href="/"
-            className="font-heading truncate text-sm font-semibold tracking-tight text-white transition-colors hover:text-emerald-400 sm:text-base"
+            className="font-heading truncate text-sm font-semibold tracking-tight text-neutral-900 transition-colors hover:text-blue-600 sm:text-base"
           >
             {siteConfig.name}
           </Link>

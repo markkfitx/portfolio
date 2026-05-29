@@ -13,12 +13,12 @@ import { Button } from "@/components/ui/button"
 import { GalleryHorizontalEnd, Laptop, ListFilter } from "lucide-react"
 
 const badgeColorMap: Record<string, string> = {
-  blue: "bg-blue-800/60 text-blue-100 border-blue-500/20 hover:border-blue-500/60",
-  cyan: "bg-cyan-800/60 text-cyan-100 border-cyan-500/20 hover:border-cyan-500/60",
-  red: "bg-red-800/60 text-red-100 border-red-500/20 hover:border-red-500/60",
-  green: "bg-green-800/60 text-green-100 border-green-500/20 hover:border-green-500/60",
+  blue: "bg-blue-100 text-blue-800 border-blue-200 hover:border-blue-400",
+  cyan: "bg-cyan-100 text-cyan-800 border-cyan-200 hover:border-cyan-400",
+  red: "bg-red-100 text-red-800 border-red-200 hover:border-red-400",
+  green: "bg-green-100 text-green-800 border-green-200 hover:border-green-400",
   white:
-    "bg-neutral-300/60 text-neutral-100 border-neutral-500/20 hover:border-neutral-500/60",
+    "bg-neutral-100 text-neutral-800 border-neutral-200 hover:border-neutral-400",
 }
 
 interface FilterFormProps {
@@ -77,7 +77,7 @@ export default function FilterForm({
           "py-0 px-3 hover:cursor-pointer text-xs transition-opacity",
           badgeColorMap[color] ?? badgeColorMap.white,
           !isActive && "opacity-50 hover:opacity-80",
-          isActive && "ring-1 ring-white/30"
+          isActive && "ring-1 ring-neutral-400"
         )}
       >
         {code === FILTER_ALL.code ? (
@@ -103,7 +103,7 @@ export default function FilterForm({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
-              className="h-9 rounded-full border border-emerald-300/20 bg-emerald-400/5 text-emerald-300"
+              className="h-9 rounded-full border border-blue-200 bg-blue-50 text-blue-700"
               variant="default"
             >
               <ListFilter className="mr-2 h-4 w-4" />
@@ -111,12 +111,12 @@ export default function FilterForm({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="mx-2 mt-2 w-screen max-w-xs rounded-2xl border border-white/10 bg-[#050509]/95 p-2 text-white shadow-2xl backdrop-blur-md sm:max-w-sm"
+            className="mx-2 mt-2 w-screen max-w-xs rounded-2xl border border-neutral-200 bg-white/95 p-2 text-neutral-900 shadow-2xl backdrop-blur-md sm:max-w-sm"
             align="start"
             sideOffset={8}
           >
             <DropdownMenuItem
-              className="cursor-pointer rounded-xl px-3 py-2.5 text-sm text-white/85 hover:bg-white/10 focus:bg-white/10 focus:text-white"
+              className="cursor-pointer rounded-xl px-3 py-2.5 text-sm text-neutral-700 hover:bg-neutral-100 focus:bg-neutral-100 focus:text-neutral-900"
               onClick={() => onFilterChange(null)}
             >
               {FILTER_ALL.label} ({counts[FILTER_ALL.label] ?? 0})
@@ -124,7 +124,7 @@ export default function FilterForm({
             {filterOptions.map((item, idx) => (
               <DropdownMenuItem
                 key={`${id}-dropdown-item-${idx}`}
-                className="cursor-pointer rounded-xl px-3 py-2.5 text-sm text-white/85 hover:bg-white/10 focus:bg-white/10 focus:text-white"
+                className="cursor-pointer rounded-xl px-3 py-2.5 text-sm text-neutral-700 hover:bg-neutral-100 focus:bg-neutral-100 focus:text-neutral-900"
                 onClick={() => onFilterChange(item.code)}
               >
                 {item.label} ({counts[item.label] ?? 0})

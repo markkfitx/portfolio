@@ -13,13 +13,13 @@ export default function Awards({id, className}: contentProps){
         <Section
           id={id}
           align="center"
-          className={clsx(`bg-linear-to-t from-black to-neutral-900 z-10`, className)}
+          className={clsx("z-10", className)}
         >
             <SectionHeader
               kicker="Recognition"
               title={
                 <>
-                  Awards & <span className="text-emerald-400">Certifications</span>
+                  Awards & <span className="text-blue-600">Certifications</span>
                 </>
               }
               align="center"
@@ -28,20 +28,20 @@ export default function Awards({id, className}: contentProps){
             <div className="w-full max-w-2xl flex flex-col justify-start items-stretch">
                 {data.certifications.map((item,idx) => (
                     <div className="w-full" key={`${id}-list-item-${idx}`}>
-                        <h6 className="font-normal w-full flex flex-row justify-between gap-4 py-4 text-white">
+                        <h6 className="font-normal w-full flex flex-row justify-between gap-4 py-4 text-neutral-900">
                             {"url" in item && item.url ? (
                               <a
                                 href={item.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-left transition-colors hover:text-emerald-400"
+                                className="text-left transition-colors hover:text-blue-600"
                               >
                                 {item.name}
                               </a>
                             ) : (
                               <span>{item.name}</span>
                             )}
-                            <span className="shrink-0 text-white/60">{item.year}</span>
+                            <span className="shrink-0 text-neutral-500">{item.year}</span>
                         </h6>
                         {idx < data.certifications.length - 1 && <Separator className="opacity-25" />}
                     </div>

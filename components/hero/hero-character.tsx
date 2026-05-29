@@ -36,19 +36,19 @@ export default function HeroCharacter({
       role={!imageSrc && children ? "img" : undefined}
     >
       <div
-        className="pointer-events-none absolute inset-[8%] rounded-[40%] bg-emerald-400/10 blur-3xl"
+        className="pointer-events-none absolute inset-[8%] rounded-[40%] bg-blue-400/10 blur-3xl"
         aria-hidden
       />
       <div
         className={clsx(
           "hero-character-float relative z-10 flex w-full items-end justify-center",
-          "aspect-[4/5] max-h-[min(72svh,640px)] min-h-[280px]",
-          "sm:aspect-[5/6] sm:min-h-[320px]",
-          "lg:aspect-auto lg:min-h-[420px] lg:max-h-[min(78svh,720px)]"
+          "aspect-[4/5] max-h-[min(72svh,960px)] min-h-[420px]",
+          "sm:aspect-[5/6] sm:min-h-[480px]",
+          "lg:aspect-auto lg:min-h-[630px] lg:max-h-[min(85svh,1080px)]"
         )}
       >
         {children ? (
-          <div className="relative h-full w-full max-w-[min(100%,420px)] [&>*]:h-full [&>*]:w-full">
+          <div className="relative h-full w-full max-w-[min(100%,630px)] [&>*]:h-full [&>*]:w-full">
             {children}
           </div>
         ) : imageSrc ? (
@@ -64,17 +64,17 @@ export default function HeroCharacter({
           <div
             className={clsx(
               "flex h-full w-full max-w-[360px] flex-col items-center justify-end",
-              "rounded-3xl border border-dashed border-white/15 bg-white/[0.02]",
+              "rounded-3xl border border-dashed border-neutral-200 bg-white/[0.02]",
               "px-6 pb-8 pt-10 text-center"
             )}
           >
-            <span className="text-xs font-medium uppercase tracking-wider text-emerald-400/80">
+            <span className="text-xs font-medium uppercase tracking-wider text-blue-400/80">
               Character slot
             </span>
-            <p className="mt-2 text-sm text-balance text-white/45">
-              Pass your animation as <code className="text-white/60">children</code> or set{" "}
-              <code className="text-white/60">imageSrc</code> on{" "}
-              <code className="text-white/60">HeroCharacter</code>.
+            <p className="mt-2 text-sm text-balance text-neutral-500">
+              Pass your animation as <code className="text-neutral-500">children</code> or set{" "}
+              <code className="text-neutral-500">imageSrc</code> on{" "}
+              <code className="text-neutral-500">HeroCharacter</code>.
             </p>
           </div>
         )}

@@ -23,10 +23,10 @@ export default function HeroHeader({ data, className }: HeroHeaderProps) {
           <h1 className="sr-only">
             Hi, I&apos;m {data.name}. UX UI. {data.description}
           </h1>
-          <h2 className="hero-ux-headline font-medium uppercase text-white">
+          <h2 className="hero-ux-headline font-medium uppercase text-neutral-900">
             <span className="hero-display-title">Hi, I&apos;m {data.name}</span>
           </h2>
-          <p className="mt-4 max-w-[18rem] text-pretty text-sm leading-relaxed text-white/75 sm:mt-5 sm:max-w-xs sm:text-[0.9375rem] md:mt-6 md:text-base">
+          <p className="mt-4 max-w-[18rem] text-pretty text-sm leading-relaxed text-neutral-600 sm:mt-5 sm:max-w-xs sm:text-[0.9375rem] md:mt-6 md:text-base">
             {data.description}
           </p>
         </div>
@@ -37,10 +37,10 @@ export default function HeroHeader({ data, className }: HeroHeaderProps) {
             "bottom-[32%] sm:bottom-[28%] md:bottom-[24%] lg:bottom-[10%]"
           )}
         >
-          <h2 className="hero-ux-headline font-medium text-emerald-400">
+          <h2 className="hero-ux-headline font-medium text-blue-600">
             <span className="hero-display-title block italic">UX/UI</span>
             <span className="hero-display-title block">
-              <span className="bg-gradient-to-r from-blue-200 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                 Engineer
               </span>
             </span>
@@ -53,9 +53,9 @@ export default function HeroHeader({ data, className }: HeroHeaderProps) {
           href={data.email}
           className={clsx(
             "group inline-flex items-center gap-2",
-            "text-sm font-medium text-white/90 transition-colors",
-            "hover:text-white focus-visible:outline-none focus-visible:ring-2",
-            "focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+            "text-sm font-medium text-neutral-800 transition-colors",
+            "hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2",
+            "focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           )}
         >
           <span>Email</span>
@@ -70,9 +70,9 @@ export default function HeroHeader({ data, className }: HeroHeaderProps) {
             target="_blank"
             rel="noopener noreferrer"
             className={clsx(
-              "text-sm font-medium text-white/90 transition-colors",
-              "hover:text-white focus-visible:outline-none focus-visible:ring-2",
-              "focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+              "text-sm font-medium text-neutral-800 transition-colors",
+              "hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2",
+              "focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             )}
           >
             LinkedIn
@@ -80,9 +80,9 @@ export default function HeroHeader({ data, className }: HeroHeaderProps) {
           <Link
             href={data.resumeUrl}
             className={clsx(
-              "text-sm font-medium text-white/90 transition-colors",
-              "hover:text-white focus-visible:outline-none focus-visible:ring-2",
-              "focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+              "text-sm font-medium text-neutral-800 transition-colors",
+              "hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2",
+              "focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             )}
           >
             Resume

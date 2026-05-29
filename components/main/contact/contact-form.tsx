@@ -84,11 +84,11 @@ export default function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white/80">Name</FormLabel>
+              <FormLabel className="text-neutral-700">Name</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Your name"
-                  className="border-white/15 bg-white/5 text-white placeholder:text-white/40"
+                  className="border-neutral-200 bg-neutral-50 text-neutral-900 placeholder:text-neutral-400"
                   {...field}
                 />
               </FormControl>
@@ -101,12 +101,12 @@ export default function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white/80">Email</FormLabel>
+              <FormLabel className="text-neutral-700">Email</FormLabel>
               <FormControl>
                 <Input
                   type="email"
                   placeholder="you@example.com"
-                  className="border-white/15 bg-white/5 text-white placeholder:text-white/40"
+                  className="border-neutral-200 bg-neutral-50 text-neutral-900 placeholder:text-neutral-400"
                   {...field}
                 />
               </FormControl>
@@ -119,12 +119,12 @@ export default function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white/80">Message</FormLabel>
+              <FormLabel className="text-neutral-700">Message</FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="What would you like to work on?"
                   rows={5}
-                  className="border-white/15 bg-white/5 text-white placeholder:text-white/40"
+                  className="border-neutral-200 bg-neutral-50 text-neutral-900 placeholder:text-neutral-400"
                   {...field}
                 />
               </FormControl>
@@ -135,13 +135,13 @@ export default function ContactForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="self-start rounded-full border border-emerald-400/70 bg-emerald-400 px-6 py-2.5 text-sm font-medium text-neutral-950 hover:bg-emerald-300 disabled:opacity-60"
+          className="self-start rounded-full border border-blue-600/80 bg-blue-600 px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-500 disabled:opacity-60"
         >
           {isSubmitting ? "Sending…" : "Send message"}
         </Button>
 
         {status === "success" && (
-          <p className="text-sm text-emerald-400" role="status">
+          <p className="text-sm text-blue-400" role="status">
             Message sent — thanks for reaching out. I&apos;ll get back to you soon.
           </p>
         )}
@@ -155,13 +155,13 @@ export default function ContactForm() {
           </p>
         )}
         {usedFallback && (
-          <p className="text-xs text-white/50" role="status">
+          <p className="text-xs text-neutral-500" role="status">
             Email delivery isn&apos;t configured yet — your mail app should open
             with your message draft.
           </p>
         )}
         {status === "idle" && !usedFallback && (
-          <p className="text-xs text-white/50">
+          <p className="text-xs text-neutral-500">
             Sends securely when configured; otherwise opens your email client.
           </p>
         )}

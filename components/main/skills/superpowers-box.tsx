@@ -38,7 +38,7 @@ function MarqueeRow({
         {doubled.map((label, idx) => (
           <Badge
             key={`${label}-${idx}`}
-            className="whitespace-nowrap rounded-lg border border-white/5 bg-black/35 px-4 py-2 text-xs font-medium text-white/80 backdrop-blur-sm"
+            className="whitespace-nowrap rounded-lg border border-neutral-200 bg-neutral-100/90 px-4 py-2 text-xs font-medium text-neutral-700 backdrop-blur-sm"
           >
             {label}
           </Badge>
@@ -60,10 +60,10 @@ export default function SuperPowerBox({ id, className }: ContentProps) {
         className="relative flex h-full flex-col items-center justify-start gap-6 p-6 md:p-7"
       >
         <div className="flex w-full items-center justify-center gap-2">
-          <span className="inline-flex size-8 items-center justify-center rounded-lg border border-emerald-300/25 bg-emerald-400/10">
-            <Bolt className="size-4 text-emerald-300" aria-hidden />
+          <span className="inline-flex size-8 items-center justify-center rounded-lg border border-blue-300/25 bg-blue-400/10">
+            <Bolt className="size-4 text-blue-600" aria-hidden />
           </span>
-          <h5 className="font-heading text-base font-semibold tracking-tight text-white/90">
+          <h5 className="font-heading text-base font-semibold tracking-tight text-neutral-800">
             Super Powers
           </h5>
         </div>

@@ -33,7 +33,7 @@ export default function Header({ onOpenSidebar }: HeaderProps) {
         {onOpenSidebar ? (
           <Button
             type="button"
-            className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-zinc-100 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/30 md:h-6 md:w-6"
+            className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-zinc-100 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/30 md:h-6 md:w-6"
             aria-label="Open navigation menu"
             onClick={onOpenSidebar}
           >
@@ -75,14 +75,14 @@ export default function Header({ onOpenSidebar }: HeaderProps) {
       <div className="flex shrink-0 items-center md:gap-2 gap-0">
         <Button
           type="button"
-          className="inline-flex h-5 w-5 items-center justify-center rounded-sm text-zinc-100 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/30 md:h-6 md:w-6"
+          className="inline-flex h-5 w-5 items-center justify-center rounded-sm text-zinc-100 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/30 md:h-6 md:w-6"
           aria-label="Account"
         >
           <User className="size-[12px] md:size-[14px]" strokeWidth={1.75} />
         </Button>
         <Button
           type="button"
-          className="inline-flex h-5 w-5 items-center justify-center rounded-sm text-zinc-100 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/30 md:h-6 md:w-6"
+          className="inline-flex h-5 w-5 items-center justify-center rounded-sm text-zinc-100 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/30 md:h-6 md:w-6"
           aria-label="Notifications"
         >
           <Bell className="size-[12px] md:size-[14px]" strokeWidth={1.75} />

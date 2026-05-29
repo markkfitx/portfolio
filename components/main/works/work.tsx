@@ -19,10 +19,7 @@ export default async function Work({ id, className }: contentProps) {
   return (
     <Section
       id={id}
-      className={clsx(
-        `items-start bg-linear-to-t from-black to-neutral-900 z-10`,
-        className
-      )}
+      className={clsx("items-start z-10", className)}
     >
       <SectionHero
         id={`${id}-section-hero`}
@@ -35,15 +32,15 @@ export default async function Work({ id, className }: contentProps) {
       <SectionSubHeading
         id={`${id}-subheading`}
         alignment="start"
-        className="max-w-[500px] text-white"
+        className="max-w-[500px] text-neutral-900"
       >
-        <span className="text-emerald-400">UX/UI across platforms</span> — Featured
+        <span className="text-blue-600">UX/UI across platforms</span> — Featured
         projects I&apos;m proud of.
       </SectionSubHeading>
       {works.length === 0 ? (
-        <p className="text-sm text-white/60">
+        <p className="text-sm text-neutral-500">
           No projects published yet. Add rows to the{" "}
-          <code className="text-emerald-400/90">Works</code> table in Supabase.
+          <code className="text-blue-600">Works</code> table in Supabase.
         </p>
       ) : (
         <WorkGrid

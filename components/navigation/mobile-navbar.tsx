@@ -31,7 +31,7 @@ export default function MobileNavBar({ id, className }: MobileNavBarProps) {
           <Button
             variant="default"
             size="icon"
-            className="h-9 w-9 rounded-full border border-white/15 bg-white/5 text-white hover:border-white/25 hover:bg-white/10"
+            className="h-9 w-9 rounded-full border border-neutral-200 bg-neutral-50 text-neutral-900 hover:border-neutral-300 hover:bg-neutral-100"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
@@ -43,18 +43,18 @@ export default function MobileNavBar({ id, className }: MobileNavBarProps) {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="mx-2 mt-3 w-[min(100vw-1rem,20rem)] rounded-2xl border border-white/10 bg-[#050509]/95 p-2 shadow-2xl backdrop-blur-md"
+          className="mx-2 mt-3 w-[min(100vw-1rem,20rem)] rounded-2xl border border-neutral-200 bg-white/95 p-2 shadow-2xl backdrop-blur-md"
           align="start"
           sideOffset={8}
         >
           <DropdownMenuGroup className="space-y-1">
-            <DropdownMenuLabel className="flex flex-col gap-1 px-3 py-2 text-white">
-              <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
+            <DropdownMenuLabel className="flex flex-col gap-1 px-3 py-2 text-neutral-900">
+              <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-400">
                 Menu
               </span>
               <span className="text-sm font-semibold">Mark Kirby</span>
             </DropdownMenuLabel>
-            <DropdownMenuSeparator className="my-1 bg-white/10" />
+            <DropdownMenuSeparator className="my-1 bg-neutral-200" />
             {mainNavLinks.map((item) => (
               <DropdownMenuItem
                 key={item.label}

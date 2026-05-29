@@ -35,7 +35,7 @@ export default async function WorkCaseStudyPage({ params }: PageProps) {
     <Section
       id="case-study"
       align="center"
-      className="min-h-[70vh] bg-linear-to-t from-black to-neutral-900 py-28 md:py-36"
+      className="min-h-[70vh] bg-white py-28 md:py-36"
     >
       <CaseStudy work={work} />
     </Section>

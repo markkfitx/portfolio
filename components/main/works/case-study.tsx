@@ -14,28 +14,28 @@ export default function CaseStudy({ work }: { work: WorkWithDisplay }) {
     <article className="w-full max-w-3xl">
       <Link
         href="/#works-section"
-        className="mb-8 inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-emerald-400"
+        className="mb-8 inline-flex items-center gap-2 text-sm text-neutral-500 transition-colors hover:text-blue-600"
       >
         <ArrowLeft className="size-4" aria-hidden />
         Back to work
       </Link>
 
       <header className="flex flex-col gap-4">
-        <p className="text-xs font-medium uppercase tracking-[0.28em] text-emerald-500">
+        <p className="text-xs font-medium uppercase tracking-[0.28em] text-blue-500">
           Case study{year ? ` · ${year}` : ""}
         </p>
-        <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl">
+        <h1 className="font-heading text-4xl font-bold tracking-tight text-neutral-900 md:text-5xl">
           {work.title}
         </h1>
         {work.subtitle ? (
-          <p className="text-lg text-white/70">{work.subtitle}</p>
+          <p className="text-lg text-neutral-600">{work.subtitle}</p>
         ) : null}
         {skills.length > 0 ? (
           <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-emerald-300/25 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-200"
+                className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-800"
               >
                 {skill}
               </span>
@@ -44,7 +44,7 @@ export default function CaseStudy({ work }: { work: WorkWithDisplay }) {
         ) : null}
       </header>
 
-      <div className="relative mt-10 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-[#E2E8F0] ring-1 ring-white/10">
+      <div className="relative mt-10 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-[#E2E8F0] ring-1 ring-neutral-200">
         <Image
           src={workImageUrl(work)}
           alt={work.title}
@@ -55,10 +55,10 @@ export default function CaseStudy({ work }: { work: WorkWithDisplay }) {
         />
       </div>
 
-      <div className="mt-12 flex flex-col gap-10 text-white/80">
+      <div className="mt-12 flex flex-col gap-10 text-neutral-700">
         {work.description ? (
           <section>
-            <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-white/45">
+            <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
               Overview
             </h2>
             <p className="text-lg leading-relaxed">{work.description}</p>
@@ -70,7 +70,7 @@ export default function CaseStudy({ work }: { work: WorkWithDisplay }) {
         {externalLink ? (
           <Button
             asChild
-            className="rounded-full border border-emerald-400/70 bg-emerald-400 text-neutral-950 hover:bg-emerald-300"
+            className="rounded-full border border-blue-600/80 bg-blue-600 text-white hover:bg-blue-500"
           >
             <a
               href={workPrimaryLink(work)}
@@ -85,7 +85,7 @@ export default function CaseStudy({ work }: { work: WorkWithDisplay }) {
         <Button
           asChild
           variant="outline"
-          className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10"
+          className="rounded-full border-neutral-300 bg-transparent text-neutral-900 hover:bg-neutral-100"
         >
           <Link href="/contact">Discuss a similar project</Link>
         </Button>

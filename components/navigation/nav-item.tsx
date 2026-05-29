@@ -40,9 +40,9 @@ export default function NavItem({
       onClick={onNavigate}
       className={clsx(
         "rounded-md px-2.5 py-1.5 text-sm font-medium transition-colors",
-        "text-white/75 hover:text-white",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40",
-        isActive && "text-emerald-400",
+        "text-neutral-600 hover:text-neutral-900",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40",
+        isActive && "text-blue-600",
         className
       )}
       {...(isExternal

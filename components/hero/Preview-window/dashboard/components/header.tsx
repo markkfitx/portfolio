@@ -18,7 +18,7 @@ import {
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 
 const iconToolbarClass =
-  "inline-flex h-5 w-4 items-center justify-center rounded-sm border border-white/10 bg-zinc-800/80 text-zinc-200 transition-colors hover:bg-zinc-700/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/35 md:h-6 md:w-5"
+  "inline-flex h-5 w-4 items-center justify-center rounded-sm border border-white/10 bg-zinc-800/80 text-zinc-200 transition-colors hover:bg-zinc-700/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/35 md:h-6 md:w-5"
 
 export default function Header() {
   return (
@@ -114,7 +114,7 @@ export default function Header() {
         <Button
           variant="default"
           type="button"
-          className="inline-flex h-5 items-center justify-center rounded-sm border border-emerald-400/45 bg-emerald-500/15 px-2 text-[9px] font-medium text-emerald-300 transition-colors hover:border-emerald-400/60 hover:bg-emerald-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 md:h-6 md:text-[11px]"
+          className="inline-flex h-5 items-center justify-center rounded-sm border border-blue-400/45 bg-blue-500/15 px-2 text-[9px] font-medium text-blue-300 transition-colors hover:border-blue-400/60 hover:bg-blue-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 md:h-6 md:text-[11px]"
           aria-label="New exploration"
         >
           New Exploration

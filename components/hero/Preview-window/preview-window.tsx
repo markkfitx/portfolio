@@ -11,7 +11,7 @@ export default function PreviewWindow({className}: {className?: string}) {
               className={clsx(
                   "w-full",
                   "rounded-3xl",
-                  "shadow-[0_32px_120px_-72px_rgba(16,185,129,0.55)]",
+                  "shadow-[0_32px_120px_-72px_rgba(96,165,250,0.55)]",
                   "lg:min-w-[720px] lg:max-w-[920px]",
                   "md:min-h-min md:h-fit max-h-[400px] h-[calc(100svh-100px)]"
               )}

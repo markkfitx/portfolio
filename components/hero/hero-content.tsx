@@ -22,12 +22,12 @@ export default function HeroContent({ data, className }: HeroContentProps) {
     <div className={clsx("flex flex-col gap-5", className)}>
       <h1 className="sr-only">{data.name}</h1>
       <div className="flex flex-col gap-0">
-        <p className="relative right-[-0.1rem] text-2xl font-medium uppercase text-white md:top-[0.35rem] md:right-[-0.25rem] lg:right-[-0.5rem]">
+        <p className="relative right-[-0.1rem] text-2xl font-medium uppercase text-neutral-900 md:top-[0.35rem] md:right-[-0.25rem] lg:right-[-0.5rem]">
           Hi, I’m {data.name}
         </p>
-        <h2 className="hero-ux-headline font-medium text-emerald-400 shadow-xl">
+        <h2 className="hero-ux-headline font-medium text-blue-400 shadow-xl">
           <span className="relative right-[0.1rem] italic md:right-[0.25rem]">UX</span>
-          <span className="heroSlash bg-gradient-to-r from-emerald-200 to-emerald-600 bg-clip-text text-transparent">
+          <span className="heroSlash bg-gradient-to-r from-blue-200 to-blue-600 bg-clip-text text-transparent">
             /
           </span>
           <span className="relative right-[0.25rem] italic md:right-[1rem]">UI</span>
@@ -42,7 +42,7 @@ export default function HeroContent({ data, className }: HeroContentProps) {
             blinkCursor
           />
         </h2>
-        <span className="relative right-[-0.1rem] my-3 text-xs text-balance text-white md:right-[-0.25rem] md:text-sm">
+        <span className="relative right-[-0.1rem] my-3 text-xs text-balance text-neutral-900 md:right-[-0.25rem] md:text-sm">
           {data.description}
         </span>
       </div>

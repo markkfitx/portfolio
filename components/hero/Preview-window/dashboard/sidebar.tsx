@@ -118,7 +118,7 @@ export default function Sidebar() {
           <NavRow
             startSlot={<ShopMark />}
             label="Shop"
-            trailing={<span className="size-1.5 shrink-0 rounded-full bg-emerald-400" aria-hidden />}
+            trailing={<span className="size-1.5 shrink-0 rounded-full bg-blue-400" aria-hidden />}
           />
         </nav>
 

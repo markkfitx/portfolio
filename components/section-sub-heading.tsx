@@ -64,7 +64,7 @@ export default function SectionSubHeading({
     >
       <h3
         className={clsx(
-          "text-balance font-medium text-white/90 md:text-lg",
+          "text-balance font-medium text-neutral-800 md:text-lg",
           styles.text
         )}
       >

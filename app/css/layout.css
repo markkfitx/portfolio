@@ -37,7 +37,7 @@ html {
 body {
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  color:white;
+  color: oklch(0.205 0 0);
 }
 
 /* Headings */

@@ -39,7 +39,7 @@ export default function SocialLinks({ className }: SocialLinksProps) {
           key={item.label}
           href={item.href}
           aria-label={item.label}
-          className="opacity-80 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40 focus-visible:rounded-sm"
+          className="group opacity-80 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40 focus-visible:rounded-sm"
           {...("external" in item && item.external
             ? { target: "_blank", rel: "noopener noreferrer" }
             : {})}
@@ -47,7 +47,7 @@ export default function SocialLinks({ className }: SocialLinksProps) {
           <Image
             width={20}
             height={20}
-            className="size-5"
+            className="size-5 opacity-75 transition-opacity group-hover:opacity-100"
             alt={item.alt}
             src={item.icon}
           />

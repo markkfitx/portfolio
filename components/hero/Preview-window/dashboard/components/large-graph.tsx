@@ -103,7 +103,7 @@ export function ChartAreaInteractive({title, className}: {title: string, classNa
           <SelectTrigger
             className={cn(
               "ml-auto hidden h-7! w-[min(100%,9.5rem)] shrink-0 rounded-md border border-white/15 bg-zinc-950/80 px-1.5! text-[9px] font-medium text-zinc-200 shadow-none sm:flex md:h-6 md:px-2!",
-              "focus-visible:border-emerald-500/40 focus-visible:ring-2 focus-visible:ring-emerald-400/25 focus-visible:ring-offset-0",
+              "focus-visible:border-blue-500/40 focus-visible:ring-2 focus-visible:ring-blue-400/25 focus-visible:ring-offset-0",
               "[&_svg]:size-3 [&_svg]:opacity-70"
             )}
             aria-label="Select a value"

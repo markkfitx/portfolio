@@ -23,10 +23,10 @@ interface ContentProps {
 }
 
 const cardSurfaceByColor: Record<string, string> = {
-  red: "to-neutral-700/60 border-neutral-600/30",
-  cyan: "to-emerald-600/35 border-emerald-800/20",
-  blue: "to-neutral-600/60 border-neutral-600/30",
-  green: "to-emerald-700/35 border-emerald-800/20",
+  red: "to-red-100/80 border-red-200/40",
+  cyan: "to-cyan-100/80 border-cyan-200/40",
+  blue: "to-blue-100/80 border-blue-200/40",
+  green: "to-green-100/80 border-green-200/40",
 }
 
 export default function WorkBox({ id, work, className }: ContentProps) {
@@ -43,7 +43,7 @@ export default function WorkBox({ id, work, className }: ContentProps) {
           "group block",
           "transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
           "shadow-lg shadow-black/10 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-black/25",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/35 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
           "transition-all duration-300 ease-out"
         )}
         aria-label={`View case study: ${work.title}`}
@@ -51,24 +51,24 @@ export default function WorkBox({ id, work, className }: ContentProps) {
         <Card
           className={cn(
             "gap-0 overflow-hidden border-0 p-6 shadow-none md:p-6 lg:p-8",
-            "text-white transition-[filter] duration-300 ease-out will-change-[filter]",
-            "ring-white/8 bg-gradient-to-br from-emerald-900/30 via-neutral-800/20 border",
+            "text-neutral-900 transition-[filter] duration-300 ease-out will-change-[filter]",
+            "ring-neutral-200 bg-gradient-to-br from-blue-50 via-neutral-50 to-neutral-100 border",
             "group-hover:brightness-[1.03]",
             surface
           )}
         >
           <CardHeader className="flex flex-row items-center justify-between gap-4 p-0">
             <div
-              className="h-px w-10 shrink-0 origin-left bg-white transition-[width] duration-500 ease-out group-hover:w-14 md:w-12 md:group-hover:w-16"
+              className="h-px w-10 shrink-0 origin-left bg-neutral-300 transition-[width] duration-500 ease-out group-hover:w-14 md:w-12 md:group-hover:w-16"
               aria-hidden
             />
             <CardAction>
               {year ? (
                 <span
                   className={cn(
-                    "rounded-full border border-white/50 px-2 py-1 text-xs font-semibold tabular-nums text-white md:px-3",
+                    "rounded-full border border-neutral-400 px-2 py-1 text-xs font-semibold tabular-nums text-neutral-900 md:px-3",
                     "transition-[background-color,border-color,box-shadow,transform] duration-300 ease-out",
-                    "group-hover:border-white/30 group-hover:bg-white/15 group-hover:shadow-sm"
+                    "group-hover:border-neutral-300 group-hover:bg-white/15 group-hover:shadow-sm"
                   )}
                 >
                   {year}
@@ -80,7 +80,7 @@ export default function WorkBox({ id, work, className }: ContentProps) {
           <CardContent className="mt-8 p-0 md:mt-10">
             <CardTitle
               className={cn(
-                "font-heading text-balance text-2xl font-bolder uppercase leading-[1.15] tracking-wide text-white",
+                "font-heading text-balance text-2xl font-bolder uppercase leading-[1.15] tracking-wide text-neutral-900",
                 "md:text-3xl lg:text-4xl"
               )}
             >
@@ -89,10 +89,10 @@ export default function WorkBox({ id, work, className }: ContentProps) {
             {work.subtitle ? (
               <CardDescription
                 className={cn(
-                  "mt-3 text-xs font-medium uppercase tracking-[0.2em] text-white/70",
+                  "mt-3 text-xs font-medium uppercase tracking-[0.2em] text-neutral-600",
                   "md:text-[0.8125rem]",
                   "transition-[color,opacity] duration-300 ease-out",
-                  "group-hover:text-white group-hover:opacity-100"
+                  "group-hover:text-neutral-900 group-hover:opacity-100"
                 )}
               >
                 {work.subtitle}

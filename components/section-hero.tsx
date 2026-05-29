@@ -35,13 +35,13 @@ export default function SectionHero({id,alignment,title,description,badgeDesc,cl
         >
             <Badge
               variant="outline"
-              className="text-white/90 text-xs md:text-[0.7rem] tracking-[0.25em] uppercase rounded-full px-4 py-1 md:mb-1"
+              className="text-neutral-800 text-xs md:text-[0.7rem] tracking-[0.25em] uppercase rounded-full px-4 py-1 md:mb-1"
             >
               {badgeDesc}
             </Badge>
             <h2
               className={clsx(
-                "font-bold text-white text-shadow-lg whitespace-normal flex flex-col text-balance",
+                "font-bold text-neutral-900 text-shadow-lg whitespace-normal flex flex-col text-balance",
                 alignmentStyles[alignment].text
               )}
             >
@@ -49,7 +49,7 @@ export default function SectionHero({id,alignment,title,description,badgeDesc,cl
             </h2>
             <p
               className={clsx(
-                "text-white/70 max-w-xl md:max-w-2xl",
+                "text-neutral-600 max-w-xl md:max-w-2xl",
                 alignmentStyles[alignment].text
               )}
             >

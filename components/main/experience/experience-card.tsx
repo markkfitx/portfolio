@@ -67,25 +67,25 @@ export default function ExperienceSubSection({
               alt={`${company} logo`}
               width={40}
               height={40}
-              className="size-10 shrink-0 rounded-full object-cover ring-1 ring-white/15"
+              className="size-10 shrink-0 rounded-full object-cover ring-1 ring-neutral-300"
             />
           ) : null}
           <div className="flex min-w-0 flex-col gap-0.5 leading-tight">
-            <p className="font-heading text-sm font-semibold tracking-tight text-white md:text-base">
+            <p className="font-heading text-sm font-semibold tracking-tight text-neutral-900 md:text-base">
               {company}
             </p>
-            <p className="font-sans text-sm font-normal text-white/70">{job}</p>
+            <p className="font-sans text-sm font-normal text-neutral-600">{job}</p>
           </div>
         </div>
 
         <h3
           id={`${id}-item-headline-${idx}`}
-          className="experience-case-headline font-heading text-balance text-white"
+          className="experience-case-headline font-heading text-balance text-neutral-900"
         >
           {headline}
         </h3>
 
-        <p className="font-sans max-w-prose text-pretty text-base leading-relaxed text-white/70">
+        <p className="font-sans max-w-prose text-pretty text-base leading-relaxed text-neutral-600">
           {body}
         </p>
 
@@ -97,11 +97,11 @@ export default function ExperienceSubSection({
               rel="noopener noreferrer"
               id={`${id}-case-study-cta-${idx}`}
               className={cn(
-                "group inline-flex items-center gap-2 rounded-full border border-emerald-400/45",
-                "bg-emerald-500/[0.07] px-5 py-2.5 text-sm font-medium text-emerald-400",
-                "transition-colors hover:border-emerald-400/70 hover:bg-emerald-500/15 hover:text-emerald-300",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/40",
-                "focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+                "group inline-flex items-center gap-2 rounded-full border border-blue-400/45",
+                "bg-blue-500/[0.07] px-5 py-2.5 text-sm font-medium text-blue-400",
+                "transition-colors hover:border-blue-400/70 hover:bg-blue-500/15 hover:text-blue-300",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/40",
+                "focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               )}
             >
               View case study

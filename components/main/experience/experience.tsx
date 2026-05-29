@@ -24,7 +24,7 @@ export default function Experience({ id, className }: contentProps) {
         id={sectionDomId}
         className={clsx(
           idx === 0
-            ? `pt-24 md:pt-36 pb-12 md:pb-18` : idx === data.resume.length - 1 ? `pb-24 md:pb-36 pt-12 md:pt-18` : `py-12 md:py-18`, `${idx % 2 === 0 ? `bg-linear-to-t to-black from-neutral-900` : `bg-linear-to-t to-neutral-900 from-black`} text-white z-10`,
+            ? `pt-24 md:pt-36 pb-12 md:pb-18` : idx === data.resume.length - 1 ? `pb-24 md:pb-36 pt-12 md:pt-18` : `py-12 md:py-18`, `${idx % 2 === 0 ? `bg-neutral-50` : `bg-white`} text-neutral-900 z-10`,
           className
         )}
         key={`${id}-sub-section-item-${idx}`}
@@ -52,7 +52,7 @@ export default function Experience({ id, className }: contentProps) {
           >
             <ChevronDown
               size={42}
-              className="text-white/20 mt-[2px] hover:text-white/80 transition-colors transition-400"
+              className="text-neutral-300 mt-[2px] hover:text-neutral-700 transition-colors transition-400"
             />
           </a>
         )}

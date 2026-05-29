@@ -21,7 +21,7 @@ function FooterLink({
   return (
     <Link
       href={href}
-      className="text-sm text-white/55 transition-colors hover:text-white"
+      className="text-sm text-neutral-500 transition-colors hover:text-neutral-900"
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       {children}
@@ -33,26 +33,26 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative z-10 w-full border-t border-white/8">
+    <footer className="relative z-10 w-full border-t border-neutral-200">
       <div className="mx-auto max-w-[1440px] px-4 py-10 md:px-6 md:py-12 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-12">
           <div className="flex flex-col gap-3 sm:col-span-2 lg:col-span-1">
             <Link
               href="/"
-              className="font-heading text-lg font-semibold tracking-tight text-white transition-colors hover:text-emerald-400"
+              className="font-heading text-lg font-semibold tracking-tight text-neutral-900 transition-colors hover:text-blue-600"
             >
               {siteConfig.name}
             </Link>
             <a
               href={mailtoHref}
-              className="w-fit text-sm text-emerald-400/90 transition-colors hover:text-emerald-300"
+              className="w-fit text-sm text-blue-600 transition-colors hover:text-blue-700"
             >
               {siteConfig.email}
             </a>
           </div>
 
           <nav aria-label="Site sections" className="flex flex-col gap-3">
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/35">
+            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-neutral-400">
               Explore
             </p>
             <ul className="flex flex-col gap-2">
@@ -65,7 +65,7 @@ export default function Footer() {
           </nav>
 
           <nav aria-label="Connect" className="flex flex-col gap-3">
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/35">
+            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-neutral-400">
               Connect
             </p>
             <ul className="flex flex-col gap-2">
@@ -80,23 +80,23 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-white/8 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-neutral-200 pt-6 text-xs text-neutral-400 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {siteConfig.name}
           </p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <a
               href="#hero-section"
-              className="transition-colors hover:text-emerald-400/90"
+              className="transition-colors hover:text-blue-600"
             >
               Back to top
             </a>
-            <span className="hidden text-white/20 sm:inline" aria-hidden>
+            <span className="hidden text-neutral-300 sm:inline" aria-hidden>
               ·
             </span>
             <Link
               href="/sitemap.xml"
-              className="transition-colors hover:text-emerald-400/90"
+              className="transition-colors hover:text-blue-600"
             >
               Sitemap
             </Link>

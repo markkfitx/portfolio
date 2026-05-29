@@ -45,7 +45,7 @@ export default function SectionHeader({
     >
       <p
         className={clsx(
-          "text-xs font-medium uppercase tracking-[0.28em] text-emerald-500",
+          "text-xs font-medium uppercase tracking-[0.28em] text-blue-500",
           styles.text
         )}
       >
@@ -53,7 +53,7 @@ export default function SectionHeader({
       </p>
       <h2
         className={clsx(
-          "font-heading text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-[2.5rem]",
+          "font-heading text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl lg:text-[2.5rem]",
           styles.text,
           titleClassName
         )}
@@ -63,7 +63,7 @@ export default function SectionHeader({
       {lead ? (
         <p
           className={clsx(
-            "max-w-2xl text-base leading-relaxed text-white/70 md:text-lg",
+            "max-w-2xl text-base leading-relaxed text-neutral-600 md:text-lg",
             styles.text,
             align === "center" && "mx-auto"
           )}

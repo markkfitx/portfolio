@@ -16,7 +16,7 @@ export default function Skills({id, className}: contentProps){
        <Section
          id={id}
          align="start"
-         className={clsx("z-10 bg-linear-to-t to-black from-neutral-900", className)}
+         className={clsx("z-10", className)}
        >
             <SectionHero 
                 id={`${id}-section-hero`} 
@@ -27,7 +27,7 @@ export default function Skills({id, className}: contentProps){
                 className="hidden"
                 />
             <SectionSubHeading id={`${id}-subheading`} alignment="start" className="md:max-w-[450px]"> 
-                <span className="text-emerald-400">I’ll help you to </span>design better products <span className="text-emerald-400">and</span> achieve results <span className="text-emerald-400">that matter.</span>
+                <span className="text-blue-600">I’ll help you to </span>design better products <span className="text-blue-600">and</span> achieve results <span className="text-blue-600">that matter.</span>
             </SectionSubHeading>
             <SuperPowersGroup id={`${id}-super-powers`} className="z-10 md:mb-6 mb-12" />
             <SkillGroup id={`${id}-skill-group`} className="" />

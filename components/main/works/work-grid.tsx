@@ -40,12 +40,12 @@ export default function WorkGrid({
         filterOptions={filterOptions}
       />
       {filteredWorks.length === 0 ? (
-        <p className="z-10 text-sm text-white/60">
+        <p className="z-10 text-sm text-neutral-500">
           No projects in this category yet. Try{" "}
           <button
             type="button"
             onClick={() => setActiveFilter(null)}
-            className="text-emerald-400 underline-offset-2 hover:underline"
+            className="text-blue-600 underline-offset-2 hover:underline"
           >
             {FILTER_ALL.label}
           </button>
