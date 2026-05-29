@@ -90,6 +90,32 @@ h2.hero-ux-headline .heroSlash {
   font-size: clamp(2.625rem, 11vw, 3.75rem);
 }
 
+/* Hero split headline — large display lines beside the scene */
+.hero-display-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 11.5vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.hero-display-title .heroSlash {
+  font-size: inherit;
+}
+
+@media (min-width: 768px) {
+  .hero-display-title {
+    font-size: clamp(3.5rem, 8.5vw, 7.25rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-display-title {
+    font-size: clamp(4.5rem, 7vw, 7.75rem);
+  }
+}
+
 h3 {
   font-size: 1.85rem;
   line-height: 1.25 !important;
